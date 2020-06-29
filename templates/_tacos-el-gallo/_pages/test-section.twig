@@ -1,3 +1,11 @@
 {% block test %}
-Hello World
+	{% for block in entry.neoField.level(1).all() %}
+		{% switch block.type.handle %}
+			{% case "sectionHeader" %}
+                {% include "_tacos-el-gallo/_snippets/header" %}
+			{% case "text" %}
+                {% include "_tacos-el-gallo/_snippets/sub-header" %}
+                {% include "_tacos-el-gallo/_snippets/body-text" %}
+		{% endswitch %}
+	{% endfor %}
 {% endblock %}
