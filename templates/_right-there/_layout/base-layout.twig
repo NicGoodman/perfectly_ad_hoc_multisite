@@ -1,0 +1,24 @@
+{% do view.registerCssFile(siteUrl ~ "assets/css/main.css") %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% if title is defined %}
+				{{ title }}
+				-
+			{% endif %}
+			{{ siteName }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon-tag.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-tag-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-tag-16x16.png">
+		<link rel="manifest" href="assets/images/site.webmanifest">
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <script src="https://kit.fontawesome.com/f1b10d4b9b.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+
+    </body>
+</html>
