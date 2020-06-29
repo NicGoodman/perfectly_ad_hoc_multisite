@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2fe407e6cbd75dcf621026183f8753f6",
+    "content-hash": "874bdd91813ec5ecf590ab21feeea52c",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -3173,6 +3173,58 @@
                 "phar"
             ],
             "time": "2020-02-14T15:25:33+00:00"
+        },
+        {
+            "name": "spicyweb/craft-neo",
+            "version": "2.7.20",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spicywebau/craft-neo.git",
+                "reference": "9b24ed13bc257356490f1a4193a20cdd95096585"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/9b24ed13bc257356490f1a4193a20cdd95096585",
+                "reference": "9b24ed13bc257356490f1a4193a20cdd95096585",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.4.24"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "neo",
+                "name": "Neo",
+                "schemaVersion": "2.3.0",
+                "class": "benf\\neo\\Plugin",
+                "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/master/CHANGELOG.md",
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/master.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "benf\\neo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Spicy Web",
+                    "homepage": "https://github.com/spicywebau"
+                }
+            ],
+            "description": "A Matrix-like field type that uses existing fields",
+            "keywords": [
+                "Neo",
+                "cms",
+                "craftcms",
+                "field",
+                "matrix",
+                "plugin"
+            ],
+            "time": "2020-06-24T14:17:26+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
