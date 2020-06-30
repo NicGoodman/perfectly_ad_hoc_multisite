@@ -2,12 +2,12 @@
 	{% for block in entry.testSection.level(1).all() %}
 		{% switch block.type.handle %}
 			{% case "sectionHeader" %}
-                {% include "_tacos-el-gallo/_snippets/header" %}
+                {% include "_tacos-el-gallo/_snippets/heading" %}
 			{% case "text" %}
-                {% include "_tacos-el-gallo/_snippets/sub-header" %}
+                {% include "_tacos-el-gallo/_snippets/subheading" %}
                 {% include "_tacos-el-gallo/_snippets/body-text" %}
             {% case "button" %}
-                {% include "_tacos-el-gallo/_snippets/button-main" %}
+                {% include "_tacos-el-gallo/_snippets/btn-main" %}
 		{% endswitch %}
 	{% endfor %}
 {% endblock %}
