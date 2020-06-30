@@ -1,5 +1,49 @@
 @tailwind base;
 
+h1 {
+    @apply font-proxima-nova;
+    @apply uppercase;
+    @apply font-extrabold;
+    @apply text-4xl;
+}
+h2 {
+    @apply font-proxima-nova;
+    @apply uppercase;
+    @apply font-extrabold;
+    @apply text-2xl;
+}
+h3 {
+    @apply font-quicksand;
+    @apply uppercase;
+    @apply font-normal;
+    @apply text-2xl;
+}
+h4 {
+    @apply font-quicksand;
+    @apply font-normal;
+    @apply text-2xl;
+}
+p {
+    @apply font-quicksand;
+    @apply text-base;
+    @apply font-medium;
+    @apply pb-3;
+}
+
+button {
+    @apply bg-tag-red;
+    @apply text-tag-light-grey;
+    @apply p-4;
+}
+
+button:hover {
+    @apply bg-tag-dark-teal;
+}
+
+button:active {
+    @apply bg-tag-dark-red;
+}
+
 @tailwind components;
 
 @tailwind utilities;
