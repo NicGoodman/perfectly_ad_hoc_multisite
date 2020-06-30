@@ -632,7 +632,7 @@ button {
   --text-opacity: 1;
   color: #F2F2F2;
   color: rgba(242, 242, 242, var(--text-opacity));
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 button:hover {
