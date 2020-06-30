@@ -6,6 +6,8 @@
 			{% case "text" %}
                 {% include "_tacos-el-gallo/_snippets/sub-header" %}
                 {% include "_tacos-el-gallo/_snippets/body-text" %}
+            {% case "button" %}
+                {% include "_tacos-el-gallo/_snippets/button-main" %}
 		{% endswitch %}
 	{% endfor %}
 {% endblock %}
