@@ -30,18 +30,40 @@ p {
     @apply pb-3;
 }
 
-button {
+.btn-main {
     @apply bg-tag-red;
     @apply text-tag-light-grey;
     @apply p-2;
+    @apply font-proxima-nova;
+    @apply uppercase;
+    @apply font-extrabold;
+    @apply text-xl;
 }
 
-button:hover {
+.btn-main:hover {
     @apply bg-tag-dark-teal;
 }
 
-button:active {
+.btn-main:active {
     @apply bg-tag-dark-red;
+}
+
+.btn-alt {
+    @apply border-tag-teal;
+    @apply text-tag-teal;
+    @apply p-2;
+    @apply font-proxima-nova;
+    @apply uppercase;
+    @apply font-extrabold;
+    @apply text-xl;
+}
+
+.btn-alt:hover {
+    @apply border-tag-red;
+}
+
+.btn-alt:active {
+    @apply border-tag-dark-red;
 }
 
 @tailwind components;
