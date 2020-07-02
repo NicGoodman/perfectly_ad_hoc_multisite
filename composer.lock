@@ -322,16 +322,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.25",
+            "version": "3.4.26",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "b5fdef81023c831ddd4f2d7de6063b4f64d1a020"
+                "reference": "06416c24cfd4e03c16a1364a6aa9b6073b369d9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/b5fdef81023c831ddd4f2d7de6063b4f64d1a020",
-                "reference": "b5fdef81023c831ddd4f2d7de6063b4f64d1a020",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/06416c24cfd4e03c16a1364a6aa9b6073b369d9a",
+                "reference": "06416c24cfd4e03c16a1364a6aa9b6073b369d9a",
                 "shasum": ""
             },
             "require": {
@@ -416,7 +416,7 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2020-06-23T23:04:43+00:00"
+            "time": "2020-07-01T22:31:18+00:00"
         },
         {
             "name": "craftcms/commerce",
@@ -2183,16 +2183,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.5.0",
+            "version": "v4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "53c2753d756f5adb586dca79c2ec0e2654dd9463"
+                "reference": "c346bbfafe2ff60680258b631afb730d186ed864"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/53c2753d756f5adb586dca79c2ec0e2654dd9463",
-                "reference": "53c2753d756f5adb586dca79c2ec0e2654dd9463",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c346bbfafe2ff60680258b631afb730d186ed864",
+                "reference": "c346bbfafe2ff60680258b631afb730d186ed864",
                 "shasum": ""
             },
             "require": {
@@ -2231,7 +2231,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2020-06-03T07:24:19+00:00"
+            "time": "2020-07-02T17:12:47+00:00"
         },
         {
             "name": "opis/closure",
@@ -3224,16 +3224,16 @@
         },
         {
             "name": "spicyweb/craft-neo",
-            "version": "2.7.20",
+            "version": "2.7.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spicywebau/craft-neo.git",
-                "reference": "9b24ed13bc257356490f1a4193a20cdd95096585"
+                "reference": "3e3bdac012fe61eb2b8302219a329c9ba2a23b35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/9b24ed13bc257356490f1a4193a20cdd95096585",
-                "reference": "9b24ed13bc257356490f1a4193a20cdd95096585",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/3e3bdac012fe61eb2b8302219a329c9ba2a23b35",
+                "reference": "3e3bdac012fe61eb2b8302219a329c9ba2a23b35",
                 "shasum": ""
             },
             "require": {
@@ -3272,7 +3272,7 @@
                 "matrix",
                 "plugin"
             ],
-            "time": "2020-06-24T14:17:26+00:00"
+            "time": "2020-07-02T05:11:57+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
