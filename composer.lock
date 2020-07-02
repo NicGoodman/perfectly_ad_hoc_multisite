@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d6f17cd3e052c5823333db4b11c4943",
+    "content-hash": "ad6c2aee1df743e10b0dbd1247b8ae0f",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -653,6 +653,58 @@
                 "yii2"
             ],
             "time": "2020-05-28T16:57:05+00:00"
+        },
+        {
+            "name": "craftcms/store-hours",
+            "version": "2.1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/store-hours.git",
+                "reference": "820671b90b3de8824edf2ccbe5493fd0216623c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/store-hours/zipball/820671b90b3de8824edf2ccbe5493fd0216623c8",
+                "reference": "820671b90b3de8824edf2ccbe5493fd0216623c8",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-beta.20"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Store Hours",
+                "handle": "store-hours",
+                "schemaVersion": "1.0.2",
+                "changelogUrl": "https://raw.githubusercontent.com/craftcms/store-hours/v2/CHANGELOG.md",
+                "downloadUrl": "https://github.com/craftcms/store-hours/archive/v2.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\storehours\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "This plugin adds a new “Store Hours” field type to Craft, for collecting the opening and closing hours of a business for each day of the week.",
+            "keywords": [
+                "cms",
+                "craftcms",
+                "hours",
+                "html",
+                "json",
+                "store",
+                "yii2"
+            ],
+            "time": "2018-11-02T01:31:39+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -3223,58 +3275,6 @@
             "time": "2020-02-14T15:25:33+00:00"
         },
         {
-            "name": "spicyweb/craft-neo",
-            "version": "2.7.21",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spicywebau/craft-neo.git",
-                "reference": "3e3bdac012fe61eb2b8302219a329c9ba2a23b35"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/3e3bdac012fe61eb2b8302219a329c9ba2a23b35",
-                "reference": "3e3bdac012fe61eb2b8302219a329c9ba2a23b35",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.4.24"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "handle": "neo",
-                "name": "Neo",
-                "schemaVersion": "2.3.0",
-                "class": "benf\\neo\\Plugin",
-                "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/master/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/master.zip"
-            },
-            "autoload": {
-                "psr-4": {
-                    "benf\\neo\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Spicy Web",
-                    "homepage": "https://github.com/spicywebau"
-                }
-            ],
-            "description": "A Matrix-like field type that uses existing fields",
-            "keywords": [
-                "Neo",
-                "cms",
-                "craftcms",
-                "field",
-                "matrix",
-                "plugin"
-            ],
-            "time": "2020-07-02T05:11:57+00:00"
-        },
-        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.2.3",
             "source": {
@@ -4334,6 +4334,94 @@
                 "templating"
             ],
             "time": "2020-02-11T15:31:23+00:00"
+        },
+        {
+            "name": "verbb/base",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/verbb-base.git",
+                "reference": "85a11791c811c90ea58a3718488af0e60e12ba2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/85a11791c811c90ea58a3718488af0e60e12ba2c",
+                "reference": "85a11791c811c90ea58a3718488af0e60e12ba2c",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "yii-module",
+            "autoload": {
+                "psr-4": {
+                    "verbb\\base\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Common utilities and building-blocks for Verbb plugins for Craft CMS.",
+            "time": "2020-04-14T23:40:29+00:00"
+        },
+        {
+            "name": "verbb/super-table",
+            "version": "2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/super-table.git",
+                "reference": "da4a41c93a475f8d2063a7116f764374fc4d47df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/da4a41c93a475f8d2063a7116f764374fc4d47df",
+                "reference": "da4a41c93a475f8d2063a7116f764374fc4d47df",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.4.23",
+                "verbb/base": "^1.0.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Super Table",
+                "handle": "super-table",
+                "description": "Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.",
+                "documentationUrl": "https://github.com/verbb/super-table",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/super-table/craft-3/CHANGELOG.md",
+                "class": "verbb\\supertable\\SuperTable"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\supertable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "super table"
+            ],
+            "time": "2020-06-10T06:44:31+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

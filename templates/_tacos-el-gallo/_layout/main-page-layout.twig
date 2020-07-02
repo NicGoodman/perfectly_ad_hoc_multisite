@@ -1,6 +1,19 @@
 {% extends "_tacos-el-gallo/_layout/base-layout" %}
-{% block body %}
+
+{% block header %}
 	{% include "_tacos-el-gallo/_frame/header" %}
-	{% include "_tacos-el-gallo/_pages/test-section" %}
+{% endblock %}
+{% block main %}
+	<main class="">
+		{% include "_tacos-el-gallo/_pages/intro-section" %}
+		{% include "_tacos-el-gallo/_pages/hours-section" %}
+		{% include "_tacos-el-gallo/_pages/menus-section" %}
+		{% include "_tacos-el-gallo/_pages/happenings-section" %}
+		{% include "_tacos-el-gallo/_pages/about-section" %}
+		{% include "_tacos-el-gallo/_pages/contact-section" %}
+		{% include "_tacos-el-gallo/_pages/merch-section" %}
+	</main>
+{% endblock %}
+{% block footer %}
 	{% include "_tacos-el-gallo/_frame/footer" %}
 {% endblock %}

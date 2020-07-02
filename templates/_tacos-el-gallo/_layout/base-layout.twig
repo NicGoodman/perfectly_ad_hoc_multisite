@@ -19,10 +19,11 @@
 		<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-        <script src="https://kit.fontawesome.com/f1b10d4b9b.js" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/f1b10d4b9b.js" crossorigin="anonymous"></script>
 	</head>
 	<body>
-	{% block body %}
-	{% endblock %}
-    </body>
+		{% block header %}{% endblock %}
+		{% block main %}{% endblock %}
+		{% block footer %}{% endblock %}
+	</body>
 </html>
