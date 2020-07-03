@@ -6,7 +6,7 @@
 		{% for entry in craft.entries().section('events').all() %}
 			{% set eventTitle = entry.eventContent.eventTitle %}
 			{% set eventBannerImage = entry.eventContent.eventBannerImage.one().optimizedImages %}
-			{% set eventBannerImageAltText = entry.eventContent.eventBannerImageAltText.one().title %}
+			{% set eventBannerImageAltText = entry.eventContent.eventBannerImage.one().title %}
 			{% set eventDate = entry.eventContent.eventDate %}
 			{% set btnText = "Learn More" %}
 			<article class="bg-tag-light-grey flex flex-col items-center p-4 w-1/2 md:w-1/3">
