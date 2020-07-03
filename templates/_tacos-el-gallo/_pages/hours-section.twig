@@ -9,7 +9,7 @@
 		{% set ctaLink = entry.hoursSectionContent.callToActionLink %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
-		<div class="w-full border-tag-yellow p-4" style="{% if entry.hoursSectionContent.map.one()|length %} {% set map = entry.hoursSectionContent.map.one().getUrl() %}background: url('{{ map }}') no-repeat right/cover;{% endif %}">
+		<div class="w-full border-tag-yellow p-4 border-2" style="{% if entry.hoursSectionContent.map.one()|length %} {% set map = entry.hoursSectionContent.map.one().getUrl() %}background: url('{{ map }}') no-repeat right/cover;{% endif %}">
 			<div class="flex flex-col p-4 w-1/3 h-full bg-tag-teal bg-opacity-75">
 				<address>
 					<h2 class="text-tag-light-grey">{{ address }}</h2>
