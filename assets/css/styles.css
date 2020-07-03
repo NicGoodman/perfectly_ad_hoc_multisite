@@ -52,17 +52,18 @@ p.tag {
 }
 
 .nav-btn.tag {
-    @apply bg-tag-red;
+    @apply bg-tag-gold;
     @apply text-tag-light-grey;
     @apply p-2;
     @apply font-proxima-nova;
     @apply uppercase;
     @apply font-extrabold;
     @apply text-xl;
+    @apply block;
 }
 
 .nav-btn.tag:hover {
-    @apply bg-tag-dark-teal;
+    @apply bg-tag-teal;
 }
 
 .nav-btn.tag:active {

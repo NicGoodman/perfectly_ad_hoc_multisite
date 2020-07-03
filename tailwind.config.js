@@ -12,6 +12,7 @@ module.exports = {
         'tag-yellow': '#FBEE3C',
         'tag-teal': '#4FBBCD',
         'tag-dark-teal': '#147F91',
+        'tag-gold': '#FFBC00',
       }
     },
     fontFamily: {
