@@ -591,34 +591,34 @@ video {
   height: auto;
 }
 
-h1 .tag {
+h1.tag {
   font-family: proxima-nova, sans-serif;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 2.25rem;
 }
 
-h2 .tag {
+h2.tag {
   font-family: proxima-nova, sans-serif;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 1.5rem;
 }
 
-h3 .tag {
+h3.tag {
   font-family: Quicksand, sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.5rem;
 }
 
-h4 .tag {
+h4.tag {
   font-family: Quicksand, sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
 }
 
-p .tag {
+p.tag {
   font-family: Quicksand, sans-serif;
   font-size: 1rem;
   font-weight: 500;
