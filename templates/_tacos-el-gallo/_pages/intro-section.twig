@@ -1,4 +1,4 @@
 <section class="bg-tag-dark-teal flex flex-row" style="{% if entry.introSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.introSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat center/cover;{% endif %} height: 66vh;">
-
-
+{% set navBtnList = entry.headerContent.navigation.visibleInIntroSection(true).all() %}
+{% include "_tacos-el-gallo/_content/nav-btn-list" %}
 </section>
