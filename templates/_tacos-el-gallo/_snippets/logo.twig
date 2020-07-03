@@ -1,3 +1,5 @@
-<h1>
-
+{% set logo = entry.logo.one().optimizedImages %}
+{% set logoAltText = entry.logo.one().title %}
+<h1 class="">
+	<img src="{{ logo.src }}" data-srcset="{{ logo.srcset() }}" alt="{{ logoAltText }}">
 </h1>
