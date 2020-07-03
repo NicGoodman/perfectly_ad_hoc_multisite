@@ -1,3 +1,12 @@
 <header class="flex flex-row flex-wrap">
-	{% include "_tacos-el-gallo/_snippets/logo" %}
+	{% if entry.headerContent.logo|length %}
+		{% set logo = entry.headerContent.one().optimizedImages %}
+		{% set logoAltText = entry.headerContent.one().title %}
+		{% include "_tacos-el-gallo/_snippets/logo" %}
+	{% else %}
+		{% include "_tacos-el-gallo/_snippets/site-title" %}
+	{% endif %}
+    {% set navList = entry.headerContent.navigation.all() %}
+	{% include "_tacos-el-gallo/_content/nav-item-list" %}
+	{% include "_tacos-el-gallo/_content/social-media-links" %}
 </header>

@@ -1,11 +1,3 @@
-{% if entry.headerContent.logo|length %}
-	{% set logo = entry.headerContent.one().optimizedImages %}
-	{% set logoAltText = entry.headerContent.one().title %}
-	<h1 class="">
-		<img src="{{ logo.src }}" data-srcset="{{ logo.srcset() }}" alt="{{ logoAltText }}">
-	</h1>
-{% else %}
-	<h1 class="">
-		{{ siteName }}
-	</h1>
-{% endif %}
+<h1 class="">
+	<img src="{{ logo.src }}" data-srcset="{{ logo.srcset() }}" alt="{{ logoAltText }}">
+</h1>
