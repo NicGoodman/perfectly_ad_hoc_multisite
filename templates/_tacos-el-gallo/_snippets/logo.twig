@@ -1,5 +1,11 @@
-{% set logo = entry.logo.one().optimizedImages %}
-{% set logoAltText = entry.logo.one().title %}
-<h1 class="">
-	<img src="{{ logo.src }}" data-srcset="{{ logo.srcset() }}" alt="{{ logoAltText }}">
-</h1>
+{% if entry.logo|length %}
+	{% set logo = entry.logo.one().optimizedImages %}
+	{% set logoAltText = entry.logo.one().title %}
+	<h1 class="">
+		<img src="{{ logo.src }}" data-srcset="{{ logo.srcset() }}" alt="{{ logoAltText }}">
+	</h1>
+{% else %}
+	<h1 class="">
+		{{ siteName }}
+	</h1>
+{% endif %}
