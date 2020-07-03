@@ -51,6 +51,24 @@ p.tag {
     @apply text-tag-red;
 }
 
+.nav-btn.tag {
+    @apply bg-tag-red;
+    @apply text-tag-light-grey;
+    @apply p-2;
+    @apply font-proxima-nova;
+    @apply uppercase;
+    @apply font-extrabold;
+    @apply text-xl;
+}
+
+.nav-btn.tag:hover {
+    @apply bg-tag-dark-teal;
+}
+
+.nav-btn.tag:active {
+    @apply bg-tag-dark-red;
+}
+
 .btn-main.tag {
     @apply bg-tag-red;
     @apply text-tag-light-grey;
