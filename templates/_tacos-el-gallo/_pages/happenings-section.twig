@@ -9,7 +9,7 @@
 			{% set eventBannerImageAltText = entry.eventContent.eventBannerImage.one().title %}
 			{% set eventDate = entry.eventContent.eventDate|datetime %}
 			{% set btnText = "Learn More" %}
-			<article class="bg-tag-light-grey flex flex-col items-center p-4 w-1/2 md:w-1/3">
+			<article class="bg-tag-light-grey flex flex-col items-start p-4 w-1/2 md:w-1/3">
 				<img src="{{ eventBannerImage.src}}" data-srcset="{{ eventBannerImage.srcset() }}" alt="{{ eventBannerImageAltText }}" class="border-tag-yellow border-2 object-cover w-full h-48">
 				<h2 class="tag">{{ eventTitle }}</h2>
 
