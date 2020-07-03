@@ -1,29 +1,29 @@
 @tailwind base;
 
-h1 .tag {
+h1.tag {
     @apply font-proxima-nova;
     @apply uppercase;
     @apply font-extrabold;
     @apply text-4xl;
 }
-h2 .tag {
+h2.tag {
     @apply font-proxima-nova;
     @apply uppercase;
     @apply font-extrabold;
     @apply text-2xl;
 }
-h3 .tag {
+h3.tag {
     @apply font-quicksand;
     @apply uppercase;
     @apply font-normal;
     @apply text-2xl;
 }
-h4 .tag {
+h4.tag {
     @apply font-quicksand;
     @apply font-normal;
     @apply text-2xl;
 }
-p .tag {
+p.tag {
     @apply font-quicksand;
     @apply text-base;
     @apply font-medium;
