@@ -30,6 +30,13 @@ p {
     @apply pb-3;
 }
 
+.nav-item {
+    @apply font-quicksand;
+    @apply text-base;
+    @apply font-medium;
+    @apply text-tag-teal;
+}
+
 .btn-main {
     @apply bg-tag-red;
     @apply text-tag-light-grey;

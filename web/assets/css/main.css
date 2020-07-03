@@ -625,6 +625,15 @@ p {
   padding-bottom: 0.75rem;
 }
 
+.nav-item {
+  font-family: Quicksand, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  --text-opacity: 1;
+  color: #4FBBCD;
+  color: rgba(79, 187, 205, var(--text-opacity));
+}
+
 .btn-main {
   --bg-opacity: 1;
   background-color: #FF1A00;
