@@ -1,5 +1,7 @@
-<section class="w-full max-w-screen-xl px-6 bg-tag-teal">
-	{% set sectionHeader = entry.hoursSectionContent.sectionHeader %}
-	{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
-	{% include "_tacos-el-gallo/_snippets/heading" %}
+<section class="w-full px-6 bg-tag-teal">
+	<div class="max-w-screen-xl">
+		{% set sectionHeader = entry.hoursSectionContent.sectionHeader %}
+		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% include "_tacos-el-gallo/_snippets/heading" %}
+	</div>
 </section>
