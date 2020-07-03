@@ -1,3 +1,10 @@
-<section class="">
-
+<section class="h-10/12 bg-tag-dark-teal flex flex-row ">
+      <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-1/2 transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon points="50,0 100,0 50,100 0,100" />
+      </svg>
+	{% if entry.introSectionContent.backgroundImage.one()|length %}
+		{% set backgroundImage = entry.introSectionContent.backgroundImage.one().optimizedImages %}
+        {% set backgroundImageAltText = entry.introSectionContent.backgroundImage.one().title %}
+			<img src="{{ backgroundImage.src }}" data-srcset="{{ backgroundImage.srcset() }}" alt="{{ backgroundImageAltText }}">
+	{% endif %}
 </section>
