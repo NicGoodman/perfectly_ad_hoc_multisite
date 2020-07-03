@@ -591,41 +591,41 @@ video {
   height: auto;
 }
 
-h1 {
+h1 .tag {
   font-family: proxima-nova, sans-serif;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 2.25rem;
 }
 
-h2 {
+h2 .tag {
   font-family: proxima-nova, sans-serif;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 1.5rem;
 }
 
-h3 {
+h3 .tag {
   font-family: Quicksand, sans-serif;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 1.5rem;
 }
 
-h4 {
+h4 .tag {
   font-family: Quicksand, sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
 }
 
-p {
+p .tag {
   font-family: Quicksand, sans-serif;
   font-size: 1rem;
   font-weight: 500;
   padding-bottom: 0.75rem;
 }
 
-.nav-item {
+.nav-item.tag {
   font-family: Quicksand, sans-serif;
   font-size: 1rem;
   font-weight: 500;
@@ -634,13 +634,13 @@ p {
   color: rgba(79, 187, 205, var(--text-opacity));
 }
 
-.nav-item:hover {
+.nav-item.tag:hover {
   --text-opacity: 1;
   color: #FBEE3C;
   color: rgba(251, 238, 60, var(--text-opacity));
 }
 
-.social-item {
+.social-item.tag {
   font-size: 1rem;
   font-weight: 500;
   --text-opacity: 1;
@@ -648,13 +648,13 @@ p {
   color: rgba(251, 238, 60, var(--text-opacity));
 }
 
-.social-item:hover {
+.social-item.tag:hover {
   --text-opacity: 1;
   color: #FF1A00;
   color: rgba(255, 26, 0, var(--text-opacity));
 }
 
-.btn-main {
+.btn-main.tag {
   --bg-opacity: 1;
   background-color: #FF1A00;
   background-color: rgba(255, 26, 0, var(--bg-opacity));
@@ -668,19 +668,19 @@ p {
   font-size: 1.25rem;
 }
 
-.btn-main:hover {
+.btn-main.tag:hover {
   --bg-opacity: 1;
   background-color: #147F91;
   background-color: rgba(20, 127, 145, var(--bg-opacity));
 }
 
-.btn-main:active {
+.btn-main.tag:active {
   --bg-opacity: 1;
   background-color: #BF3026;
   background-color: rgba(191, 48, 38, var(--bg-opacity));
 }
 
-.btn-alt {
+.btn-alt.tag {
   --border-opacity: 1;
   border-color: #4FBBCD;
   border-color: rgba(79, 187, 205, var(--border-opacity));
@@ -694,13 +694,13 @@ p {
   font-size: 1.25rem;
 }
 
-.btn-alt:hover {
+.btn-alt.tag:hover {
   --border-opacity: 1;
   border-color: #FF1A00;
   border-color: rgba(255, 26, 0, var(--border-opacity));
 }
 
-.btn-alt:active {
+.btn-alt.tag:active {
   --border-opacity: 1;
   border-color: #BF3026;
   border-color: rgba(191, 48, 38, var(--border-opacity));

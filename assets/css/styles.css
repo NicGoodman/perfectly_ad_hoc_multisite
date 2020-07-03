@@ -1,57 +1,57 @@
 @tailwind base;
 
-h1 {
+h1 .tag {
     @apply font-proxima-nova;
     @apply uppercase;
     @apply font-extrabold;
     @apply text-4xl;
 }
-h2 {
+h2 .tag {
     @apply font-proxima-nova;
     @apply uppercase;
     @apply font-extrabold;
     @apply text-2xl;
 }
-h3 {
+h3 .tag {
     @apply font-quicksand;
     @apply uppercase;
     @apply font-normal;
     @apply text-2xl;
 }
-h4 {
+h4 .tag {
     @apply font-quicksand;
     @apply font-normal;
     @apply text-2xl;
 }
-p {
+p .tag {
     @apply font-quicksand;
     @apply text-base;
     @apply font-medium;
     @apply pb-3;
 }
 
-.nav-item {
+.nav-item.tag {
     @apply font-quicksand;
     @apply text-base;
     @apply font-medium;
     @apply text-tag-teal;
 }
 
-.nav-item:hover {
+.nav-item.tag:hover {
     @apply text-tag-yellow;
 }
 
-.social-item {
+.social-item.tag {
     @apply text-base;
     @apply font-medium;
     @apply text-tag-yellow;
 }
 
-.social-item:hover {
+.social-item.tag:hover {
     @apply text-tag-red;
 }
 
-.btn-main {
+.btn-main.tag {
     @apply bg-tag-red;
     @apply text-tag-light-grey;
     @apply p-2;
@@ -61,15 +61,15 @@ p {
     @apply text-xl;
 }
 
-.btn-main:hover {
+.btn-main.tag:hover {
     @apply bg-tag-dark-teal;
 }
 
-.btn-main:active {
+.btn-main.tag:active {
     @apply bg-tag-dark-red;
 }
 
-.btn-alt {
+.btn-alt.tag {
     @apply border-tag-teal;
     @apply text-tag-teal;
     @apply p-2;
@@ -79,11 +79,11 @@ p {
     @apply text-xl;
 }
 
-.btn-alt:hover {
+.btn-alt.tag:hover {
     @apply border-tag-red;
 }
 
-.btn-alt:active {
+.btn-alt.tag:active {
     @apply border-tag-dark-red;
 }
 
