@@ -4,7 +4,8 @@
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
 		{% for entry in craft.entries().section('events').all() %}
-			
+			{% set eventTitle = entry.eventContent.eventTitle %}
+			{{ eventTitle }}
 		{% endfor %}
 	</div>
 </section>
