@@ -37,6 +37,20 @@ p {
     @apply text-tag-teal;
 }
 
+.nav-item:hover {
+    @apply text-tag-yellow;
+}
+
+.social-item {
+    @apply text-base;
+    @apply font-medium;
+    @apply text-tag-yellow;
+}
+
+.social-item:hover {
+    @apply text-tag-red;
+}
+
 .btn-main {
     @apply bg-tag-red;
     @apply text-tag-light-grey;

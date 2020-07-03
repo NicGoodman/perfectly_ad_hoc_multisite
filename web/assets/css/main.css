@@ -634,6 +634,26 @@ p {
   color: rgba(79, 187, 205, var(--text-opacity));
 }
 
+.nav-item:hover {
+  --text-opacity: 1;
+  color: #FBEE3C;
+  color: rgba(251, 238, 60, var(--text-opacity));
+}
+
+.social-item {
+  font-size: 1rem;
+  font-weight: 500;
+  --text-opacity: 1;
+  color: #FBEE3C;
+  color: rgba(251, 238, 60, var(--text-opacity));
+}
+
+.social-item:hover {
+  --text-opacity: 1;
+  color: #FF1A00;
+  color: rgba(255, 26, 0, var(--text-opacity));
+}
+
 .btn-main {
   --bg-opacity: 1;
   background-color: #FF1A00;
