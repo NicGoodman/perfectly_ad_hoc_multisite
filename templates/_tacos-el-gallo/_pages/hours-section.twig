@@ -1,3 +1,5 @@
-{% block hours %}
-	<section class=""></section>
-{% endblock %}
+<section class="">
+	{% set sectionHeader = entry.hoursSectionContent.sectionHeader %}
+	{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+	{% include "_tacos-el-gallo/_snippets/heading" %}
+</section>
