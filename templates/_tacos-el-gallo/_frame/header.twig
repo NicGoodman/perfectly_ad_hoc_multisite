@@ -6,7 +6,7 @@
 	{% else %}
 		{% include "_tacos-el-gallo/_snippets/site-title" %}
 	{% endif %}
-	<nav class="ml-4 flex flex-col md:flex-row justify-between flex-grow">
+	<nav class="ml-10 flex flex-col md:flex-row justify-between flex-grow">
 		{% set navList = entry.headerContent.navigation.all() %}
 		{% include "_tacos-el-gallo/_content/nav-item-list" %}
 		{% set socialMediaList = entry.headerContent.socialMediaAccounts.all() %}
