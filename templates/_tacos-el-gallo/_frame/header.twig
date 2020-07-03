@@ -1,7 +1,7 @@
 <header class="w-full flex flex-row flex-wrap bg-black justify-start content-center p-4">
 	{% if entry.headerContent.logo|length %}
-		{% set logo = entry.headerContent.one().optimizedImages %}
-		{% set logoAltText = entry.headerContent.one().title %}
+		{% set logo = entry.headerContent.logo.one().optimizedImages %}
+		{% set logoAltText = entry.headerContent.logo.one().title %}
 		{% include "_tacos-el-gallo/_snippets/logo" %}
 	{% else %}
 		{% include "_tacos-el-gallo/_snippets/site-title" %}
