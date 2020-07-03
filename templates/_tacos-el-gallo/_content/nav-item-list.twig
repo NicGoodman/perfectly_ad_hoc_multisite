@@ -1,11 +1,9 @@
-<nav class="">
-	<ul class="flex flex-col md:flex-row flex-wrap space-x-8">
-		{% for block in navList %}
-			{% set itemLink = block.itemLink %}
-			{% set itemName = block.itemName %}
-			<li>
-				{% include "_tacos-el-gallo/_snippets/nav-item.twig" %}
-			</li>
-		{% endfor %}
-	</ul>
-</nav>
+<ul class="flex flex-col md:flex-row flex-wrap space-x-8">
+	{% for block in navList %}
+		{% set itemLink = block.itemLink %}
+		{% set itemName = block.itemName %}
+		<li>
+			{% include "_tacos-el-gallo/_snippets/nav-item.twig" %}
+		</li>
+	{% endfor %}
+</ul>

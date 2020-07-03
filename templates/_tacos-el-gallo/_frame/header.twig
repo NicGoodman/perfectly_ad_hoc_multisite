@@ -1,4 +1,4 @@
-<header class="w-full flex flex-row flex-wrap bg-black justify-start content-center p-4">
+<header class="w-full flex flex-row flex-wrap bg-black items-center p-4">
 	{% if entry.headerContent.logo|length %}
 		{% set logo = entry.headerContent.logo.one().optimizedImages %}
 		{% set logoAltText = entry.headerContent.logo.one().title %}
@@ -6,8 +6,10 @@
 	{% else %}
 		{% include "_tacos-el-gallo/_snippets/site-title" %}
 	{% endif %}
-    {% set navList = entry.headerContent.navigation.all() %}
-	{% include "_tacos-el-gallo/_content/nav-item-list" %}
-    {% set socialMediaList = entry.headerContent.socialMediaAccounts.all() %}
-	{% include "_tacos-el-gallo/_content/social-media-links" %}
+	<nav class="ml-4 flex flex-col md:flex-row justify-between w-full">
+		{% set navList = entry.headerContent.navigation.all() %}
+		{% include "_tacos-el-gallo/_content/nav-item-list" %}
+		{% set socialMediaList = entry.headerContent.socialMediaAccounts.all() %}
+		{% include "_tacos-el-gallo/_content/social-media-links" %}
+	</nav>
 </header>
