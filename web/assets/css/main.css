@@ -715,6 +715,7 @@ p.tag {
   --border-opacity: 1;
   border-color: #4FBBCD;
   border-color: rgba(79, 187, 205, var(--border-opacity));
+  border-width: 2px;
   --text-opacity: 1;
   color: #4FBBCD;
   color: rgba(79, 187, 205, var(--text-opacity));

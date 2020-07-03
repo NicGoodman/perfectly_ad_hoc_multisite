@@ -92,6 +92,7 @@ p.tag {
 
 .btn-alt.tag {
     @apply border-tag-teal;
+    @apply border-2;
     @apply text-tag-teal;
     @apply p-2;
     @apply font-proxima-nova;
