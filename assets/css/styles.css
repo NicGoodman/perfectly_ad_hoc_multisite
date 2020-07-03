@@ -54,12 +54,14 @@ p.tag {
 .nav-btn.tag {
     @apply bg-tag-gold;
     @apply text-tag-light-grey;
-    @apply p-2;
+    @apply px-4;
+    @apply py-2;
     @apply font-proxima-nova;
     @apply uppercase;
     @apply font-extrabold;
     @apply text-xl;
     @apply block;
+    @apply text-center;
 }
 
 .nav-btn.tag:hover {
