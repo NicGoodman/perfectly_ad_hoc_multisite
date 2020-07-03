@@ -36902,6 +36902,11 @@ p.tag {
   transition-delay: 1000ms;
 }
 
+.angled {
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 93%, 0 100%);
+          clip-path: polygon(0 0, 100% 0%, 100% 93%, 0 100%);
+}
+
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;

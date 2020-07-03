@@ -111,3 +111,7 @@ p.tag {
 @tailwind components;
 
 @tailwind utilities;
+
+.angled {
+    clip-path: polygon(0 0, 100% 0%, 100% 93%, 0 100%);
+}
