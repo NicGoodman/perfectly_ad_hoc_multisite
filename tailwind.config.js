@@ -1,6 +1,9 @@
 module.exports = {
   purge: [],
   theme: {
+    maxWidth: {
+      'screen-xl': '1152px',
+    },
     extend: {
       colors: {
         'tag-light-grey': '#F2F2F2',
