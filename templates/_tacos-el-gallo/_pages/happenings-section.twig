@@ -3,7 +3,8 @@
 		{% set sectionHeader = entry.happeningsSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
-		{% for entry in craft.entries.section.('events').all() %}
+		{% set events = craft.entries.section.('events').all() %}
+		{% for event in events %}
 			test
 			
 		{% endfor %}
