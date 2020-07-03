@@ -1,4 +1,4 @@
 <section class="h-10/12 bg-tag-dark-teal flex flex-row"{% if entry.introSectionContent.backgroundImage.one()|length %}
-	{% set backgroundImage = entry.introSectionContent.backgroundImage.one().optimizedImages %}style="background: url('{{ backgroundImage }}') no-repeat center/cover"{% endif %}>
+	{% set backgroundImage = entry.introSectionContent.backgroundImage.one().getUrl() %}style="background: url('{{ backgroundImage }}') no-repeat center/cover"{% endif %}>
 
 </section>
