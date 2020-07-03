@@ -6,7 +6,8 @@
 	{% else %}
 		{% include "_tacos-el-gallo/_snippets/site-title" %}
 	{% endif %}
-    {% set navList = entry.headerContent.navigation.all() %}
+    {% set navList = entry.headerContent.navigation(':notempty:').all() %}
 	{% include "_tacos-el-gallo/_content/nav-item-list" %}
+    {% set socialMediaList = entry.headerContent.socialMediaAccounts(':notempty:').all() %}
 	{% include "_tacos-el-gallo/_content/social-media-links" %}
 </header>

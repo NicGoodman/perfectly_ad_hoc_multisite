@@ -1,3 +1,14 @@
-<section>
-
-</section>
+<nav class="">
+	<ul>
+		{% for block in socialMediaList %}
+			{% set accountLink = block.accountLink %}
+			{% if 'youtube' in accountLink %}
+				<li>
+					<a href="{{ accountLink }}">
+						<i class="fab fa-youtube"></i>
+					</a>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</nav>

@@ -1,6 +1,8 @@
 <nav class="">
 	<ul>
 		{% for block in navList %}
+			{% set itemLink = block.itemLink %}
+			{% set itemName = block.itemName %}
 			<li>
 				{% include "_tacos-el-gallo/_snippets/nav-item.twig" %}
 			</li>
