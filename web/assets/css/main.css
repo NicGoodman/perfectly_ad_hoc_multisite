@@ -36902,9 +36902,19 @@ p.tag {
   transition-delay: 1000ms;
 }
 
-.angled {
+.angled-bottom {
   -webkit-clip-path: polygon(0 0, 100% 0%, 100% 93%, 0 100%);
           clip-path: polygon(0 0, 100% 0%, 100% 93%, 0 100%);
+}
+
+.angled-top {
+  -webkit-clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 100%);
+          clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0 100%);
+}
+
+.angled-both {
+  -webkit-clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%);
+          clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%);
 }
 
 @media (min-width: 640px) {
