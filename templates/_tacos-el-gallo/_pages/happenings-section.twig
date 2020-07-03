@@ -5,7 +5,17 @@
 		{% include "_tacos-el-gallo/_snippets/heading" %}
 		{% for entry in craft.entries().section('events').all() %}
 			{% set eventTitle = entry.eventContent.eventTitle %}
-			{{ eventTitle }}
+			{% set eventBannerImage = entry.eventContent.eventBannerImage.one().optimizedImages %}
+			{% set eventBannerImageAltText = entry.eventContent.eventBannerImageAltText.one().title %}
+			{% set eventDate = entry.eventContent.eventDate %}
+			{% set btn-text = "Learn More" %}
+			<article class="bg-tag-light-grey flex flex-col items-center p-4 w-1/2 md:w-1/3">
+				<h2>{{ eventTitle }}</h2>
+				<img src="{{ eventBannerImage.src}}" data-srcset="{{ eventBannerImage.srcset() }}" alt="{{ eventBannerImageAltText }}" class="border-tag-yellow border-2 object-cover w-full h-48">
+				<h3 class="mb-4">{{ eventTitle|datetime('short') }}</h3>
+				{% include "_tacos-el-gallo/_snippets/btn-alt" %}
+			</article>
+
 		{% endfor %}
 	</div>
 </section>
