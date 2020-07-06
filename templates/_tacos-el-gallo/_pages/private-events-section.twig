@@ -9,7 +9,7 @@
 		<div class="w-full border-tag-yellow border-4 flex flex-row items-center" style="{% if entry.privateEventsSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.privateEventsSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat right/cover;{% endif %}">
 			<div class="flex flex-col w-1/2 items-center p-4 ">
 				<div class="flex flex-col items-center p-4 w-full h-full bg-tag-teal">
-					<article class="text-center text-black mb-4 font-quicksand">
+					<article class="tag text-center text-black">
 						{{ bodyText }}
 					</article>
 				</div>
