@@ -6,13 +6,17 @@
 		{% set ctaText = entry.privateEventsSectionContent.callToActionText %}
 		{% set ctaLink = entry.privateEventsSectionContent.callToActionLink %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
-		<div class="w-full border-tag-yellow p-4 border-4 flex flex-row justify-around items-center" style="{% if entry.privateEventsSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.privateEventsSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat right/cover;{% endif %}">
-			<div class="flex flex-col items-center p-4 w-2/5 h-full bg-tag-teal">
-				<article class="text-center text-black mb-4 font-quicksand">
-					{{ bodyText }}
-				</article>
+		<div class="w-full border-tag-yellow p-4 border-4 flex flex-row items-center" style="{% if entry.privateEventsSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.privateEventsSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat right/cover;{% endif %}">
+			<div class="flex flex-col w-1/2 items-center">
+				<div class="flex flex-col items-center p-4 w-2/5 h-full bg-tag-teal">
+					<article class="text-center text-black mb-4 font-quicksand">
+						{{ bodyText }}
+					</article>
+				</div>
 			</div>
-			{% include "_tacos-el-gallo/_snippets/btn-main.twig" %}
+			<div class="flex flex-col w-1/2 items-center">
+				{% include "_tacos-el-gallo/_snippets/btn-main.twig" %}
+			</div>
 		</div>
 	</div>
 </section>

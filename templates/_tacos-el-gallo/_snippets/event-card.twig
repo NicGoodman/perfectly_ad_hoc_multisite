@@ -1,6 +1,6 @@
 <article class="bg-tag-light-grey flex flex-col items-center p-4 w-1/2 md:w-1/3">
 	<img src="{{ eventBannerImage.src}}" data-srcset="{{ eventBannerImage.srcset() }}" alt="{{ eventBannerImageAltText }}" class="border-tag-yellow border-4 object-cover w-full h-48">
 	<h2 class="tag text-tag-teal w-full text-left mt-4">{{ eventTitle }}</h2>
-	<h3 class="tag mb-4 border-tag-red border-t-4 w-full text-left">{{ eventDate }}</h3>
+	<h3 class="tag mb-4 border-tag-red border-t-4 w-full text-left font-bold">{{ eventDate }}</h3>
 	{% include "_tacos-el-gallo/_snippets/btn-alt" %}
 </article>
