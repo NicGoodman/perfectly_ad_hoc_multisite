@@ -42,7 +42,7 @@ p.tag {
 }
 
 .social-item.tag {
-    @apply text-base;
+    @apply text-lg;
     @apply font-medium;
     @apply text-tag-yellow;
 }
