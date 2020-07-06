@@ -28,6 +28,7 @@ h4.tag {
     @apply text-base;
     @apply font-medium;
     @apply pb-3;
+    @apply leading-snug;
 }
 
 .nav-item.tag {
