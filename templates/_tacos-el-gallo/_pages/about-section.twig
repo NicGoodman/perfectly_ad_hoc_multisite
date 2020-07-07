@@ -1,7 +1,29 @@
 <section class="w-full flex flex-col items-center px-6 bg-tag-light-grey py-16 angled-both">
-	<div class="w-full max-w-screen-xl">
+	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
 		{% set sectionHeader = entry.aboutSectionContent.sectionHeader %}
+		{% set sectionContent = entry.aboutSectionContent.sectionContent %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
+		<article class="">
+			{% for block in sectionContent.all() %}
+				{% switch block.type %}
+
+					{% case "subheading" %}
+						{% include "_tacos-el-gallo/_snippets/subheading.twig" %}
+					{% case "image" %}
+						<img src="" alt="">
+
+					{% case "bodyText" %}
+						<article>
+							{{ block.bodyText }}
+						</article>
+					{% case "callToAction" %}
+							
+
+				{% endswitch %}
+
+
+			{% endfor %}
+		</article>
 	</div>
 </section>
