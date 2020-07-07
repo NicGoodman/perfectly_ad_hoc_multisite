@@ -1,7 +1,24 @@
 <section class="w-full flex flex-col items-center px-6 bg-tag-light-grey py-16 angled-both">
-	<div class="w-full max-w-screen-xl">
+	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
 		{% set sectionHeader = entry.menusSectionContent.sectionHeader %}
+		{% set bodyText = entry.menusSectionContent.bodyText %}
+		{% set ctaText = entry.menusSectionContent.callToActionText %}
+		{% set ctaLink = entry.menusSectionContent.callToActionLink %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
+		<div class="flex flex-col md:flex-row flex-wrap space-around">
+			<article class="tag w-full md:w-3/5 text-center px-20">
+				{{ block.bodyText }}
+			</article>
+			{% include "_tacos-el-gallo/_snippets/btn-main.twig" %}
+		</div>
+		{% for row in entry.menus.all() %}
+			{% set menuName = entry.menus.menuName %}
+			{% set menuIcon = entry.menus.menuIcon.one() %}
+			{% set menuContent = entry.menus.menuContent %}
+			{{ menuName }}
+			{{ menuIcon }}
+			
+		{% endfor %}
 	</div>
 </section>
