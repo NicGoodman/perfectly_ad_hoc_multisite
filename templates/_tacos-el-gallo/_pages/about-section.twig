@@ -10,10 +10,10 @@
 					{% case "subheading" %}
 						{% include "_tacos-el-gallo/_snippets/subheading.twig" %}
 					{% case "image" %}
-						{% set image = block.image.one().optimizedImages %}
-						<img src="{{ image.src }}" data-srcset="{{ image.srcset() }}" alt="" class="w-full md:w-1/3">
+						{% set image = block.image.one().getUrl() %}
+						<div class="w-full md:w-1/3 border-4 border-tag-yellow" style="background: url('{{ image }}') no-repeat center/cover;">
 					{% case "bodyText" %}
-						<article class="w-full md:w-2/3 text-center px-20">
+						<article class="tag w-full md:w-2/3 text-center px-20">
 							{{ block.bodyText }}
 						</article>
 				{% endswitch %}
