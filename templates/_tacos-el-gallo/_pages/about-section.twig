@@ -4,7 +4,7 @@
 		{% set sectionContent = entry.aboutSectionContent.sectionContent %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
-		<article class="flex flex-col md:flex-row flex-wrap">
+		<article class="flex flex-col md:flex-row flex-wrap items-center">
 			{% for block in sectionContent.all() %}
 				{% switch block.type %}
 					{% case "subheading" %}
