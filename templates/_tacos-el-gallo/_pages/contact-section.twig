@@ -19,7 +19,7 @@
 			{{ csrfInput() }}
 			<input type="hidden" name="action" value="contact-form/send">
 			{{ redirectInput('contact/thanks') }}
-			<div class="flex flex-row">
+			<div class="flex flex-row mb-2">
 				<h3 class="w-32">
 					<label for="from-name">Your Name</label>
 				</h3 class="w-32">
@@ -27,14 +27,14 @@
 				{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 			</div>
 
-			<div class="flex flex-row">
+			<div class="flex flex-row mb-2">
 				<h3 class="w-32">
 					<label for="from-email">Your Email</label>
 				</h3 class="w-32">
 				<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class="w-full">
 				{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 			</div>
-			<div class="flex flex-row">
+			<div class="flex flex-row mb-2">
 				<h3 class="w-32">
 					<label for="subject">Subject</label>
 				</h3 class="w-32">
