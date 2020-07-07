@@ -618,6 +618,12 @@ h4.tag {
   font-size: 1.5rem;
 }
 
+h5.tag {
+  font-family: Quicksand, sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+
 .tag p {
   font-family: Quicksand, sans-serif;
   font-size: 1rem;

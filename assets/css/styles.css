@@ -23,6 +23,11 @@ h4.tag {
     @apply font-normal;
     @apply text-2xl;
 }
+h5.tag {
+    @apply font-quicksand;
+    @apply font-normal;
+    @apply text-lg;
+}
 .tag p {
     @apply font-quicksand;
     @apply text-base;
