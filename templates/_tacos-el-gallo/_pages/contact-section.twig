@@ -23,7 +23,7 @@
 				<p class="tag uppercase justify-center w-32 h-12 flex items-center bg-black text-tag-light-grey text-sm">
 					<label for="from-name">Your Name</label>
 				</p>
-				<input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" class="w-full h-12 border-4 border-tag-red">
+				<input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" class="w-auto flex-grow h-12 border-4 border-tag-red">
 				{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 			</div>
 
@@ -31,14 +31,14 @@
 				<p class="tag uppercase justify-center w-32 h-12 flex items-center bg-black text-tag-light-grey text-sm">
 					<label for="from-email">Your Email</label>
 				</p>
-				<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class="w-full border-4 border-tag-red h-12">
+				<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class="w-auto flex-grow border-4 border-tag-red h-12">
 				{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 			</div>
 			<div class="flex flex-row mb-4 items-center">
 				<p class="tag uppercase justify-center w-32 h-12 flex items-center bg-black text-tag-light-grey text-sm">
 					<label for="subject">Subject</label>
 				</p>
-				<input id="subject" type="text" name="subject" value="{{ message.subject ?? '' }}" class="w-full border-4 border-tag-red h-12">
+				<input id="subject" type="text" name="subject" value="{{ message.subject ?? '' }}" class="w-auto flex-grow border-4 border-tag-red h-12">
 				{{ message is defined and message ? errorList(message.getErrors('subject')) }}
 			</div>
 			<div class="flex flex-col mb-4">
