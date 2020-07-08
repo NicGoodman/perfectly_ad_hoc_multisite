@@ -13,15 +13,18 @@
 			{% include "_tacos-el-gallo/_snippets/btn-main.twig" %}
 		</div>
 		<div class="flex flex-row flex-wrap w-full justify-around items-center">
-		{% for row in entry.menus.all() %}
-			{% set menuName = row.menus.menuName %}
-			{% set menuIcon = row.menus.menuIcon.one().optimizedImages %}
-			{% set menuContent = row.menus.menuContent %}
-			<div class="flex flex-col items-center w-40">
-			<img src="{{ menuIcon.src }}" data-srcset="{{ menuIcon.srcset }}" alt="">
-				<h2 class="tag text-tag-teal">{{ menuName }}</h2>
-			</div>
-		{% endfor %}
+			{% for row in entry.menus.all() %}
+				{% set menuName = row.menuName %}
+				{% set menuIcon = row.menuIcon.one().optimizedImages %}
+				{% set menuContent = row.menuContent %}
+				<div class="flex flex-col items-center w-40">
+					<img src="{{ menuIcon.src }}" data-srcset="{{ menuIcon.srcset }}" alt="">
+					<h2 class="tag text-tag-teal">{{ menuName }}</h2>
+				</div>
+				{% for block in menuContent.all() %}
+
+				{% endfor %}
+			{% endfor %}
 		</div>
 	</div>
 </section>
