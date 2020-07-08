@@ -12,6 +12,7 @@
 			</article>
 			{% include "_tacos-el-gallo/_snippets/btn-main.twig" %}
 		</div>
+		<div class="flex flex-row flex-wrap w-full max-w-2xl justify-between items-center">
 		{% for row in entry.menus.all() %}
 			{% set menuName = entry.menus.menuName %}
 			{% set menuIcon = entry.menus.menuIcon.one().optimizedImages %}
@@ -21,5 +22,6 @@
 				<h2 class="tag text-tag-teal">{{ menuName }}</h2>
 			</div>
 		{% endfor %}
+		</div>
 	</div>
 </section>
