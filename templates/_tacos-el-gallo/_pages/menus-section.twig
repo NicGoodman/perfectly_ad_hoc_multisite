@@ -1,4 +1,4 @@
-<section class="w-full flex flex-col items-center px-6 bg-tag-light-grey py-16 angled-both">
+<section class="w-full flex flex-col items-center px-6 bg-tag-light-grey py-16 angled-both" x-data="{selected:null}">
 	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
 		{% set sectionHeader = entry.menusSectionContent.sectionHeader %}
 		{% set bodyText = entry.menusSectionContent.bodyText %}
@@ -17,13 +17,13 @@
 				{% set menuName = row.menuName %}
 				{% set menuIcon = row.menuIcon.one().optimizedImages %}
 
-				<div class="flex flex-col items-center w-40">
+				<div class="flex flex-col items-center w-40" @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null">
 					<img src="{{ menuIcon.src }}" data-srcset="{{ menuIcon.srcset }}" alt="">
 					<h2 class="tag text-tag-teal">{{ menuName }}</h2>
 				</div>
 			{% endfor %}
 		</div>
-		<div class="w-full md:w-2/3">
+		<div class="w-full md:w-2/3 mt-8">
 			{% for row in entry.menus.all() %}
 				{% set menuContent = row.menuContent %}
 				{% for block in menuContent.all() %}
@@ -31,7 +31,7 @@
 					{% set itemDescription = block.itemDescription %}
 					{% set price = block.prices %}
 					{% set priceDescription = block.priceDescription %}
-					<div id="menu-item-wrapper" class="flex flex-col w-full mb-4">
+					<div id="menu-item-wrapper" class="flex flex-col w-full mb-4" x-show="selected == {{ loop.index }}">
 						<div id="menu-item-top-line" class="flex flex-row justify-between w-full">
 							<div class="text-left">
 								<h3 class="tag">{{ itemName }}</h3>
