@@ -6,13 +6,13 @@
 		{% set products = craft.products().type('clothing') %}
 		{% for product in products.all() %}
 			{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
-			{% set ctaLink = "/buy/add?purchasableId={{product.defaultVariant.id}}" %}
-			{% set ctaText = "Buy Now" %}
+			{% set btnLink = "/buy/add?purchasableId={{product.defaultVariant.id}}" %}
+			{% set btnText = "Buy Now" %}
 			<div class="w-1/2 md:w-1/4 flex flex-col items-center">
 				<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
 				<h2 class="tag text-black">{{ product.title }}</h2>
-				<h3 class="tag text-tag-light-grey">{{ product.defaultVariant.salePriceAsCurrency }}</h3>
-				{% include "_tacos-el-gallo/_snippets/btn-main" %}
+				<h2 class="tag text-tag-light-grey">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
+				{% include "_tacos-el-gallo/_snippets/btn-alt" %}
 			</div>
 		{% endfor %}
 	</div>
