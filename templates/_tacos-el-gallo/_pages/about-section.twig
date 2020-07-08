@@ -8,7 +8,7 @@
 			{% for block in sectionContent.all() %}
 				{% switch block.type %}
 					{% case "bodyText" %}
-						<article class="tag w-full md:w-2/3 text-center md:px-20 py-8">
+						<article class="tag w-full text-center md:px-28 py-8">
 							{{ block.bodyText }}
 						</article>
 				{% endswitch %}
