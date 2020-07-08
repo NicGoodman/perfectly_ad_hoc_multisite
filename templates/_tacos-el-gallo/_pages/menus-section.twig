@@ -16,7 +16,7 @@
 			{% set menuName = entry.menus.menuName %}
 			{% set menuIcon = entry.menus.menuIcon.one().optimizedImages %}
 			{% set menuContent = entry.menus.menuContent %}
-			<div class="flex flex-col">
+			<div class="flex flex-col items-center w-40">
 			<img src="{{ menuIcon.src }}" data-srcset="{{ menuIcon.srcset }}" alt="">
 				<h2 class="tag text-tag-teal">{{ menuName }}</h2>
 			</div>
