@@ -51,7 +51,7 @@ h5.tag {
 }
 
 .social-item.tag {
-    @apply text-lg;
+    @apply text-xl;
     @apply font-medium;
     @apply text-tag-yellow;
 }
