@@ -15,7 +15,7 @@
 			{% endfor %}
 			<div class="flex flex-col md:flex-row flex-wrap space-y-8">
 				{% for block in sectionContent.all() %}
-					{% switch variable %}
+					{% switch block.type %}
 						{% case "image" %}
 							{% set image = block.image.one().getUrl() %}
 							{% set overlayHeader = block.overlayHeader %}
