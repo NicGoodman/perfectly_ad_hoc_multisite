@@ -21,9 +21,32 @@
 					<img src="{{ menuIcon.src }}" data-srcset="{{ menuIcon.srcset }}" alt="">
 					<h2 class="tag text-tag-teal">{{ menuName }}</h2>
 				</div>
-				{% for block in menuContent.all() %}
-
-				{% endfor %}
+				<div>
+					{% for block in menuContent.all() %}
+						{% set itemName = block.itemName %}
+						{% set itemDescription = block.itemDescription %}
+						{% set price = block.prices %}
+						{% set priceDescription = block.priceDescription %}
+						<div id="menu-item-wrapper" class="flex flex-col w-full mb-4">
+							<div id="menu-item-top-line" class="flex flex-row justify-between w-full">
+								<div class="text-left">
+									<h4>{{ itemName }}</h4>
+								</div>
+								<div class="text-right pl-10">
+									<h4>{{ prices }}</h4>
+								</div>
+							</div>
+							<div id="menu-item-bottom-line" class="flex flex-row justify-between w-full">
+								<div class="text-left">
+									{{ itemDescription | nl2br }}
+								</div>
+								<div class="text-right pl-10">
+									{{ priceDescription }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
 			{% endfor %}
 		</div>
 	</div>
