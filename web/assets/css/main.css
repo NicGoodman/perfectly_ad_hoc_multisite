@@ -595,6 +595,7 @@ h1.tag {
   font-family: proxima-nova, sans-serif;
   text-transform: uppercase;
   font-weight: 800;
+  line-height: 1.375;
   font-size: 2.25rem;
 }
 
@@ -602,25 +603,27 @@ h2.tag {
   font-family: proxima-nova, sans-serif;
   text-transform: uppercase;
   font-weight: 800;
+  line-height: 1.375;
   font-size: 1.5rem;
 }
 
 h3.tag {
   font-family: Quicksand, sans-serif;
   text-transform: uppercase;
-  font-weight: 400;
+  line-height: 1.375;
   font-size: 1.5rem;
 }
 
 h4.tag {
   font-family: Quicksand, sans-serif;
   font-weight: 400;
+  line-height: 1.375;
   font-size: 1.5rem;
 }
 
 h5.tag {
   font-family: Quicksand, sans-serif;
-  font-weight: 400;
+  line-height: 1.375;
   font-size: 1.125rem;
 }
 
