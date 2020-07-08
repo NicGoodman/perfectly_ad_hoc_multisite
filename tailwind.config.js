@@ -1,9 +1,6 @@
 module.exports = {
   purge: [],
   theme: {
-    maxWidth: {
-      'screen-xl': '1152px',
-    },
     extend: {
       colors: {
         'tag-light-grey': '#F2F2F2',
@@ -16,6 +13,9 @@ module.exports = {
         'tag-teal': '#4FBBCD',
         'tag-dark-teal': '#147F91',
         'tag-gold': '#FFBC00',
+      },
+      maxWidth: {
+        'screen-xl': '1152px',
       }
     },
     fontFamily: {
