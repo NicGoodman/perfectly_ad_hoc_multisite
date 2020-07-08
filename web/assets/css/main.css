@@ -36990,8 +36990,8 @@ h5.tag {
 }
 
 .angled-bottom {
-  -webkit-clip-path: polygon(0 0, 100% 0, 0 calc(100% - 4vw), 100% 100%);
-          clip-path: polygon(0 0, 100% 0, 0 calc(100% - 4vw), 100% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 4vw), 0 100%);
 }
 
 .angled-top {
@@ -37000,8 +37000,8 @@ h5.tag {
 }
 
 .angled-both {
-  -webkit-clip-path: polygon(0 4vw, 100% 0, 0 calc(100% - 4vw), 100% 100%);
-          clip-path: polygon(0 4vw, 100% 0, 0 calc(100% - 4vw), 100% 100%);
+  -webkit-clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
+          clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
 }
 
 @media (min-width: 640px) {
