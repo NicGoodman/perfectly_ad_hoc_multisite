@@ -3,7 +3,8 @@
 		{% set sectionHeader = entry.merchSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
-		{% for product in craft.products.type('clothing').all() %}
+		{% set products = craft.products().type('clothing').all() %}
+		{% for product in products %}
 			{% set productImage = product.productImage.one().optimizedImages %}
 			{% set ctaLink = "/buy/add?purchasableId={{product.defaultVariant.id}}" %}
 			{% set ctaText = "Buy Now" %}
@@ -14,6 +15,5 @@
 				{% include "_tacos-el-gallo/_snippets/btn-main" %}
 			</div>
 		{% endfor %}
-
 	</div>
 </section>
