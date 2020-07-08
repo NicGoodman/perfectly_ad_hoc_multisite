@@ -12,7 +12,7 @@
 			</article>
 			{% include "_tacos-el-gallo/_snippets/btn-main.twig" %}
 		</div>
-		<div class="flex flex-row flex-wrap w-full max-w-2xl justify-between items-center">
+		<div class="flex flex-row flex-wrap w-full justify-around items-center">
 		{% for row in entry.menus.all() %}
 			{% set menuName = entry.menus.menuName %}
 			{% set menuIcon = entry.menus.menuIcon.one().optimizedImages %}
