@@ -5,7 +5,9 @@
 		{% include "_tacos-el-gallo/_snippets/heading" %}
 		{% set products = craft.products().type('clothing').all() %}
 		{% for product in products %}
-			{% set productImage = product.productImage.one().optimizedImages %}
+			{% if product.productImage.one()|length %}
+				{% set productImage = product.productImage.one().optimizedImages %}
+			{% endif %}
 			{% set ctaLink = "/buy/add?purchasableId={{product.defaultVariant.id}}" %}
 			{% set ctaText = "Buy Now" %}
 			<div class="w-1/2 md:w-1/3 flex flex-col">
