@@ -17,9 +17,9 @@
 				{% set menuName = row.menuName %}
 				{% set menuIcon = row.menuIcon.one().optimizedImages %}
 
-				<div class="flex flex-col items-center w-40" @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null">
+				<div class="flex flex-col items-center w-40 cursor-pointern text-tag-teal hover:text-tag-dark-teal" @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null">
 					<img src="{{ menuIcon.src }}" data-srcset="{{ menuIcon.srcset }}" alt="">
-					<h2 class="tag text-tag-teal">{{ menuName }}</h2>
+					<h2 class="tag">{{ menuName }}</h2>
 				</div>
 			{% endfor %}
 		</div>
