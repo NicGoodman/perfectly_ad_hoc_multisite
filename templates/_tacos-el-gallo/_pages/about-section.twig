@@ -13,7 +13,7 @@
 						</article>
 				{% endswitch %}
 			{% endfor %}
-			<div class="flex flex-col md:flex-row flex-wrap space-y-8 space-x-8">
+			<div class="flex flex-col md:flex-row flex-wrap space-y-8 space-x-8 items-stretch">
 				{% for block in sectionContent.all() %}
 					{% switch block.type %}
 						{% case "image" %}
@@ -21,8 +21,8 @@
 							{% set overlayHeader = block.overlayHeader %}
 							{% set overlaySubheader = block.overlaySubheader %}
 							{% set overlayBodyText = block.overlayBodyText %}
-							<div class="w-full md:w-1/3 border-4 border-tag-yellow p-4 flex flex-col justify-end items-stretch" style="background: url('{{ image }}') no-repeat center/cover;">
-								<div class="flex flex-col items-start p-4 w-full bg-tag-teal">
+							<div class="w-full md:w-1/3 border-4 border-tag-yellow p-4 flex flex-col items-center justify-end" style="background: url('{{ image }}') no-repeat center/cover;">
+								<div class="flex flex-col items-start p-4 w-full bg-tag-teal mt-64">
 									<header class="mb-2">
 										<h2 class="tag leading-none">{{ overlayHeader }}</h2>
 										<h5 class="tag text-tag-red">{{ overlaySubheader }}</h5>
