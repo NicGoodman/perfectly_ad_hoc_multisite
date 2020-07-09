@@ -1,9 +1,11 @@
-<footer class="w-full flex flex-row flex-wrap bg-black items-center px-10 py-8">
+<footer class="w-full flex flex-row flex-wrap bg-black items-center justify-between px-10 py-8">
 	{% set listClasses = 'block' %}
 	<nav class="" style="column-count: 2;">
 		{% set navList = entry.headerContent.navigation.all() %}
 		{% include "_tacos-el-gallo/_content/nav-item-list" %}
-		{% set socialMediaList = entry.headerContent.socialMediaAccounts.all() %}
-		{% include "_tacos-el-gallo/_content/social-media-links" %}
 	</nav>
+
+	<nav>
+		{% set socialMediaList = entry.headerContent.socialMediaAccounts.all() %}
+		{% include "_tacos-el-gallo/_content/social-media-links" %}</nav>
 </footer>
