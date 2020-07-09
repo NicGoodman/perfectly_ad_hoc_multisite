@@ -1,0 +1,13 @@
+{% extends "_tacos-el-gallo/_layout/base-layout" %}
+
+{% block header %}
+	{% include "_tacos-el-gallo/_frame/header" %}
+{% endblock %}
+{% block main %}
+	<main class="flex flex-col items-center w-full">
+	{% include "_taco-el-gallo/_pages/event-section" %}
+	</main>
+{% endblock %}
+{% block footer %}
+	{% include "_tacos-el-gallo/_frame/footer" %}
+{% endblock %}
