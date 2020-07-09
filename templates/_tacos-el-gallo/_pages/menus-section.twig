@@ -27,9 +27,8 @@
 		</div>
 		<div id="menu" class="w-full md:w-2/3 mt-8">
 			{% for row in entry.menus.all() %}
-				{% set menuContent = row.menuContent %}
 				<div class="w-full" x-show="selected == {{ loop.index }}">
-					{% for block in menuContent.all() %}
+					{% for block in row.menuContent.all() %}
 						{% set itemName = block.itemName %}
 						{% set itemDescription = block.itemDescription %}
 						{% set price = block.prices %}
