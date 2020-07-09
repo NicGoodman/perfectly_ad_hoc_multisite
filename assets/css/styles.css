@@ -230,9 +230,9 @@ h5.imp {
 }
 
 .btn-alt.imp {
-    @apply border-imp-aqua;
+    @apply border-imp-dark-aqua;
     @apply border-2;
-    @apply text-imp-aqua;
+    @apply text-imp-dark-aqua;
     @apply p-2;
     @apply font-luchador;
     @apply uppercase;
