@@ -9,8 +9,10 @@
 		{% include "_tacos-el-gallo/_content/social-media-links" %}
 	</nav>
 	<address class="not-italic text-center w-full md:w-2/5 lg:w-1/3 my-8 md:my-0">
-		<h5 class="text-tag-light-grey tag text-center font-bold">{{ address | nl2br }}</h5>
-		<h5 class="text-tag-light-grey tag text-center font-bold">{{ hours }}</h5>
+		<a href="http://maps.google.com">
+			<h5 class="text-tag-light-grey tag text-center font-bold">{{ address | nl2br }}</h5>
+		</a>
+		<h5 class="text-tag-light-grey tag text-center font-bold">{{ hours | nl2br }}</h5>
 	</address>
 	{% set btnLink = "tel:1-828-254-8980" %}
 	{% set btnText = "Call Us" %}
