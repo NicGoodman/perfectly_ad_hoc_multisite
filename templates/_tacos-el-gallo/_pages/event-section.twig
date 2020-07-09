@@ -1,6 +1,6 @@
 <section class="w-full flex flex-col items-center px-6 py-16 bg-tag-teal">
 	<div class="w-full max-w-screen-xl">
-		{% set entry = craft.entries().id(102) %}
+		{% set entry = craft.entries().section('events').id(currentEntry).one() %}
 		{% set sectionHeader = entry.eventContent.eventTitle %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% set eventTitle = entry.eventContent.eventTitle %}
