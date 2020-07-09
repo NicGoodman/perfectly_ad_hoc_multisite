@@ -4,31 +4,31 @@ h1.tag {
     @apply font-proxima-nova;
     @apply uppercase;
     @apply font-extrabold;
-    @apply leading-snug;
+    @apply leading-tight;
     @apply text-4xl;
 }
 h2.tag {
     @apply font-proxima-nova;
     @apply uppercase;
     @apply font-extrabold;
-    @apply leading-snug;
+    @apply leading-tight;
     @apply text-2xl;
 }
 h3.tag {
     @apply font-quicksand;
     @apply uppercase;
-    @apply leading-snug;
+    @apply leading-tight;
     @apply text-2xl;
 }
 h4.tag {
     @apply font-quicksand;
     @apply font-normal;
-    @apply leading-snug;
+    @apply leading-tight;
     @apply text-2xl;
 }
 h5.tag {
     @apply font-quicksand;
-    @apply leading-snug;
+    @apply leading-tight;
     @apply text-lg;
 }
 .tag p {
