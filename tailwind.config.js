@@ -16,6 +16,11 @@ module.exports = {
       },
       maxWidth: {
         'screen-xl': '1152px',
+      },
+      opacity: {
+        '10': '0.1',
+        '20': '0.2',
+        '95': '0.95',
       }
     },
     fontFamily: {
