@@ -1,7 +1,7 @@
 {% extends "_tacos-el-gallo/_layout/base-layout" %}
 {% set currentEntry = entry.id %}
 {% block header %}
-{% set entry = craft.entries().section('tacosElGalloHome').first() %}
+{% set entry = craft.entries().section('tacosElGalloHome').one() %}
 	{% include "_tacos-el-gallo/_frame/header" %}
 {% endblock %}
 {% block main %}
@@ -10,6 +10,6 @@
 	</main>
 {% endblock %}
 {% block footer %}
-{% set entry = craft.entries().section('tacosElGalloHome').first() %}
+{% set entry = craft.entries().section('tacosElGalloHome').one() %}
 	{% include "_tacos-el-gallo/_frame/footer" %}
 {% endblock %}
