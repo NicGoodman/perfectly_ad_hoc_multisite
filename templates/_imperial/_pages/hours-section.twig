@@ -15,10 +15,10 @@
 				<h2 class="text-imp-light-grey imp text-center">{{ address }}</h2>
 			</address>
 			<div>
-				<h2 class="text-imp-dark-red imp text-center">{{ hours }}</h2>
+				<h2 class="text-imp-gold md:text-imp-dark-red imp text-center">{{ hours }}</h2>
 			</div>
 			<div>
-				<h2 class="text-imp-dark-red imp">{{ phoneNumber }}</h2>
+				<h2 class="text-imp-gold md:text-imp-dark-red imp">{{ phoneNumber }}</h2>
 			</div>
 		</div>
 		<div class="flex flex-row w-full h-64 md:h-auto items-stretch" style="{% if entry.hoursSectionContent.map.one()|length %} {% set map = entry.hoursSectionContent.map.one().getUrl() %}background: url('{{ map }}') no-repeat right/cover;{% endif %}">
@@ -29,11 +29,11 @@
 					</a>
 				</address>
 				<div>
-					<h2 class="text-imp-dark-red imp text-center my-2">{{ hours | nl2br }}</h2>
+					<h2 class="text-imp-gold md:text-imp-dark-red imp text-center my-2">{{ hours | nl2br }}</h2>
 				</div>
 				<div>
 					<a href="tel:1-828-254-8980">
-						<h2 class="text-imp-dark-red imp">{{ phoneNumber }}</h2>
+						<h2 class="text-imp-gold md:text-imp-dark-red imp">{{ phoneNumber }}</h2>
 					</a>
 				</div>
 				<article class="text-center text-black mb-4 imp">
