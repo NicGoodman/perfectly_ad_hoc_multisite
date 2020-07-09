@@ -12,8 +12,8 @@
 		{% include "_tacos-el-gallo/_snippets/heading" %}
 		<div class="w-full flex flex-col md:flex-row flex-wrap">
 			<img src="{{ eventBannerImage.src}}" alt="{{ eventBannerImageAltText }}" data-srcset="{{ eventBannerImage.srcset }}" class="w-full md:w-1/2 lg:w-1/3 border-4 border-tag-yellow">
-			<article class="w-full md:w-1/2 lg:w-2/3 px-8">
-				{% set subheading = eventDate ~ eventTime %}
+			<article class="w-full md:w-1/2 lg:w-2/3 px-8 tag">
+				{% set subheading = eventDate ~ ' • ' ~eventTime %}
 				{% include "_tacos-el-gallo/_snippets/subheading" %}
 				{{ eventDescription}}
 			</article>
