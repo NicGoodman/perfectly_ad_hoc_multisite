@@ -5,11 +5,11 @@
 		{% include "_imperial/_snippets/heading" %}
 		{% set products = craft.products().type('clothing') %}
 		{% for product in products.all() %}
-			{% set productImage = product.defaultVariant.productImage.one() %}
+			{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
 			{% set btnLink = "/buy/add?purchasableId={{product.defaultVariant.id}}" %}
 			{% set btnText = "Buy Now" %}
 			<div class="w-1/2 md:w-1/4 flex flex-col items-center">
-
+				<img src="{{ productImage.src }}" alt="" class="border-4 border-imp-gold">
 				<h2 class="imp text-black">{{ product.title }}</h2>
 				<h2 class="imp text-imp-light-grey">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
 				{% include "_imperial/_snippets/btn-alt" %}
