@@ -936,13 +936,13 @@ h5.imp {
   font-size: 1.25rem;
 }
 
-.btn-alt.imp:hover {
+.btn-purchase.imp:hover {
   --border-opacity: 1;
   border-color: #e11e14;
   border-color: rgba(225, 30, 20, var(--border-opacity));
 }
 
-.btn-alt.imp:active {
+.btn-purchase.imp:active {
   --border-opacity: 1;
   border-color: #bf3026;
   border-color: rgba(191, 48, 38, var(--border-opacity));

@@ -260,11 +260,11 @@ h5.imp {
     @apply text-xl;
 }
 
-.btn-alt.imp:hover {
+.btn-purchase.imp:hover {
     @apply border-imp-red;
 }
 
-.btn-alt.imp:active {
+.btn-purchase.imp:active {
     @apply border-imp-dark-red;
 }
 
