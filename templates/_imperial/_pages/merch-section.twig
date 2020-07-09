@@ -1,7 +1,8 @@
-<section class="w-full flex flex-col items-center px-6 bg-imp-light-red py-16 angled-top">
+<section class="w-full flex flex-col items-center px-6 bg-imp-dark-aqua py-16">
 	<div class="w-full max-w-screen-xl">
 		{% set sectionHeader = entry.merchSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% set textColor = 'text-imp-aqua' %}
 		{% include "_imperial/_snippets/heading" %}
 		{% set products = craft.products().type('clothing') %}
 		{% for product in products.all() %}

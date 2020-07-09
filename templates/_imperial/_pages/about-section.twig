@@ -1,8 +1,9 @@
-<section class="w-full flex flex-col items-center px-6 bg-imp-light-grey py-16 angled-both">
+<section class="w-full flex flex-col items-center px-6 bg-imp-light-grey py-16">
 	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
 		{% set sectionHeader = entry.aboutSectionContent.sectionHeader %}
 		{% set sectionContent = entry.aboutSectionContent.sectionContent %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% set textColor = 'text-imp-dark-aqua' %}
 		{% include "_imperial/_snippets/heading" %}
 		<article class="flex flex-col flex-wrap items-center">
 			{% for block in sectionContent.all() %}

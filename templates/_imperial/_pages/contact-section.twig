@@ -1,7 +1,8 @@
-<section class="w-full flex flex-col items-center px-6 bg-imp-light-grey py-16 angled-both">
+<section class="w-full flex flex-col items-center px-6 bg-imp-light-grey py-16">
 	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
 		{% set sectionHeader = entry.contactUsSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% set textColor = 'text-imp-dark-aqua' %}
 		{% include "_imperial/_snippets/heading" %}
 		{% macro errorList(errors) %}
 			{% if errors %}

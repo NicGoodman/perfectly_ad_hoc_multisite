@@ -2,6 +2,7 @@
 	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
 		{% set sectionHeader = entry.privateEventsSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% set textColor = 'text-imp-dark-aqua' %}
 		{% set bodyText = entry.privateEventsSectionContent.bodyText %}
 		{% set ctaText = entry.privateEventsSectionContent.callToActionText %}
 		{% set ctaLink = entry.privateEventsSectionContent.callToActionLink %}

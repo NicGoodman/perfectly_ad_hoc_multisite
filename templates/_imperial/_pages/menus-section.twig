@@ -1,10 +1,11 @@
-<section class="w-full flex flex-col items-center px-6 bg-imp-light-grey py-16 angled-both" x-data="{selected:null}">
+<section class="w-full flex flex-col items-center px-6 bg-imp-aqua py-16" x-data="{selected:null}">
 	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
 		{% set sectionHeader = entry.menusSectionContent.sectionHeader %}
 		{% set bodyText = entry.menusSectionContent.bodyText %}
 		{% set ctaText = entry.menusSectionContent.callToActionText %}
 		{% set ctaLink = entry.menusSectionContent.callToActionLink %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% set textColor = 'text-imp-dark-aqua' %}
 		{% include "_imperial/_snippets/heading" %}
 		<div class="flex flex-col md:flex-row flex-wrap justify-around items-center mb-8">
 			<article class="imp w-full md:w-3/5 text-left">
