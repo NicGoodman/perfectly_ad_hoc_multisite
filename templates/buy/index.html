@@ -53,7 +53,7 @@ Buy your hand-crafted free-range coastal artisan t-shirt.
                 <label for="email" class="block text-sm mb-2">E-mail</label>
                 <input id="email" name="email" type="email" value="{{cart.email}}" {% if currentUser %}}disabled{% endif %}} class="w-full text-sm bg-grey-light text-grey-darkest rounded px-3 py-3 outline-0">
             </div>
-            <div class="w-1/2 w-full">
+            <div class="w-full">
             <button type="submit" class="bg-blue-commerce text-white w-full rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-blue-dark outline-0">
                 Next
             </button>
@@ -150,7 +150,7 @@ Buy your hand-crafted free-range coastal artisan t-shirt.
 
     <form method="POST" class="add-to-cart-form">
         <input type="hidden" name="action" value="commerce/payments/pay">
-        <input type="hidden" name="gatewayId" value="2"> {# the dummy gateway ID #}
+        <input type="hidden" name="gatewayId" value="4"> {# the dummy gateway ID #}
         {{ redirectInput('buy/confirm?number={number}') }}
         {{ csrfInput() }}
     <div class="p-10 pt-8">

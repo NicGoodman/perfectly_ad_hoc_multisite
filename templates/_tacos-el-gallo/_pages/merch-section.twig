@@ -4,16 +4,18 @@
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
 		{% set products = craft.products().type('clothing') %}
+				<div class="w-full flex flex-row flex-wrap">
 		{% for product in products.all() %}
 			{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
 			{% set btnLink = "/buy/add?purchasableId={{product.defaultVariant.id}}" %}
 			{% set btnText = "Buy Now" %}
-			<div class="w-1/2 md:w-1/4 flex flex-col items-center">
+			<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
 				<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
 				<h2 class="tag text-black">{{ product.title }}</h2>
 				<h2 class="tag text-tag-light-grey">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
 				{% include "_tacos-el-gallo/_snippets/btn-alt" %}
 			</div>
 		{% endfor %}
+		</div>
 	</div>
 </section>

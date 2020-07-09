@@ -249,6 +249,27 @@ h5.imp {
     @apply border-imp-dark-red;
 }
 
+.btn-purchase.imp {
+    @apply border-imp-dark-gold;
+    @apply border-2;
+    @apply text-imp-dark-gold;
+    @apply p-2;
+    @apply font-luchador;
+    @apply uppercase;
+    @apply font-bold;
+    @apply text-xl;
+}
+
+.btn-alt.imp:hover {
+    @apply border-imp-red;
+}
+
+.btn-alt.imp:active {
+    @apply border-imp-dark-red;
+}
+
+
+
 @tailwind components;
 
 @tailwind utilities;
