@@ -1,5 +1,7 @@
 <footer class="w-full flex flex-col md:flex-row flex-wrap bg-black items-center justify-between px-10 py-8">
 	{% set listClasses = 'block' %}
+	{% set address = entry.hoursSectionContent.address %}
+	{% set hours = entry.hoursSectionContent.hours %}
 	<nav class="" style="column-count: 2;">
 		{% set navList = entry.headerContent.navigation.all() %}
 		{% include "_tacos-el-gallo/_content/nav-item-list" %}
@@ -10,5 +12,4 @@
 		<h2 class="text-tag-light-grey tag text-center">{{ address }}</h2>
 		<h2 class="text-tag-dark-red tag text-center">{{ hours }}</h2>
 	</address>
-
 </footer>
