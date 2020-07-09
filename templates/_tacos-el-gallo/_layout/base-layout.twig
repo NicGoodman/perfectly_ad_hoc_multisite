@@ -21,12 +21,16 @@
 		<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 		<script src="https://kit.fontawesome.com/f1b10d4b9b.js" crossorigin="anonymous"></script>
 	</head>
-	<body class="bg-tag-light-grey min-h-screen flex flex-col"> {% block header %}{% endblock %}{% block main %}{% endblock %}{% block footer %}{% endblock %}
+	<body class="bg-tag-light-grey min-h-screen flex flex-col">
+		{% block header %}{% endblock %}
+		{% block main %}{% endblock %}
+		{% block footer %}{% endblock %}
 		<script src='https://app.upserve.com/platform/olo-widget.js?the-imperial-life-asheville' type='text/javascript' id='upserve-olo-script'></script>
-		<script src="assets/js/zenscroll-min.js"></script>
-		<script>
+			<script src="assets/js/zenscroll-min.js"></script>
+			<script>
+			var defaultDuration = 777 // ms
 			var edgeOffset = 42 // px
-zenscroll.setup(edgeOffset)
-		</script>
+zenscroll.setup(defaultDuration, edgeOffset)
+			</script>
 	</body>
 </html>
