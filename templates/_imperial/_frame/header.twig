@@ -1,4 +1,4 @@
-<header class="w-full flex flex-row flex-wrap bg-black items-center px-4 md:px-10 py-8 justify-between md:justify-start" x-data="{ isOpen: false }" @keydown.escape="isOpen = false">
+<header class="w-full flex flex-row flex-wrap bg-imp-dark-aqua items-center px-4 md:px-10 py-8 justify-between md:justify-start" x-data="{ isOpen: false }" @keydown.escape="isOpen = false">
 	{% if entry.headerContent.logo|length %}
 		{% set logo = entry.headerContent.logo.one().optimizedImages %}
 		{% set logoAltText = entry.headerContent.logo.one().title %}
