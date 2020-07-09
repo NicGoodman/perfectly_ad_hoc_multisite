@@ -1,0 +1,9 @@
+<ul class="{{ listClasses }}">
+	{% for block in navList %}
+		{% set itemLink = block.itemLink %}
+		{% set itemName = block.itemName %}
+		<li>
+			{% include "_imperial/_snippets/nav-item.twig" %}
+		</li>
+	{% endfor %}
+</ul>

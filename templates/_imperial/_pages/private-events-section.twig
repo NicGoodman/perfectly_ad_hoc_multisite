@@ -1,0 +1,32 @@
+<section class="w-full flex flex-col items-center px-6 bg-imp-aqua py-16 angled-both">
+	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
+		{% set sectionHeader = entry.privateEventsSectionContent.sectionHeader %}
+		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% set bodyText = entry.privateEventsSectionContent.bodyText %}
+		{% set ctaText = entry.privateEventsSectionContent.callToActionText %}
+		{% set ctaLink = entry.privateEventsSectionContent.callToActionLink %}
+		{% include "_imperial/_snippets/heading" %}
+		<div class="w-full border-imp-gold border-4 flex flex-row items-center h-64 md:h-auto" style="{% if entry.privateEventsSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.privateEventsSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat right/cover;{% endif %}">
+			<div class="hidden md:flex flex-col w-1/2 items-center p-4 my-32">
+				<div class="flex flex-col items-center p-4 w-full h-full bg-imp-aqua">
+					<article class="imp text-center text-black">
+						{{ bodyText }}
+					</article>
+				</div>
+			</div>
+			<div class="hidden md:flex flex-col w-1/2 items-center p-4">
+				{% include "_imperial/_snippets/btn-main.twig" %}
+			</div>
+		</div>
+		<div class="md:hidden flex flex-col w-full items-center p-4 ">
+			<div class="flex flex-col items-center p-4 w-full h-full bg-imp-aqua">
+				<article class="imp text-center text-black">
+					{{ bodyText }}
+				</article>
+			</div>
+		</div>
+		<div class="md:hidden flex flex-col w-full items-center p-4">
+			{% include "_imperial/_snippets/btn-main.twig" %}
+		</div>
+	</div>
+</section>

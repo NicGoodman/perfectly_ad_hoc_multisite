@@ -1,0 +1,6 @@
+<article class="bg-imp-light-grey flex flex-col items-center p-4 w-full">
+	<img src="{{ eventBannerImage.src}}" data-srcset="{{ eventBannerImage.srcset() }}" alt="{{ eventBannerImageAltText }}" class="border-imp-gold border-4 object-cover w-full h-48">
+	<h2 class="imp text-imp-aqua w-full text-left mt-4">{{ eventTitle }}</h2>
+	<h3 class="imp mb-4 border-imp-red border-t-4 w-full text-left font-bold">{{ eventDate }} at {{ eventTime }}</h3>
+	{% include "_imperial/_snippets/btn-alt" %}
+</article>

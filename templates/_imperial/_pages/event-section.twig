@@ -1,0 +1,23 @@
+<section class="w-full flex flex-col items-center px-6 py-16 bg-imp-aqua h-full flex-grow">
+	<div class="w-full max-w-screen-xl">
+		{% set entry = craft.entries().section('events').id(currentEntry).one() %}
+		{% set sectionHeader = entry.eventContent.eventTitle %}
+		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% set eventTitle = entry.eventContent.eventTitle %}
+		{% set eventBannerImage = entry.eventContent.eventBannerImage.one().optimizedImages %}
+		{% set eventBannerImageAltText = entry.eventContent.eventBannerImage.one().title %}
+		{% set eventDate = entry.eventContent.eventDate|date('medium') %}
+		{% set eventTime = entry.eventContent.eventDate|time('short') %}
+		{% set eventDescription = entry.eventContent.eventDescription %}
+		{% include "_imperial/_snippets/heading" %}
+		<div class="w-full flex flex-col md:flex-row flex-wrap">
+			<img src="{{ eventBannerImage.src}}" alt="{{ eventBannerImageAltText }}" data-srcset="{{ eventBannerImage.srcset }}" class="w-full md:w-1/2 lg:w-1/3 border-4 border-imp-gold object-cover">
+			<article class="w-full md:w-1/2 lg:w-2/3 px-8 imp">
+				{% set subheading = eventDate ~ ' • ' ~eventTime %}
+				{% include "_imperial/_snippets/subheading" %}
+				{{ eventDescription}}
+			</article>
+		</div>
+
+	</div>
+</section>

@@ -1,0 +1,55 @@
+<section class="w-full flex flex-col items-center px-6 bg-imp-light-grey py-16 angled-both">
+	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
+		{% set sectionHeader = entry.contactUsSectionContent.sectionHeader %}
+		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% include "_imperial/_snippets/heading" %}
+		{% macro errorList(errors) %}
+			{% if errors %}
+				<ul class="errors">
+					{% for error in errors %}
+						<li>{{ error }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		{% endmacro %}
+
+		{% from _self import errorList %}
+
+		<form method="post" action="" accept-charset="UTF-8" class="flex flex-col w-full md:w-2/3">
+			{{ csrfInput() }}
+			<input type="hidden" name="action" value="contact-form/send">
+			{{ redirectInput('contact/thanks') }}
+			<div class="flex flex-row mb-4 items-center">
+				<p class="imp uppercase justify-center w-32 h-12 flex items-center bg-imp-dark-aqua text-imp-light-grey text-sm">
+					<label for="from-name">Full Name</label>
+				</p>
+				<input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" class="px-4 w-auto flex-grow h-12 border-4 border-imp-red">
+				{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+			</div>
+
+			<div class="flex flex-row mb-4 items-center">
+				<p class="imp uppercase justify-center w-32 h-12 flex items-center bg-imp-dark-aqua text-imp-light-grey text-sm">
+					<label for="from-email">Email</label>
+				</p>
+				<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class=" px-4 w-auto flex-grow border-4 border-imp-red h-12">
+				{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+			</div>
+			<div class="flex flex-row mb-4 items-center">
+				<p class="imp uppercase justify-center w-32 h-12 flex items-center bg-imp-dark-aqua text-imp-light-grey text-sm">
+					<label for="phone">Phone</label>
+				</p>
+				<input id="phone" type="text" name="phone" value="{{ message.phone ?? '' }}" class="px-4 w-auto flex-grow border-4 border-imp-red h-12">
+				{{ message is defined and message ? errorList(message.getErrors('phone')) }}
+			</div>
+			<div class="flex flex-col mb-4">
+				<p class="imp uppercase justify-center w-32 h-12 flex items-center bg-imp-dark-aqua text-imp-light-grey text-sm">
+					<label for="message">Comment</label>
+				</p>
+				<textarea rows="10" cols="40" id="message" name="message" class="p-4 w-full border-4 border-imp-red">{{ message.message ?? '' }}</textarea>
+				{{ message is defined and message ? errorList(message.getErrors('message')) }}
+			</div>
+
+			<input type="submit" value="Send Comment" class="btn-main imp w-64 self-center">
+		</form>
+	</div>
+</section>

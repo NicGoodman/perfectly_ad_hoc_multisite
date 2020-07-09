@@ -1,0 +1,52 @@
+<section class="w-full flex flex-col items-center px-6 bg-imp-aqua py-16 angled-bottom">
+	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
+		{% set sectionHeader = entry.hoursSectionContent.sectionHeader %}
+		{% set address = entry.hoursSectionContent.address %}
+		{% set hours = entry.hoursSectionContent.hours %}
+		{% set phoneNumber = entry.hoursSectionContent.phoneNumber %}
+		{% set bodyText = entry.hoursSectionContent.bodyText %}
+		{% set ctaText = entry.hoursSectionContent.callToActionText %}
+		{% set ctaLink = entry.hoursSectionContent.callToActionLink %}
+		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% include "_imperial/_snippets/heading" %}
+		<div class="flex flex-col md:hidden items-center p-4 w-full">
+			<address class="not-italic">
+				<h2 class="text-imp-light-grey imp text-center">{{ address }}</h2>
+			</address>
+			<div>
+				<h2 class="text-imp-dark-red imp text-center">{{ hours }}</h2>
+			</div>
+			<div>
+				<h2 class="text-imp-dark-red imp">{{ phoneNumber }}</h2>
+			</div>
+		</div>
+		<div class="flex flex-row w-full border-imp-gold p-4 border-4 h-64 md:h-auto items-stretch" style="{% if entry.hoursSectionContent.map.one()|length %} {% set map = entry.hoursSectionContent.map.one().getUrl() %}background: url('{{ map }}') no-repeat right/cover;{% endif %}">
+			<div class="hidden md:flex flex-col items-center p-4 md:w-2/5 lg:w-1/3 h-full bg-imp-aqua bg-opacity-85">
+				<address class="not-italic">
+					<a href="https://maps.google.com">
+						<h2 class="text-imp-light-grey imp text-center cursor-pointer">{{ address }}</h2>
+					</a>
+				</address>
+				<div>
+					<h2 class="text-imp-dark-red imp text-center my-2">{{ hours | nl2br }}</h2>
+				</div>
+				<div>
+					<a href="tel:1-828-254-8980">
+						<h2 class="text-imp-dark-red imp">{{ phoneNumber }}</h2>
+					</a>
+				</div>
+				<article class="text-center text-black mb-4 imp">
+					{{ bodyText }}
+				</article>
+				{% include "_imperial/_snippets/btn-main.twig" %}
+			</div>
+			<div class=" w-full md:w-2/3 h-auto cursor-pointer" onclick="location.href='https://maps.google.com';"></div>
+		</div>
+		<div class="flex flex-col md:hidden items-center p-4 w-full">
+			<article class="text-center text-black mb-4 imp">
+				{{ bodyText }}
+			</article>
+			{% include "_imperial/_snippets/btn-main.twig" %}
+		</div>
+	</div>
+</section>

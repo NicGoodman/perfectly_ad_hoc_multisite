@@ -1,0 +1,7 @@
+<section class="w-full flex flex-col items-center px-6 bg-imp-aqua py-16">
+	<div class="w-full max-w-screen-xl">
+		{% set sectionHeader = entry.hoursSectionContent.sectionHeader %}
+		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% include "_imperial/_snippets/heading" %}
+	</div>
+</section>

@@ -1,5 +1,15 @@
 @tailwind base;
 
+@font-face {
+    font-family: 'luchadorregular';
+    src: url('/assets/fonts/luchador-regular-webfont.woff2') format('woff2'),
+         url('/assets/fonts/luchador-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Tacos El Gallo Classes */
+
 h1.tag {
     @apply font-proxima-nova;
     @apply uppercase;
@@ -116,6 +126,126 @@ h5.tag {
 
 .btn-alt.tag:active {
     @apply border-tag-dark-red;
+}
+
+/* Imperial Classes */
+
+h1.imp {
+    @apply font-luchador;
+    @apply uppercase;
+    @apply font-bold;
+    @apply leading-tight;
+    @apply text-4xl;
+}
+h2.imp {
+    @apply font-luchador;
+    @apply uppercase;
+    @apply font-bold;
+    @apply leading-tight;
+    @apply text-2xl;
+}
+h3.imp {
+    @apply font-minion-pro;
+    @apply uppercase;
+    @apply leading-tight;
+    @apply text-2xl;
+}
+h4.imp {
+    @apply font-minion-pro;
+    @apply font-bold;
+    @apply leading-tight;
+    @apply text-2xl;
+}
+h5.imp {
+    @apply font-minion-pro;
+    @apply leading-tight;
+    @apply text-lg;
+}
+.imp p {
+    @apply font-minion-pro;
+    @apply text-base;
+    @apply font-medium;
+    @apply pb-3;
+    @apply leading-snug;
+}
+
+.nav-item.imp {
+    @apply font-quicksand;
+    @apply text-base;
+    @apply font-medium;
+    @apply text-imp-aqua;
+}
+
+.nav-item.imp:hover {
+    @apply text-imp-gold;
+}
+
+.social-item.imp {
+    @apply text-xl;
+    @apply font-medium;
+    @apply text-imp-gold;
+}
+
+.social-item.imp:hover {
+    @apply text-imp-red;
+}
+
+.nav-btn.imp {
+    @apply bg-imp-gold;
+    @apply text-imp-light-grey;
+    @apply px-4;
+    @apply py-2;
+    @apply font-luchador;
+    @apply uppercase;
+    @apply font-bold;
+    @apply text-xl;
+    @apply block;
+    @apply text-center;
+}
+
+.nav-btn.imp:hover {
+    @apply bg-imp-aqua;
+}
+
+.nav-btn.imp:active {
+    @apply bg-imp-dark-red;
+}
+
+.btn-main.imp {
+    @apply bg-imp-red;
+    @apply text-imp-light-grey;
+    @apply p-2;
+    @apply font-luchador;
+    @apply uppercase;
+    @apply font-bold;
+    @apply text-xl;
+}
+
+.btn-main.imp:hover {
+    @apply bg-imp-dark-aqua;
+}
+
+.btn-main.imp:active {
+    @apply bg-imp-dark-red;
+}
+
+.btn-alt.imp {
+    @apply border-imp-aqua;
+    @apply border-2;
+    @apply text-imp-aqua;
+    @apply p-2;
+    @apply font-luchador;
+    @apply uppercase;
+    @apply font-bold;
+    @apply text-xl;
+}
+
+.btn-alt.imp:hover {
+    @apply border-imp-red;
+}
+
+.btn-alt.imp:active {
+    @apply border-imp-dark-red;
 }
 
 @tailwind components;

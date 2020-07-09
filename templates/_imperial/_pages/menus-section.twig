@@ -1,0 +1,59 @@
+<section class="w-full flex flex-col items-center px-6 bg-imp-light-grey py-16 angled-both" x-data="{selected:null}">
+	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
+		{% set sectionHeader = entry.menusSectionContent.sectionHeader %}
+		{% set bodyText = entry.menusSectionContent.bodyText %}
+		{% set ctaText = entry.menusSectionContent.callToActionText %}
+		{% set ctaLink = entry.menusSectionContent.callToActionLink %}
+		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% include "_imperial/_snippets/heading" %}
+		<div class="flex flex-col md:flex-row flex-wrap justify-around items-center mb-8">
+			<article class="imp w-full md:w-3/5 text-left">
+				{{ bodyText }}
+			</article>
+			{% include "_imperial/_snippets/btn-main.twig" %}
+		</div>
+		<div class="flex flex-row flex-wrap w-full justify-around items-center">
+			{% for row in entry.menus.all() %}
+				{% set menuName = row.menuName %}
+				{% set menuIcon = row.menuIcon.one().optimizedImages %}
+
+				<div class="flex flex-col items-center w-40 cursor-pointer text-imp-aqua hover:text-imp-dark-aqua" @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null">
+					<a href="#menu" class="text-center">
+						<img src="{{ menuIcon.src }}" data-srcset="{{ menuIcon.srcset }}" alt="">
+						<h2 class="imp">{{ menuName }}</h2>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+		<div id="menu" class="w-full md:w-2/3 mt-8">
+			{% for row in entry.menus.all() %}
+				<div class="w-full" x-show="selected == {{ loop.index }}">
+					{% for block in row.menuContent.all() %}
+						{% set itemName = block.itemName %}
+						{% set itemDescription = block.itemDescription %}
+						{% set price = block.prices %}
+						{% set priceDescription = block.priceDescription %}
+						<div id="menu-item-wrapper" class="flex flex-col w-full mb-4">
+							<div id="menu-item-top-line" class="flex flex-row justify-between w-full">
+								<div class="text-left">
+									<h3 class="imp font-bold">{{ itemName }}</h3>
+								</div>
+								<div class="text-right pl-10">
+									<h3 class="imp text-imp-red font-bold">{{ price }}</h3>
+								</div>
+							</div>
+							<div id="menu-item-bottom-line" class="flex flex-row justify-between w-full">
+								<div class="text-left imp">
+									{{ itemDescription | nl2br }}
+								</div>
+								<div class="text-right pl-10 imp">
+									<p class="imp text-imp-dark-aqua">{{ priceDescription }}</p>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

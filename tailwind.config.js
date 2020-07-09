@@ -13,6 +13,13 @@ module.exports = {
         'tag-teal': '#4FBBCD',
         'tag-dark-teal': '#147F91',
         'tag-gold': '#FFBC00',
+        'imp-light-grey': '#f2f2f2',
+        'imp-aqua': '#b9dfcf',
+        'imp-gold': '#fab40f',
+        'imp-red': '#e11e14',
+        'imp-dark-gold': '#f99410',
+        'imp-dark-red': '#bf3026',
+        'imp-dark-aqua': '#0d6c78',
       },
       maxWidth: {
         'screen-xl': '1152px',
@@ -24,8 +31,10 @@ module.exports = {
       }
     },
     fontFamily: {
-      'proxima-nova': ['proxima-nova', 'sans-serif'],
-      'quicksand': ['Quicksand', 'sans-serif'],
+      'proxima-nova': ['proxima-nova', 'serif'],
+      'quicksand': ['Quicksand', 'serif'],
+      'luchador': ['luchadorregular', 'serif'],
+      'minion-pro': ['minion-pro', 'serif'],
     }
   },
   variants: {
