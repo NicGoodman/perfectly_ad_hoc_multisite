@@ -8,8 +8,8 @@
 		{% set socialMediaList = entry.headerContent.socialMediaAccounts.all() %}
 		{% include "_tacos-el-gallo/_content/social-media-links" %}
 	</nav>
-	<address class="not-italic text-center">
-		<h2 class="text-tag-light-grey tag text-center">{{ address }}</h2>
-		<h2 class="text-tag-dark-red tag text-center">{{ hours }}</h2>
+	<address class="not-italic text-center w-full md:w-3/5 lg:w-1/3">
+		<h5 class="text-tag-light-grey tag text-center">{{ address }}</h5>
+		<h5 class="text-tag-light-grey tag text-center">{{ hours }}</h5>
 	</address>
 </footer>
