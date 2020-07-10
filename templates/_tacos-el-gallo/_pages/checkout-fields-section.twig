@@ -68,7 +68,7 @@
 				{{ cart.email }}
                 </div>
 				{% if not currentUser %}
-					<a href="order?step=1" class="bg-cool-gray-600 text-white w-full rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
+					<a href="order?step=1" class="bg-cool-gray-600 text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
 				{% endif %}
 			{% endif %}
 		</div>
@@ -154,7 +154,7 @@
 			{% endif %}
 
 			{% if showShippingInfo %}
-            <div class="block text-sm font-medium leading-5 text-gray-700" style="column-count: 2;">
+            <div class="block text-normal font-medium leading-5 text-gray-700 mt-8 border-t-2 border-cool-gray-400" style="column-count: 2;">
 				{{ cart.shippingAddress.firstName ?? ''}}
 				{{ cart.shippingAddress.lastName ?? ''}}<br>
 				{{ cart.shippingAddress.address1 ?? ''}}<br>
@@ -164,7 +164,7 @@
 				{{ cart.shippingAddress.stateValue ?? ''}}
 				{{ cart.shippingAddress.countryText ?? ''}}<br>
                 </div>
-				<a href="order?step=2" class="bg-cool-gray-600 text-white w-full rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
+				<a href="order?step=2" class="bg-cool-gray-600 text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
 			{% endif %}
 
 		</div>
