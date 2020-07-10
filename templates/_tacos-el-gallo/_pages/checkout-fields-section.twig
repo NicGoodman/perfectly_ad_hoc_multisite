@@ -1,3 +1,34 @@
+{% if cart.isEmpty %}
+	{% redirect '#merch' %}
+{% endif %}
+
+{# Do we have have more than 1 line item? If so, we are likely on Pro, let's use the main cart checkout example template #}
+{% if cart.lineItems|length > 1 %}
+	{% redirect '/shop/cart' %}
+{% endif %}
+
+{% set step = craft.app.request.param('step') %}
+
+{% if not step %}
+	{% redirect 'order?step=1' %}
+{% endif %}
+
+{% set showEmailForm = (step == 1) %}
+{% set showEmailInfo = (not showEmailForm and cart.email) %}
+
+{% set showShippingForm = (step == 2) %}
+{% set showShippingInfo = (not showShippingForm and cart.shippingAddress) %}
+
+{% set showPaymentForm = (step == 3) %}
+
+{% if showPaymentForm and not cart.email %}
+	{% redirect 'order?step=1' %}
+{% endif %}
+
+{% if showPaymentForm and not cart.shippingAddress %}
+	{% redirect 'order?step=2' %}
+{% endif %}
+
 <section class="w-full flex flex-col items-center">
 	<div class="w-full max-w-screen-xl bg-tag-light-grey rounded-lg shadow-lg">
 		<header class="flex flex-row items-center content-center border-b-2 border-cool-gray-400">
@@ -10,6 +41,7 @@
 		<div class="flex flex-col">
 			<form method="POST" class="add-to-cart-form">
 				<input type="hidden" name="action" value="commerce/cart/update-cart">
+				{{ redirectInput('order?step=2') }}
 				{{ csrfInput() }}
 				<div>
 					<label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
