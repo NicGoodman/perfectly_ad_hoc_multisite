@@ -31,7 +31,7 @@ return [
             '@assetBasePath' => getenv('ASSET_BASE_PATH'),
             '@assetPublicPath' => getenv('ASSET_PUBLIC_PATH')
         ],
-        'tokenParam' => craftToken
+        'tokenParam' => 'craftToken'
     ],
 
     // Dev environment settings
