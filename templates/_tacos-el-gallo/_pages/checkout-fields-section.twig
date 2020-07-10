@@ -170,7 +170,7 @@
 				<form method="POST" class="add-to-cart-form">
 					<input type="hidden" name="action" value="commerce/payments/pay">
 					<input type="hidden" name="gatewayId" value="6">
-					{{ redirectInput('order?step=4?number={number}') }}
+					{{ redirectInput('order?step=4') }}
 					{{ csrfInput() }}
 					{{ cart.gateway.getPaymentFormHtml({})|raw }}
 					<div class="pl-10 pr-10 pt-5 pb-0">
