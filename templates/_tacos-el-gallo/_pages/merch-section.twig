@@ -33,7 +33,7 @@ document.forms['auto-add-to-cart'].submit();
 					<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
 					<h2 class="tag text-black">{{ product.title }}</h2>
 					<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
-        <a href="/buy/add?purchasableId={{product.defaultVariant.id}}"class="bg-blue-commerce text-white w-1/2 rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-blue-dark outline-0">
+        <a href="/tag/order?purchasableId={{product.defaultVariant.id}}"class="bg-blue-commerce text-white w-1/2 rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-blue-dark outline-0">
             Buy {{ product.title }} ({{ product.defaultVariant.salePriceAsCurrency }})
         </a>
 				</div>
