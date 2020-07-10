@@ -984,6 +984,24 @@ h5.imp {
   line-height: 1.5;
 }
 
+.card-data {
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #ffffff;
+  border-color: #d2d6dc;
+  border-width: 1px;
+  border-radius: 0.375rem;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 .container {
   width: 100%;
 }
