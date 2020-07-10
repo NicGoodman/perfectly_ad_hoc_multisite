@@ -26,17 +26,19 @@ document.forms['auto-add-to-cart'].submit();
 }
 			</script>
 		{% else %}
-			{% for product in products.all() %}
-				{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
-				<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
-					<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
-					<h2 class="tag text-black">{{ product.title }}</h2>
-					<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
-					<a href="/tag/order?purchasableId={{product.defaultVariant.id}}" class="btn-alt tag">
-						Buy Now
-					</a>
-				</div>
-			{% endfor %}
+			<div class="w-full flex flex-row flex-wrap">
+				{% for product in products.all() %}
+					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
+					<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
+						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
+						<h2 class="tag text-black">{{ product.title }}</h2>
+						<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
+						<a href="/tag/order?purchasableId={{product.defaultVariant.id}}" class="btn-alt tag">
+							Buy Now
+						</a>
+					</div>
+				{% endfor %}
+			</div>
 		{% endif %}
 	</div>
 </section>
