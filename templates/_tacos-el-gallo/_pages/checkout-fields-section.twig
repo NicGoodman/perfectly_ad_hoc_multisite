@@ -63,7 +63,7 @@
 			{% if showEmailInfo %}
 				{{ cart.email }}
 				{% if not currentUser %}
-					<a href="buy?step=1" class="text-blue block mt-5">Edit</a>
+					<a href="order?step=1" class="text-blue block mt-5">Edit</a>
 				{% endif %}
 			{% endif %}
 		</div>
@@ -71,7 +71,7 @@
 			{% if showShippingForm %}
 				<form method="POST" class="add-to-cart-form">
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
-					{{ redirectInput('buy?step=3') }}
+					{{ redirectInput('order?step=3') }}
 					{{ csrfInput() }}
 
 					{# Name Fields for Shipping #}
@@ -170,7 +170,7 @@
 					<input
 					type="hidden" name="gatewayId" value="6">
 					{# the dummy gateway ID #}
-					{{ redirectInput('buy/confirm?number={number}') }}
+					{{ redirectInput('order/confirm?number={number}') }}
 					{{ csrfInput() }}
 					{{ cart.gateway.getPaymentFormHtml({})|raw }}
 					<div class="pl-10 pr-10 pt-5 pb-0">
