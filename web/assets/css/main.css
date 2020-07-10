@@ -948,6 +948,32 @@ h5.imp {
   border-color: rgba(191, 48, 38, var(--border-opacity));
 }
 
+.card-holder > div.grid {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.card-holder > div > div.item {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .card-holder > div > div.item {
+    width: 50%;
+  }
+}
+
+.card-holder > div > div:nth-child(2) {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .card-holder > div > div:nth-child(2) {
+    width: 50%;
+  }
+}
+
 .card-holder-first-name {
   border-radius: 0.375rem;
   margin-bottom: 1rem;
@@ -964,6 +990,7 @@ h5.imp {
   padding-left: 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
+  width: 100%;
 }
 
 .card-holder-last-name {
@@ -982,6 +1009,7 @@ h5.imp {
   padding-left: 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
+  width: 100%;
 }
 
 .card-data {
@@ -1000,6 +1028,7 @@ h5.imp {
   padding-left: 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
+  width: 100%;
 }
 
 .container {

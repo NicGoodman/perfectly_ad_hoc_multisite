@@ -268,22 +268,51 @@ h5.imp {
     @apply border-imp-dark-red;
 }
 
+.card-holder > div.grid {
+    @apply flex;
+    @apply flex-row;
+    @apply w-full;
+}
+
+.card-holder > div > div.item {
+    @apply w-full;
+}
+
+@screen md {
+    .card-holder > div > div.item {
+        @apply w-1/2;
+    }
+}
+
+.card-holder > div > div:nth-child(2) {
+    @apply w-full;
+}
+
+@screen md {
+    .card-holder > div > div:nth-child(2) {
+        @apply w-1/2;
+    }
+}
+
 .card-holder-first-name {
     @apply rounded-md;
     @apply mb-4;
     @apply form-input;
+    @apply w-full;
 }
 
 .card-holder-last-name {
     @apply rounded-md;
     @apply mb-4;
     @apply form-input;
+    @apply w-full;
 }
 
 .card-data {
     @apply rounded-md;
     @apply mb-4;
     @apply form-input;
+    @apply w-full;
 }
 
 
