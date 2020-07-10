@@ -315,6 +315,22 @@ h5.imp {
     @apply w-full;
 }
 
+.card-holder > legend {
+    @apply text-sm;
+    @apply font-medium;
+    @apply leading-5;
+    @apply text-gray-700;
+}
+
+.payment-form-fields {
+    @apply w-3/4;
+}
+
+@screen md {
+    .payment-form-fields {
+        @apply w-full;
+    }
+}
 
 
 
