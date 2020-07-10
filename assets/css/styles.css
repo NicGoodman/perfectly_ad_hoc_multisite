@@ -339,3 +339,7 @@ h5.imp {
 .angled-both {
     clip-path: polygon(0 4vw, 100% 0, 100% calc(100% - 4vw), 0 100%);
 }
+
+.stripe-payment-intents-form {
+    width: 100% !important;
+}
