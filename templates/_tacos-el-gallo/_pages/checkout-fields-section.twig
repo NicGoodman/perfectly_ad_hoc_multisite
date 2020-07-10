@@ -38,7 +38,7 @@
 				<span class="text-5xl">{{ cart.itemTotal }}</span>
 			</div>
 		</header>
-		<div class="flex flex-col">
+		<div class="flex flex-col items-center">
 			{% if showEmailForm %}
 				<form method="POST" class="add-to-cart-form">
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
@@ -64,7 +64,7 @@
 				</form>
 			{% endif %}
 			{% if showEmailInfo %}
-            <div class="block text-sm font-medium leading-5 text-gray-700">
+            <div class="block text-normal font-medium leading-5 text-gray-700 p-4">
 				{{ cart.email }}
                 </div>
 				{% if not currentUser %}
@@ -72,7 +72,7 @@
 				{% endif %}
 			{% endif %}
 		</div>
-		<div class="flex flex-col">
+		<div class="flex flex-col items-center">
 			{% if showShippingForm %}
 				<form method="POST" class="add-to-cart-form">
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
@@ -154,7 +154,7 @@
 			{% endif %}
 
 			{% if showShippingInfo %}
-            <div class="block text-normal font-medium leading-5 text-gray-700 mt-8 border-t-2 border-cool-gray-400" style="column-count: 2;">
+            <div class="block text-normal font-medium leading-5 text-gray-700 mt-8 border-t-2 border-cool-gray-400 p-4" style="column-count: 2;">
 				{{ cart.shippingAddress.firstName ?? ''}}
 				{{ cart.shippingAddress.lastName ?? ''}}<br>
 				{{ cart.shippingAddress.address1 ?? ''}}<br>
