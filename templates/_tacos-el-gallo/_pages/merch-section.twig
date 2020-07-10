@@ -1,10 +1,10 @@
 <section class="w-full flex flex-col items-center px-6 bg-tag-light-red py-16 angled-top">
-{% set purchasableId = craft.app.request.param('purchasableId') %}
-{% if purchasableId %}
-Adding to cart...
-{% else %}
+	{% set purchasableId = craft.app.request.param('purchasableId') %}
+	{% if purchasableId %}
+		Adding to cart...
+		{% else %}
 
-{% endif %}
+	{% endif %}
 	<div class="w-full max-w-screen-xl">
 		{% set sectionHeader = entry.merchSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
@@ -26,14 +26,17 @@ document.forms['auto-add-to-cart'].submit();
 }
 			</script>
 		{% else %}
-			{% set product = craft.products.one() %}
-			<div class="m-10">
-				<a href="/tag/order?purchasableId={{product.defaultVariant.id}}" class="bg-blue-commerce text-white w-1/2 rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-blue-dark outline-0">
-					Buy
-					{{ product.title }}
-					({{ product.defaultVariant.salePriceAsCurrency }})
-				</a>
-			</div>
+			{% for product in products.all() %}
+				{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
+				<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
+					<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
+					<h2 class="tag text-black">{{ product.title }}</h2>
+					<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
+					<a href="/tag/order?purchasableId={{product.defaultVariant.id}}" class="btn-alt tag">
+						Buy Now
+					</a>
+				</div>
+			{% endfor %}
 		{% endif %}
 	</div>
 </section>
