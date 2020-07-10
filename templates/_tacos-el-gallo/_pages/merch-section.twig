@@ -1,9 +1,14 @@
 <section class="w-full flex flex-col items-center px-6 bg-tag-light-red py-16 angled-top">
+{% set purchasableId = craft.app.request.param('purchasableId') %}
+{% if purchasableId %}
+Adding to cart...
+{% else %}
+Buy your hand-crafted free-range coastal artisan t-shirt.
+{% endif %}
 	<div class="w-full max-w-screen-xl">
 		{% set sectionHeader = entry.merchSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
-		{% set purchasableId = craft.app.request.param('purchasableId') %}
 		{% set products = craft.products().type('clothing') %}
 		{% if purchasableId %}
 			{# if we have a purchasableId as a query param, just add it to cart and submit the form #}
