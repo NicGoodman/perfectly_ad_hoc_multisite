@@ -40,7 +40,7 @@
 		</header>
 		<div class="flex flex-col items-center">
 			{% if showEmailForm %}
-				<form method="POST" class="add-to-cart-form">
+				<form method="POST" class="add-to-cart-form w-full md:w-3/4">
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
 					{{ redirectInput('order?step=2') }}
 					{{ csrfInput() }}
@@ -74,7 +74,7 @@
 		</div>
 		<div class="flex flex-col items-center">
 			{% if showShippingForm %}
-				<form method="POST" class="add-to-cart-form">
+				<form method="POST" class="add-to-cart-form w-full">
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
 					{{ redirectInput('order?step=3') }}
 					{{ csrfInput() }}
