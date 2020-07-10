@@ -1,9 +1,5 @@
 {% set cart = craft.commerce.carts.cart %}
 
-{% if cart.isEmpty %}
-	{% redirect '#merch' %}
-{% endif %}
-
 {% set step = craft.app.request.param('step') %}
 
 {% if not step %}
@@ -27,7 +23,12 @@
 {% if showPaymentForm and not cart.shippingAddress %}
 	{% redirect 'order?step=2' %}
 {% endif %}
+{% if not showConfirmation %}
 
+	{% if cart.isEmpty %}
+		{% redirect '#merch' %}
+	{% endif %}
+{% endif %}
 <section class="w-full flex flex-col items-center min-h-screen py-48 bg-tag-light-grey">
 	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full py-24 px-48">
 		<header class="flex flex-row items-center content-center border-b-2 border-cool-gray-400 mb-12">
