@@ -2,9 +2,9 @@
 
 {% set step = craft.app.request.param('step') %}
 
-	{% if cart.isEmpty %}
-		{% redirect '#merch' %}
-	{% endif %}
+{% if cart.isEmpty %}
+	{% redirect '#merch' %}
+{% endif %}
 {% if not step %}
 	{% redirect 'order?step=1' %}
 {% endif %}
@@ -27,16 +27,15 @@
 {% endif %}
 
 
-
-
 <section class="w-full flex flex-col items-center min-h-screen py-48 bg-tag-light-grey">
 	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full py-24 px-48">
 		<header class="flex flex-row items-center content-center border-b-2 border-cool-gray-400 mb-12">
-			<h2 class="font-bold text-xl mb-4 tag">{{ cart.lineitems[0].description }}</h2>
-			<div class="mb-4">
-				<span class="text-2xl align-top">$</span>
-				<span class="text-5xl">{{ cart.itemTotal }}</span>
-			</div>
+			<h2 class="font-bold mb-4 tag leading-5 text-gray-700">{{ cart.lineitems[0].description }}
+				• ${{ cart.totalPrice }}*
+			</h2>
+
+			<span class="text-sm align-bottom"><br/>*includes shipping and tax</span>
+
 		</header>
 		<div class="flex flex-col items-center">
 			{% if showEmailForm %}
@@ -64,9 +63,9 @@
 				</form>
 			{% endif %}
 			{% if showEmailInfo %}
-            <div class="block text-normal font-medium leading-5 text-gray-700 p-4">
-				{{ cart.email }}
-                </div>
+				<div class="block text-normal font-medium leading-5 text-gray-700 p-4">
+					{{ cart.email }}
+				</div>
 				{% if not currentUser %}
 					<a href="order?step=1" class="bg-cool-gray-600 text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
 				{% endif %}
@@ -154,16 +153,16 @@
 			{% endif %}
 
 			{% if showShippingInfo %}
-            <div class="block text-normal font-medium leading-5 text-gray-700 border-t-2 border-cool-gray-400 pt-8 pb-6" style="column-count: 2;">
-				{{ cart.shippingAddress.firstName ?? ''}}
-				{{ cart.shippingAddress.lastName ?? ''}}<br>
-				{{ cart.shippingAddress.address1 ?? ''}}
-				{{ cart.shippingAddress.address2 ?? ''}}<br>
-				{{ cart.shippingAddress.city ?? ''}},
-                {{ cart.shippingAddress.stateValue ?? ''}}
-				{{ cart.shippingAddress.zipCode ?? ''}}<br>
-				{{ cart.shippingAddress.countryText ?? ''}}<br>
-                </div>
+				<div class="block text-normal font-medium leading-5 text-gray-700 border-t-2 border-cool-gray-400 pt-8 pb-6" style="column-count: 2;">
+					{{ cart.shippingAddress.firstName ?? ''}}
+					{{ cart.shippingAddress.lastName ?? ''}}<br>
+					{{ cart.shippingAddress.address1 ?? ''}}
+					{{ cart.shippingAddress.address2 ?? ''}}<br>
+					{{ cart.shippingAddress.city ?? ''}},
+					{{ cart.shippingAddress.stateValue ?? ''}}
+					{{ cart.shippingAddress.zipCode ?? ''}}<br>
+					{{ cart.shippingAddress.countryText ?? ''}}<br>
+				</div>
 				<a href="order?step=2" class="bg-cool-gray-600 text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
 			{% endif %}
 
@@ -185,10 +184,9 @@
 					</div>
 				</form>
 
-                <img src="/uploads/powered-by-stripe.png" class="mt-8 w-32" alt="">
+				<img src="/uploads/powered-by-stripe.png" class="mt-8 w-32" alt="">
 			{% endif %}
 		</div>
-
 
 
 	</div>
