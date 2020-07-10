@@ -24,7 +24,7 @@ document.forms['auto-add-to-cart'].submit();
 			<div class="w-full flex flex-row flex-wrap">
 				{% for product in products.all() %}
 					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
-					{% set btnLink = "/order?purchasableId={{product.defaultVariant.id}}" %}
+					{% set btnLink = "/tag/order?purchasableId={{product.defaultVariant.id}}" %}
 					{% set btnText = "Buy Now" %}
 					<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
 						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
