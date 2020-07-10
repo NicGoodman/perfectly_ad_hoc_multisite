@@ -11,12 +11,12 @@
 		{% set item = order.lineItems|first %}
 		<div class="bg-tag-light-grey shadow sm:rounded-lg">
 			<div class="px-4 py-5 sm:p-6">
-				<h3 class="text-lg leading-6 font-medium text-gray-700">
-					Thank-you for your order!
+				<h3 class="text-2xl leading-6 font-bold uppercase text-gray-700 mb-4">
+					Thank you for your order!
 				</h3>
 				<div class="block text-normal font-medium leading-5 text-gray-700 border-t-2 border-cool-gray-400 pt-8 pb-6">
-					<h3>You ordered
-						<span class="text-gray-900 font-bold">{{ item.description}}</span>. We have charged your card
+					<h3>You ordered a 
+						<span class="text-gray-900 font-bold">{{ item.description}}</span>. We have charged your card for 
 						<span class="text-gray-900 font-bold">{{ order.totalPriceAsCurrency }}</span>. Please check your email for your receipt.</h3>
 				</div>
 				<div class="mt-5">
