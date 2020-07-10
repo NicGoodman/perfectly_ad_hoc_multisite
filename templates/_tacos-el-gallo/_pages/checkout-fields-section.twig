@@ -26,9 +26,10 @@
 	{% redirect 'order?step=2' %}
 {% endif %}
 {% for item in cart.lineItems %}
-	{% set productImage = item.snapshot.product.productImage.one().optimizedImages %}
-{% endfor %}
+	{% set product = item.purchasable.product %}
 
+{% endfor %}
+{% set productImage = product.productImage.one().optimizedImages %}
 
 <section class="w-full flex flex-col items-center min-h-screen py-48 bg-tag-light-grey">
 	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full py-24 px-48">
