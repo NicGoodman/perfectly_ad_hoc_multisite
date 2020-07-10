@@ -1,3 +1,5 @@
+{% set cart = craft.commerce.carts.cart %}
+
 {% if cart.isEmpty %}
 	{% redirect '#merch' %}
 {% endif %}
@@ -29,8 +31,8 @@
 	{% redirect 'order?step=2' %}
 {% endif %}
 
-<section class="w-full flex flex-col items-center min-h-screen py-24">
-	<div class="w-full max-w-screen-xl bg-tag-light-grey rounded-lg shadow-lg flex-grow h-full">
+<section class="w-full flex flex-col items-center min-h-screen py-48">
+	<div class="w-full max-w-screen-xl bg-tag-light-grey rounded-lg shadow-lg flex-grow h-full px-16">
 		<header class="flex flex-row items-center content-center border-b-2 border-cool-gray-400">
 			<h2 class="font-bold text-xl mb-4">{{ cart.lineitems[0].description }}</h2>
 			<div class="mb-4">
