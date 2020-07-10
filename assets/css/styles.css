@@ -322,16 +322,6 @@ h5.imp {
     @apply text-gray-700;
 }
 
-.stripe-payment-intents-form {
-    @apply w-3/4;
-}
-
-@screen md {
-    .stripe-payment-intents-form {
-        @apply w-full;
-    }
-}
-
 
 
 @tailwind components;
