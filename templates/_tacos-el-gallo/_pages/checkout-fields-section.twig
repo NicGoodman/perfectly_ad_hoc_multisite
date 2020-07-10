@@ -72,7 +72,7 @@
 				{% endif %}
 			{% endif %}
 		</div>
-		<div class="flex flex-col items-center mt-16">
+		<div class="flex flex-col items-center mt-8">
 			{% if showShippingForm %}
 				<form method="POST" class="add-to-cart-form w-full">
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
@@ -154,7 +154,7 @@
 			{% endif %}
 
 			{% if showShippingInfo %}
-            <div class="block text-normal font-medium leading-5 text-gray-700 mt-8 border-t-2 border-cool-gray-400 p-4" style="column-count: 2;">
+            <div class="block text-normal font-medium leading-5 text-gray-700 border-t-2 border-cool-gray-400 pt-8 pb-6" style="column-count: 2;">
 				{{ cart.shippingAddress.firstName ?? ''}}
 				{{ cart.shippingAddress.lastName ?? ''}}<br>
 				{{ cart.shippingAddress.address1 ?? ''}}
