@@ -27,7 +27,7 @@ document.forms['auto-add-to-cart'].submit();
 					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
 
 					<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
-						<form method="post">
+						<form method="post" class="flex flex-col items-center">
 							<input type="hidden" name="action" value="commerce/cart/update-cart">
 							<input type="hidden" name="cartUpdatedNotice" value="Added {{ product.title }} to the cart.">
 							{{ redirectInput('order') }}
