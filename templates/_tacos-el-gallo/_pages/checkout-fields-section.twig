@@ -1,6 +1,4 @@
-{% if cart.isEmpty %}
-	{% redirect '#merch' %}
-{% endif %}
+
 
 {# Do we have have more than 1 line item? If so, we are likely on Pro, let's use the main cart checkout example template #}
 {% if cart.lineItems|length > 1 %}
