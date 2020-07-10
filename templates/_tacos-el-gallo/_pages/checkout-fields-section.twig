@@ -132,17 +132,18 @@
 								<input id="country" name="shippingAddress[country]" type="text" value="{{cart.shippingAddress.country ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="USA"/>
 							</div>
 						</div>
-					</div>
+						<div class="flex">
+							<div class="w-1/2">
+								<input type="hidden" name="billingAddressSameAsShipping" value="1"/>
+							</div>
+							<div class="w-1/2 p-4">
+								<button type="submit" class="bg-cool-gray-600 text-white w-full rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-cool-gray-800 outline-0">
+									Next
+								</button>
+							</div>
+						</div>
 
-					<div class="flex">
-						<div class="w-1/2">
-							<input type="hidden" name="billingAddressSameAsShipping" value="1"/>
-						</div>
-						<div class="w-1/2">
-							<button type="submit" class="bg-cool-gray-600 text-white w-full rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-cool-gray-800 outline-0">
-								Next
-							</button>
-						</div>
+
 					</div>
 
 
