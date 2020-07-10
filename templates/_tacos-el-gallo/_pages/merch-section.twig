@@ -2,8 +2,8 @@
 	{% set purchasableId = craft.app.request.param('purchasableId') %}
 	{% if purchasableId %}
 		Adding to cart...
-		{% else %}
-		Buy stuff
+	{% else %}
+		Buy your hand-crafted free-range coastal artisan t-shirt.
 	{% endif %}
 	<div class="w-full max-w-screen-xl">
 		{% set sectionHeader = entry.merchSectionContent.sectionHeader %}
@@ -28,15 +28,15 @@ document.forms['auto-add-to-cart'].submit();
 		{% else %}
 			<div class="w-full flex flex-row flex-wrap">
 				{% set product = craft.products.one() %}
-					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
-					<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
-						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
-						<h2 class="tag text-black">{{ product.title }}</h2>
-						<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
-						<a href="/tag/order?purchasableId={{product.defaultVariant.id}}" class="btn-alt tag">
-							Buy Now
-						</a>
-					</div>
+				{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
+				<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
+					<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
+					<h2 class="tag text-black">{{ product.title }}</h2>
+					<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
+        <a href="/buy/add?purchasableId={{product.defaultVariant.id}}"class="bg-blue-commerce text-white w-1/2 rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-blue-dark outline-0">
+            Buy {{ product.title }} ({{ product.defaultVariant.salePriceAsCurrency }})
+        </a>
+				</div>
 			</div>
 		{% endif %}
 	</div>
