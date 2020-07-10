@@ -170,7 +170,7 @@
 		</div>
 
 
-		<div class="flex flex-col">
+		<div class="flex flex-col items-center mt-8">
 			{% if showPaymentForm %}
 				<form method="POST" class="add-to-cart-form">
 					<input type="hidden" name="action" value="commerce/payments/pay">
@@ -179,7 +179,7 @@
 					{{ csrfInput() }}
 					{{ cart.gateway.getPaymentFormHtml({})|raw }}
 					<div class="pl-10 pr-10 pt-5 pb-0">
-						<button type="submit" class="bg-blue-commerce text-white w-full rounded px-4 py-4 mb-2 text-lg hover:bg-blue-dark">
+						<button type="submit" class="bg-cool-gray-600 text-white w-64 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">
 							Buy ${{ cart.totalPrice }}
 						</button>
 					</div>
