@@ -162,7 +162,7 @@
 
 		<div class="pl-10 pr-10 pt-5 pb-0">
 			{% if showPaymentForm %}
-            					{{ cart.gateway.getPaymentFormHtml({}) }}
+				{{ cart.gateway.getPaymentFormHtml({})|raw }}
 				<button type="submit" class="bg-blue-commerce text-white w-full rounded px-4 py-4 mb-2 text-lg hover:bg-blue-dark">
 					Buy ${{ cart.totalPrice }}
 				</button>
