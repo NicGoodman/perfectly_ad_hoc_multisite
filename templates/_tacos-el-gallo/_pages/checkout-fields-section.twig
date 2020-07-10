@@ -2,6 +2,9 @@
 
 {% set step = craft.app.request.param('step') %}
 
+	{% if cart.isEmpty %}
+		{% redirect '#merch' %}
+	{% endif %}
 {% if not step %}
 	{% redirect 'order?step=1' %}
 {% endif %}
@@ -14,7 +17,6 @@
 
 {% set showPaymentForm = (step == 3) %}
 
-{% set showConfirmation = (step == 4) %}
 
 {% if showPaymentForm and not cart.email %}
 	{% redirect 'order?step=1' %}
@@ -23,12 +25,10 @@
 {% if showPaymentForm and not cart.shippingAddress %}
 	{% redirect 'order?step=2' %}
 {% endif %}
-{% if not showConfirmation %}
 
-	{% if cart.isEmpty %}
-		{% redirect '#merch' %}
-	{% endif %}
-{% endif %}
+
+
+
 <section class="w-full flex flex-col items-center min-h-screen py-48 bg-tag-light-grey">
 	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full py-24 px-48">
 		<header class="flex flex-row items-center content-center border-b-2 border-cool-gray-400 mb-12">
@@ -171,7 +171,7 @@
 				<form method="POST" class="add-to-cart-form">
 					<input type="hidden" name="action" value="commerce/payments/pay">
 					<input type="hidden" name="gatewayId" value="6">
-					{{ redirectInput('order?step=4') }}
+					{{ redirectInput('order/confirm?number={number}') }}
 					{{ csrfInput() }}
 					{{ cart.gateway.getPaymentFormHtml({})|raw }}
 					<div class="pl-10 pr-10 pt-5 pb-0">
@@ -183,36 +183,7 @@
 			{% endif %}
 		</div>
 
-		<div>
-			{% if showConfirmation %}
-				{% set purchasableId = craft.app.request.param('purchasableId') %}
 
-				{% set number = craft.app.request.param('number') %}
-				{% set order = craft.orders.number(number).one() %}
-
-				{% if not order or order.isCompleted == false %}
-					{% redirect 'order?step=3' %}
-				{% endif %}
-
-				{% block title %}
-					Thank-you for your order!
-				{% endblock %}
-
-
-				{% block content %}
-					<div class="m-10">
-						{% set item = order.lineItems|first %}
-						<h3>You ordered
-							<span class="text-blue">{{ item.description}}</span>. We have charged your card
-							<span class="text-blue">{{ order.totalPriceAsCurrency }}</span>. Please check your email for your receipt.</h3>
-						<div class="mt-10">
-							<a href="#merch" class="text-blue">Return to Home</a>
-						</div>
-					</div>
-				{% endblock %}
-
-			{% endif %}
-		</div>
 
 	</div>
 

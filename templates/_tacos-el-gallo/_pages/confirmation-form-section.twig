@@ -1,0 +1,28 @@
+<section class="w-full flex flex-col items-center min-h-screen py-48 bg-tag-light-grey">
+	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full py-24 px-48">
+		{% set purchasableId = craft.app.request.param('purchasableId') %}
+
+		{% set number = craft.app.request.param('number') %}
+		{% set order = craft.orders.number(number).one() %}
+
+		{% if not order or order.isCompleted == false %}
+			{% redirect 'order?step=3' %}
+		{% endif %}
+
+
+		Thank-you for your order!
+
+
+		<div class="m-10">
+			{% set item = order.lineItems|first %}
+			<h3>You ordered
+				<span class="text-blue">{{ item.description}}</span>. We have charged your card
+				<span class="text-blue">{{ order.totalPriceAsCurrency }}</span>. Please check your email for your receipt.</h3>
+			<div class="mt-10">
+				<a href="#merch" class="text-blue">Return to Home</a>
+			</div>
+		</div>
+
+
+	</div>
+</section>
