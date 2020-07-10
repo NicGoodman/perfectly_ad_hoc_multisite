@@ -27,7 +27,7 @@
 {% endif %}
 
 <section class="w-full flex flex-col items-center min-h-screen py-48 bg-tag-light-grey">
-	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full p-24">
+	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full py-24 px-48">
 		<header class="flex flex-row items-center content-center border-b-2 border-cool-gray-400 mb-12">
 			<h2 class="font-bold text-xl mb-4 tag">{{ cart.lineitems[0].description }}</h2>
 			<div class="mb-4">
@@ -50,7 +50,7 @@
 									<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
 								</svg>
 							</div>
-							<input id="email" class="form-input block w-full pl-10 sm:text-sm sm:leading-5" placeholder="you@example.com"/>
+							<input id="email" name="email" type="email" value="{{cart.email}}" {% if currentUser %}} disabled {% endif %}} class="form-input block w-full pl-10 sm:text-sm sm:leading-5" placeholder="you@example.com"/>
 						</div>
 					</div>
 					<button type="submit" class="bg-cool-gray-600 text-white w-full rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-cool-gray-800 outline-0">
@@ -71,32 +71,23 @@
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
 					{{ redirectInput('buy?step=3') }}
 					{{ csrfInput() }}
-					<div>
-						<label for="first-name" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('firstName') %}text-red{% endif %}">First Name</label>
-						<div class="mt-1 relative rounded-md shadow-sm">
-							<input id="first-name" name="shippingAddress[firstName]" type="text" value="{{cart.shippingAddress.firstName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Jane"/>
+					<div class="flex flex-col md:flex-row">
+						<div class="w-full md:w-1/2 p-4">
+							<label for="first-name" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('firstName') %}text-red{% endif %}">First Name</label>
+							<div class="mt-1 relative rounded-md shadow-sm">
+								<input id="first-name" name="shippingAddress[firstName]" type="text" value="{{cart.shippingAddress.firstName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Jane"/>
+							</div>
 						</div>
-					</div>
-                    <div>
-						<label for="last-name" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('firstName') %}text-red{% endif %}">Last Name</label>
-						<div class="mt-1 relative rounded-md shadow-sm">
-							<input id="last-name" type="text" value="{{cart.shippingAddress.lastName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Doe"/>
+						<div class="w-full md:w-1/2">
+							<label for="last-name" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('firstName') %}text-red{% endif %}">Last Name</label>
+							<div class="mt-1 relative rounded-md shadow-sm">
+								<input id="last-name" type="text" value="{{cart.shippingAddress.lastName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Doe"/>
+							</div>
 						</div>
 					</div>
 				</form>
 			{% endif %}
 		</div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 	</div>
