@@ -27,7 +27,7 @@ document.forms['auto-add-to-cart'].submit();
 			</script>
 		{% else %}
 			<div class="w-full flex flex-row flex-wrap">
-				{% for product in products.all() %}
+				{% set product = craft.products.one() %}
 					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
 					<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
 						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
@@ -37,7 +37,6 @@ document.forms['auto-add-to-cart'].submit();
 							Buy Now
 						</a>
 					</div>
-				{% endfor %}
 			</div>
 		{% endif %}
 	</div>
