@@ -33,7 +33,7 @@
 			<div class="flex flex-row">
 				{% for item in cart.lineItems %}
 					{% set product = item.purchasable.product %}
-					{% set productImage = product.productImage.one().optimizedImages %}
+					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
 					<img src="{{ productImage.src }}" class="h-32 w-auto" alt="">
 				{% endfor %}
 				<div class="flex flex-col">
