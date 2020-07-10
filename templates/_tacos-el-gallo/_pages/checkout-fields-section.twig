@@ -127,9 +127,9 @@
 							</div>
 						</div>
 						<div class="w-1/2 md:w-1/4 p-4">
-							<label for="country" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('country') %}text-red{% endif %}">Country</label>
+							<label for="country" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('countryId') %}text-red{% endif %}">Country</label>
 							<div class="mt-1 relative rounded-md shadow-sm">
-								<input id="country" name="shippingAddress[country]" type="text" value="{{cart.shippingAddress.country ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="USA"/>
+								<input id="country" name="shippingAddress[countryId]" type="text" value="{{cart.shippingAddress.country ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="USA"/>
 							</div>
 						</div>
 						<div class="w-1/2">
@@ -153,7 +153,7 @@
 				{{ cart.shippingAddress.zipCode ?? ''}}<br>
 				{{ cart.shippingAddress.stateValue ?? ''}}
 				{{ cart.shippingAddress.countryText ?? ''}}<br>
-				<a href="buy?step=2" class="text-blue block mt-5">Edit</a>
+				<a href="order?step=2" class="text-blue block mt-5">Edit</a>
 			{% endif %}
 
 		</div>
