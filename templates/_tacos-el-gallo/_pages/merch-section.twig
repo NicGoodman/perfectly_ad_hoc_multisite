@@ -1,6 +1,5 @@
 <section class="w-full flex flex-col items-center px-6 bg-tag-light-red py-16 angled-top">
 	{% set purchasableId = craft.app.request.param('purchasableId') %}
-
 	<div class="w-full max-w-screen-xl">
 		{% set sectionHeader = entry.merchSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
@@ -40,8 +39,6 @@ document.forms['auto-add-to-cart'].submit();
 							<input type="submit" value="Buy Now" class="btn-alt tag bg-opacity-0">
 						</form>
 					</div>
-
-
 				{% endfor %}
 			</div>
 		{% endif %}

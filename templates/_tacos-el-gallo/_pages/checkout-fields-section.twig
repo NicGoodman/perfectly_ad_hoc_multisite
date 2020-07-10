@@ -4,11 +4,6 @@
 	{% redirect '#merch' %}
 {% endif %}
 
-{# Do we have have more than 1 line item? If so, we are likely on Pro, let's use the main cart checkout example template #}
-{% if cart.lineItems|length > 1 %}
-	{% redirect '/shop/cart' %}
-{% endif %}
-
 {% set step = craft.app.request.param('step') %}
 
 {% if not step %}
@@ -33,31 +28,76 @@
 
 <section class="w-full flex flex-col items-center min-h-screen py-48 bg-tag-light-grey">
 	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full p-24">
-		<header class="flex flex-row items-center content-center border-b-2 border-cool-gray-400">
-			<h2 class="font-bold text-xl mb-4">{{ cart.lineitems[0].description }}</h2>
+		<header class="flex flex-row items-center content-center border-b-2 border-cool-gray-400 mb-12">
+			<h2 class="font-bold text-xl mb-4 tag">{{ cart.lineitems[0].description }}</h2>
 			<div class="mb-4">
 				<span class="text-2xl align-top">$</span>
 				<span class="text-5xl">{{ cart.itemTotal }}</span>
 			</div>
 		</header>
 		<div class="flex flex-col">
-			<form method="POST" class="add-to-cart-form">
-				<input type="hidden" name="action" value="commerce/cart/update-cart">
-				{{ redirectInput('order?step=2') }}
-				{{ csrfInput() }}
-				<div>
-					<label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
-					<div class="mt-1 relative rounded-md shadow-sm">
-						<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-							<svg class="h-5 w-5 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
-								<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-								<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-							</svg>
+			{% if showEmailForm %}
+				<form method="POST" class="add-to-cart-form">
+					<input type="hidden" name="action" value="commerce/cart/update-cart">
+					{{ redirectInput('order?step=2') }}
+					{{ csrfInput() }}
+					<div>
+						<label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
+						<div class="mt-1 relative rounded-md shadow-sm">
+							<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+								<svg class="h-5 w-5 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
+									<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+									<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+								</svg>
+							</div>
+							<input id="email" class="form-input block w-full pl-10 sm:text-sm sm:leading-5" placeholder="you@example.com"/>
 						</div>
-						<input id="email" class="form-input block w-full pl-10 sm:text-sm sm:leading-5" placeholder="you@example.com"/>
 					</div>
-				</div>
-			</form>
+					<button type="submit" class="bg-cool-gray-600 text-white w-full rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-cool-gray-800 outline-0">
+						Next
+					</button>
+				</form>
+			{% endif %}
+			{% if showEmailInfo %}
+				{{ cart.email }}
+				{% if not currentUser %}
+					<a href="buy?step=1" class="text-blue block mt-5">Edit</a>
+				{% endif %}
+			{% endif %}
 		</div>
+		<div class="flex flex-col">
+			{% if showShippingForm %}
+				<form method="POST" class="add-to-cart-form">
+					<input type="hidden" name="action" value="commerce/cart/update-cart">
+					{{ redirectInput('buy?step=3') }}
+					{{ csrfInput() }}
+					<div>
+						<label for="first-name" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('firstName') %}text-red{% endif %}">First Name</label>
+						<div class="mt-1 relative rounded-md shadow-sm">
+							<input id="first-name" name="shippingAddress[firstName]" type="text" value="{{cart.shippingAddress.firstName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Jane"/>
+						</div>
+					</div>
+                    <div>
+						<label for="last-name" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('firstName') %}text-red{% endif %}">Last Name</label>
+						<div class="mt-1 relative rounded-md shadow-sm">
+							<input id="last-name" type="text" value="{{cart.shippingAddress.lastName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Doe"/>
+						</div>
+					</div>
+				</form>
+			{% endif %}
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</div>
 </section>
