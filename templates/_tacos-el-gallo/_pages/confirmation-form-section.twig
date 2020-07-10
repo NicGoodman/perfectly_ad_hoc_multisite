@@ -14,8 +14,6 @@
 
 
 		<div class="m-10">
-        {{ number }}
-        {{ order }}
 			{% set item = order.lineItems|first %}
 			<h3>You ordered
 				<span class="text-blue">{{ item.description}}</span>. We have charged your card
