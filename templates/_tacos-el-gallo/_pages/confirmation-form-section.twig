@@ -8,21 +8,23 @@
 		{% if not order or order.isCompleted == false %}
 			{% redirect 'order?step=3' %}
 		{% endif %}
-
-
-		Thank-you for your order!
-
-
-		<div class="m-10">
-			{% set item = order.lineItems|first %}
-			<h3>You ordered
-				<span class="text-blue">{{ item.description}}</span>. We have charged your card
-				<span class="text-blue">{{ order.totalPriceAsCurrency }}</span>. Please check your email for your receipt.</h3>
-			<div class="mt-10">
-				<a href="{{ currentSite.baseUrl }}" class="text-blue">Return to Home</a>
+		{% set item = order.lineItems|first %}
+		<div class="bg-tag-light-grey shadow sm:rounded-lg">
+			<div class="px-4 py-5 sm:p-6">
+				<h3 class="text-lg leading-6 font-medium text-gray-700">
+					Thank-you for your order!
+				</h3>
+				<div class="block text-normal font-medium leading-5 text-gray-700 border-t-2 border-cool-gray-400 pt-8 pb-6">
+					<h3>You ordered
+						<span class="text-gray-900 font-bold">{{ item.description}}</span>. We have charged your card
+						<span class="text-gray-900 font-bold">{{ order.totalPriceAsCurrency }}</span>. Please check your email for your receipt.</h3>
+				</div>
+				<div class="mt-5">
+					<a href="{{ currentSite.baseUrl }}" class="bg-cool-gray-600 text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">
+						Return Home
+					</a>
+				</div>
 			</div>
 		</div>
-
-
 	</div>
 </section>
