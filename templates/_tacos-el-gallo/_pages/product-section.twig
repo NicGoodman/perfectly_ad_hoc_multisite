@@ -1,7 +1,6 @@
 <section class="w-full flex flex-col items-center px-6 py-16 bg-tag-teal h-full flex-grow">
 	<div class="w-full max-w-screen-xl">
 		<div class="w-full flex flex-row flex-wrap">
-			{% for product in products.all() %}
 				{% set variant = product.defaultVariant %}
 				{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
 
@@ -18,7 +17,6 @@
 						<input type="submit" value="Buy Now" class="btn-alt tag bg-transparent cursor-pointer">
 					</form>
 				</div>
-			{% endfor %}
 		</div>
 	</div>
 </section>
