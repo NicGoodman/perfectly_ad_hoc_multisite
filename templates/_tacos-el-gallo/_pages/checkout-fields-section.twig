@@ -11,11 +11,9 @@
 
 {% set showEmailForm = (step == 1) %}
 {% set showEmailInfo = (not showEmailForm and cart.email) %}
-
-{% set showShippingForm = (step == 2) %}
 {% set showShippingInfo = (not showShippingForm and cart.shippingAddress) %}
 
-{% set showPaymentForm = (step == 3) %}
+{% set showPaymentForm = (step == 2) %}
 
 
 {% if showPaymentForm and not cart.email %}
@@ -23,7 +21,7 @@
 {% endif %}
 
 {% if showPaymentForm and not cart.shippingAddress %}
-	{% redirect 'order?step=2' %}
+	{% redirect 'order?step=1' %}
 {% endif %}
 
 
@@ -41,22 +39,23 @@
 						• ${{ cart.totalPrice }}*
 					</h2>
 					<span class="block text-sm font-medium leading-5 text-gray-500 align-bottom">*Includes Shipping and Tax.</span>
-					<form method="post">
+					<form method="post" class="flex flex-col">
 						<input type="hidden" name="action" value="commerce/cart/update-cart">
 						<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
 						{{ redirectInput('order?step=1') }}
 						{{ csrfInput() }}
 						{% for item in cart.lineItems %}
 							<input type="hidden" name="lineItems[{{ item.id }}][id]" value="{{ item.id }}">
-							<input type="number" name="lineItems[{{ item.id }}][qty]" min="1" value="{{ item.qty }}">
+							<input type="number" name="lineItems[{{ item.id }}][qty]" min="1" value="{{ item.qty }}" class="form-input block pl-10 sm:text-sm sm:leading-5">
 						{% endfor %}
-						<input type="submit" value="Update Quantity">
+						<input type="submit" value="Update Quantity" class="bg-cool-gray-600 font-bold text-white w-64 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">
 					</form>
 				</div>
 			</div>
 		</header>
 		<div class="flex flex-col items-center">
 			{% if showEmailForm %}
+				<h2 class="block text-base font-bold leading-5 text-gray-700">Email & Shipping Information</h2>
 				<form method="POST" class="add-to-cart-form w-full md:w-3/4">
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
 					{{ redirectInput('order?step=2') }}
@@ -73,29 +72,6 @@
 							<input id="email" name="email" type="email" value="{{cart.email}}" {% if currentUser %}} disabled {% endif %}} class="form-input block w-full pl-10 sm:text-sm sm:leading-5" placeholder="you@example.com"/>
 						</div>
 					</div>
-					<div class="w-1/2">
-						<button type="submit" class="bg-cool-gray-600 text-white w-full rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-cool-gray-800 outline-0">
-							Next
-						</button>
-					</div>
-				</form>
-			{% endif %}
-			{% if showEmailInfo %}
-				<div class="block text-normal font-bold leading-5 text-gray-700 p-4">
-					{{ cart.email }}
-				</div>
-				{% if not currentUser %}
-					<a href="order?step=1" class="bg-cool-gray-600 font-bold text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
-				{% endif %}
-			{% endif %}
-		</div>
-		<div class="flex flex-col items-center mt-8">
-			{% if showShippingForm %}
-				<form method="POST" class="add-to-cart-form w-full">
-					<input type="hidden" name="action" value="commerce/cart/update-cart">
-					{{ redirectInput('order?step=3') }}
-					{{ csrfInput() }}
-
 					{# Name Fields for Shipping #}
 					<div class="flex flex-col md:flex-row">
 						<div class="w-full md:w-1/2 p-4">
@@ -164,12 +140,19 @@
 					</div>
 					<div class="w-1/2 p-4">
 						<button type="submit" class="bg-cool-gray-600 font-bold text-white w-full rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-cool-gray-800 outline-0">
-							Next
+							Continue to Payment Info
 						</button>
 					</div>
 				</form>
 			{% endif %}
-
+			{% if showEmailInfo %}
+				<div class="block text-normal font-bold leading-5 text-gray-700 p-4">
+					{{ cart.email }}
+				</div>
+				{% if not currentUser %}
+					<a href="order?step=1" class="bg-cool-gray-600 font-bold text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
+				{% endif %}
+			{% endif %}
 			{% if showShippingInfo %}
 				<div class="block text-normal font-bold leading-5 text-gray-700 border-t-2 border-cool-gray-400 pt-8 pb-6" style="column-count: 2;">
 					{{ cart.shippingAddress.firstName ?? ''}}
@@ -183,12 +166,17 @@
 				</div>
 				<a href="order?step=2" class="bg-cool-gray-600 text-white font-bold w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
 			{% endif %}
+		</div>
+		<div class="flex flex-col items-center mt-8">
+			{% if showShippingForm %}{% endif %}
+
 
 		</div>
 
 
 		<div class="flex flex-col items-center mt-16">
 			{% if showPaymentForm %}
+			<h2 class="block text-base font-bold leading-5 text-gray-700">Payment Information</h2>
 				<form method="POST" class="add-to-cart-form">
 					<input type="hidden" name="action" value="commerce/payments/pay">
 					<input type="hidden" name="gatewayId" value="6">
