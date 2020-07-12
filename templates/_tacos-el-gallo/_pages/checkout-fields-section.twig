@@ -47,8 +47,8 @@
 						{{ redirectInput('order?step=1') }}
 						{{ csrfInput() }}
 						{% for item in cart.lineItems %}
-							<input type="hidden" name="lineItems[{{ loop.index }}][id]" value="{{ item.id }}">
-							<input type="number" name="lineItems[{{ loop.index }}][qty]" min="1" value="{{ item.qty }}">
+							<input type="hidden" name="lineItems[{{ item.id }}][id]" value="{{ item.id }}">
+							<input type="number" name="lineItems[{{ item.id }}][qty]" min="1" value="{{ item.qty }}">
 						{% endfor %}
 						<input type="submit" value="Update Quantity">
 					</form>
