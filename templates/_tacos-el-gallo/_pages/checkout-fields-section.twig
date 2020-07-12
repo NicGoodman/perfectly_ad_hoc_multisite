@@ -11,10 +11,10 @@
 
 {% set showEmailForm = (step == 1) %}
 {% set showEmailInfo = (not showEmailForm and cart.email) %}
-{% set showShippingInfo = (not showShippingForm and cart.shippingAddress) %}
+
 
 {% set showPaymentForm = (step == 2) %}
-
+{% set showShippingInfo = (not showEmailForm and cart.shippingAddress) %}
 
 {% if showPaymentForm and not cart.email %}
 	{% redirect 'order?step=1' %}
