@@ -48,8 +48,10 @@
 					<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
 					{{ redirectInput('order?step=1') }}
 					{{ csrfInput() }}
-					<input type="hidden" name="lineItems[0][qty]" value="{{ cart.lineitems[0].id }}">
-					<input type="number" name="lineItems[0][qty]" min="1" value="{{ cart.lineitems[0].qty }}">
+					{% for item in cart.lineItems %}
+						<input type="hidden" name="lineItems[{{ loop.index }}][id]" value="{{ item.id }}">
+						<input type="number" name="lineItems[{{ loop.index }}][qty]" min="1" value="{{ item.qty }}">
+					{% endfor %}
 					<input type="submit" value="Update Line Item">
 				</form>
 			</div>
