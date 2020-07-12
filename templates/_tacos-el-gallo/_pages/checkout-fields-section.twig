@@ -35,14 +35,6 @@
 					{% set product = item.purchasable.product %}
 					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
 					<img src="{{ productImage.src }}" class="h-32 w-auto rounded-lg mr-4" alt="">
-					<form method="post">
-					<input type="hidden" name="action" value="commerce/cart/update-cart">
-					<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
-					{{ redirectInput('order?step=1') }}
-					{{ csrfInput() }}
-					<input type="number" name="lineItems[{{ loop.index }}][qty]" min="1" value="{{ item.qty }}">
-					<input type="submit" value="Update Line Item">
-				</form>
 				{% endfor %}
 				<div class="flex flex-col">
 					<h2 class="font-bold tag leading-5 text-gray-700">{{ cart.lineitems[0].description }}
@@ -51,7 +43,14 @@
 
 					<span class="block text-sm font-medium leading-5 text-gray-500 align-bottom">*Includes Shipping and Tax.</span>
 				</div>
-				
+				<form method="post">
+					<input type="hidden" name="action" value="commerce/cart/update-cart">
+					<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
+					{{ redirectInput('order?step=1') }}
+					{{ csrfInput() }}
+					<input type="number" name="lineItems[0][qty]" min="1" value="{{ cart.lineitems[0].qty }}">
+					<input type="submit" value="Update Line Item">
+				</form>
 			</div>
 		</header>
 		<div class="flex flex-col items-center">
