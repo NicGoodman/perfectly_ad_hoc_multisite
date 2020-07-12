@@ -31,7 +31,7 @@
 	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full py-24 px-48">
 		<header class="flex flex-row flex-wrap items-center content-center border-b-2 border-cool-gray-400 mb-12">
 			<div class="flex flex-row items-center mb-4">
-				{% for item in cart.lineItems %}
+				{% for item in cart.lineitems %}
 					{% set product = item.purchasable.product %}
 					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
 					<img src="{{ productImage.src }}" class="h-32 w-auto rounded-lg mr-4" alt="">
@@ -40,20 +40,19 @@
 					<h2 class="font-bold tag leading-5 text-gray-700">{{ cart.lineitems[0].description }}
 						• ${{ cart.totalPrice }}*
 					</h2>
-
 					<span class="block text-sm font-medium leading-5 text-gray-500 align-bottom">*Includes Shipping and Tax.</span>
+					<form method="post">
+						<input type="hidden" name="action" value="commerce/cart/update-cart">
+						<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
+						{{ redirectInput('order?step=1') }}
+						{{ csrfInput() }}
+						{% for item in cart.lineitems %}
+							<input type="hidden" name="lineitems[{{ loop.index }}][id]" value="{{ item.id }}">
+							<input type="number" name="lineitems[{{ loop.index }}][qty]" min="1" value="{{ item.qty }}">
+						{% endfor %}
+						<input type="submit" value="Update Quantity">
+					</form>
 				</div>
-				<form method="post">
-					<input type="hidden" name="action" value="commerce/cart/update-cart">
-					<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
-					{{ redirectInput('order?step=1') }}
-					{{ csrfInput() }}
-					{% for item in cart.lineItems %}
-						<input type="hidden" name="lineItems[{{ loop.index }}][id]" value="{{ item.id }}">
-						<input type="number" name="lineItems[{{ loop.index }}][qty]" min="1" value="{{ item.qty }}">
-					{% endfor %}
-					<input type="submit" value="Update Line Item">
-				</form>
 			</div>
 		</header>
 		<div class="flex flex-col items-center">
