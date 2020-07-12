@@ -43,6 +43,14 @@
 
 					<span class="block text-sm font-medium leading-5 text-gray-500 align-bottom">*Includes Shipping and Tax.</span>
 				</div>
+				<form method="post">
+					<input type="hidden" name="action" value="commerce/cart/update-cart">
+					<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
+					{{ redirectInput('order?step=1') }}
+					{{ csrfInput() }}
+					<input type="number" name="lineItems[{{ loop.index }}][qty]" min="1" value="{{ item.qty }}">
+					<input type="submit" value="Update Line Item">
+				</form>
 			</div>
 		</header>
 		<div class="flex flex-col items-center">
