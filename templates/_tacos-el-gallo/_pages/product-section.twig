@@ -15,11 +15,13 @@
 					{{ redirectInput('order') }}
 					{{ csrfInput() }}
 					<input type="hidden" name="qty" value="1">
-					<select name="purchasableId">
-						{% for variant in product.variants %}
-							<option value="{{ variant.id }}">{{ variant.size.label }}</option>
-						{% endfor %}
-					</select>
+					{% if product.variants|length %}
+						<select name="purchasableId">
+							{% for variant in product.variants %}
+								<option value="{{ variant.id }}">{{ variant.size.label }}</option>
+							{% endfor %}
+						</select>
+					{% endif %}
 					<h2 class="tag text-black">{{ product.title }}</h2>
 					<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
 					<input type="submit" value="Buy Now" class="btn-main tag cursor-pointer">
