@@ -14,7 +14,12 @@
 					<input type="hidden" name="cartUpdatedNotice" value="Added {{ product.title }} to the cart.">
 					{{ redirectInput('order') }}
 					{{ csrfInput() }}
-					<input type="hidden" name="purchasableId" value="{{ variant.id }}">
+					<input type="hidden" name="qty" value="1">
+					<select name="purchasableId">
+						{% for variant in product.variants %}
+							<option value="{{ variant.id }}">{{ variant.sku }}</option>
+						{% endfor %}
+					</select>
 					<h2 class="tag text-black">{{ product.title }}</h2>
 					<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
 					<input type="submit" value="Buy Now" class="btn-main tag cursor-pointer">
