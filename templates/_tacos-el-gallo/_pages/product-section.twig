@@ -21,6 +21,8 @@
 								<option value="{{ variant.id }}">{{ variant.size.label }}</option>
 							{% endfor %}
 						</select>
+					{% else %}
+						<input type="hidden" name="purchasableId" value="{{ variant.id }}">
 					{% endif %}
 					<h2 class="tag text-black">{{ product.title }}</h2>
 					<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
