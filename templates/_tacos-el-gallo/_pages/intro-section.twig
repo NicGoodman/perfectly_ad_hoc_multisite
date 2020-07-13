@@ -2,8 +2,5 @@
 	{% set navBtnList = entry.headerContent.navigation.visibleInIntroSection(true).all() %}
 	<nav class="w-full md:w-1/2 flex flex-col justify-center items-center">
 		{% include "_tacos-el-gallo/_content/nav-btn-list" %}
-		{% if entry.uri == "__home__" %}
-  🏠
-{% endif %}
 	</nav>
 </section>
