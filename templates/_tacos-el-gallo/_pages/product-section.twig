@@ -17,7 +17,7 @@
 					<input type="hidden" name="qty" value="1">
 					<select name="purchasableId">
 						{% for variant in product.variants %}
-							<option value="{{ variant.id }}">{{ variant.title }}: {{ variant.gender }} • {{ variant.shirtSize }} • {{ variant.shirtColor}}</option>
+							<option value="{{ variant.id }}">{{ variant.gender.title }}, {{ variant.shirtSize.title }}, {{ variant.shirtColor.title }}</option>
 						{% endfor %}
 					</select>
 					<h2 class="tag text-black">{{ product.title }}</h2>
