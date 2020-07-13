@@ -34,7 +34,7 @@
 					{% set product = item.purchasable.product %}
 					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
 					{% set variantId = craft.app.request.getQueryParam('id') %}
-					{% set myVariantQuery = craft.variants().id(variantId) %}
+					{% set myVariantQuery = craft.variants().id(item.variantId) %}
 					{% set variant = myVariantQuery.one() %}
 					{% set productDescription =  variant.gender.label ~ ', ' ~ variant.shirtSize.label ~ ', ' ~ variant.shirtColor.label %}
 
