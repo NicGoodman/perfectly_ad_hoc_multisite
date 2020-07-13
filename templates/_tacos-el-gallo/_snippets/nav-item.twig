@@ -1,1 +1,3 @@
-<a href="{{ itemLink }}" class="nav-item tag uppercase" @click="isOpen = false">{{ itemName }}</a>
+<a href="{% if craft.request.getUrl() == siteUrl %}{{ itemLink }}{% else %}{{ currentSite.baseUrl }}{{ itemLink }}{% endif %}" class="nav-item tag uppercase" @click="isOpen = false">{{ itemName }}</a>
+
+
