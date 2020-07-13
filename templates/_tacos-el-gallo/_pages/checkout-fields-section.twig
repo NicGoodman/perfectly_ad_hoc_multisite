@@ -24,6 +24,7 @@
 	{% redirect 'order?step=1' %}
 {% endif %}
 
+{% set productDescription = '' %}
 
 <section class="w-full flex flex-col items-center min-h-screen py-48 bg-tag-light-grey">
 	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full py-24 px-48">
@@ -32,10 +33,11 @@
 				{% for item in cart.lineItems %}
 					{% set product = item.purchasable.product %}
 					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
+					{% set productDescription = {{ variant.gender.label }}~', '~{{ variant.shirtSize.label }}~', '~{{ variant.shirtColor.label }} %}
 					<img src="{{ productImage.src }}" class="h-32 w-auto rounded-lg mr-4" alt="">
 				{% endfor %}
 				<div class="flex flex-col">
-					<h2 class="font-bold tag leading-5 text-gray-700">{{ cart.lineItems[0].description }}
+					<h2 class="font-bold tag leading-5 text-gray-700">{{ productDescription }}
 						• ${{ cart.totalPrice }}*
 					</h2>
 					<span class="block text-sm font-medium leading-5 text-gray-700">*Total Includes Shipping and Tax.</span>
