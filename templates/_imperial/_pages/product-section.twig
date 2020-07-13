@@ -19,7 +19,7 @@
 					<input type="hidden" name="qty" value="1">
 					
 					<h2 class="imp text-black">{{ product.title }}</h2>
-					<p class="imp text-black">{{ product.productDescription }}</p>
+					<div class="imp text-black">{{ product.productDescription }}</div>
                     {% if product.type=='shirts' %}
 						<select name="purchasableId" class="mt-1 form-select rounded-none block w-full pl-3 pr-10 py-2 text-base leading-6 border-4 border-imp-red focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
 							{% for variant in product.variants %}
