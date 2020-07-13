@@ -39,28 +39,28 @@
 						• ${{ cart.totalPrice }}*
 					</h2>
 					<span class="block text-sm font-medium leading-5 text-gray-500 align-bottom">*Includes Shipping and Tax.</span>
-					<form method="post" class="flex flex-col">
+					<form method="post" class="flex flex-row mt-4">
 						<input type="hidden" name="action" value="commerce/cart/update-cart">
 						<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
 						{{ redirectInput('order?step=1') }}
 						{{ csrfInput() }}
 						{% for item in cart.lineItems %}
 							<input type="hidden" name="lineItems[{{ item.id }}][id]" value="{{ item.id }}">
-							<input type="number" name="lineItems[{{ item.id }}][qty]" min="1" value="{{ item.qty }}" class="form-input block pl-10 sm:text-sm sm:leading-5">
+							<input type="number" name="lineItems[{{ item.id }}][qty]" min="1" value="{{ item.qty }}" class="form-input block pl-3 sm:text-sm sm:leading-5 mr-4 w-15 text-center">
 						{% endfor %}
-						<input type="submit" value="Update Quantity" class="bg-cool-gray-600 font-bold text-white w-64 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">
+						<input type="submit" value="Update Quantity" class="bg-cool-gray-600 font-bold text-white w-48 text-center rounded px-3 py-2 text-sm hover:bg-cool-gray-800 outline-0">
 					</form>
 				</div>
 			</div>
 		</header>
 		<div class="flex flex-col items-center">
 			{% if showEmailForm %}
-				<h2 class="block text-base font-bold leading-5 text-gray-700">Email & Shipping Information</h2>
+				<h2 class="block text-base font-bold leading-5 text-gray-700 p-4">Email & Shipping Information</h2>
 				<form method="POST" class="add-to-cart-form w-full md:w-3/4">
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
 					{{ redirectInput('order?step=2') }}
 					{{ csrfInput() }}
-					<div>
+					<div class="p-4">
 						<label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
 						<div class="mt-1 relative rounded-md shadow-sm">
 							<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
