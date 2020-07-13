@@ -23,7 +23,7 @@ document.forms['auto-add-to-cart'].submit();
 			<div class="w-full flex flex-row flex-wrap">
 				{% for product in craft.products().all() %}
 					{% set variant = product.defaultVariant %}
-					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
+					{% set productImage = product.productImages.one().optimizedImages %}
 
 					<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
 
