@@ -174,7 +174,7 @@
 				</form>
 			{% endif %}
 		</div>
-		<div class="flex flex-col md:flex-row items-start mt-16">
+		<div class="flex flex-col md:flex-row items-start mt-4 md:mt-16">
 			{% if showEmailInfo %}
 				<div class="block text-normal font-bold leading-5 text-gray-700 md:p-8">
 					<h2 class="block text-base font-bold leading-5 text-gray-700 self-start mb-6">Shipping Information</h2>
@@ -203,7 +203,7 @@
 
 			{% endif %}
 			{% if showPaymentForm %}
-				<div class="p-8 flex flex-col items-center md:border-l-2 md:border-gray-400">
+				<div class="mt-8 md:mt-0 md:p-8 flex flex-col items-center md:border-l-2 md:border-gray-400">
 					<h2 class="block text-base font-bold leading-5 text-gray-700 self-start mb-6">Payment Information</h2>
 					<form method="POST" class="add-to-cart-form">
 						<input type="hidden" name="action" value="commerce/payments/pay">
