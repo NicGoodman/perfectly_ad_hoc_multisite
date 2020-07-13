@@ -11,7 +11,7 @@
 				{% set eventBannerImageAltText = entry.eventContent.eventBannerImage.one().title %}
 				{% set eventDate = entry.eventContent.eventDate|date('medium') %}
 				{% set eventTime = entry.eventContent.eventDate|time('short') %}
-				{% set btnLink = entry.getUrl() %}
+				{% set btnLink = 'https://facebook.com' %}
 				{% set btnText = "Learn More" %}
 				<div class="w-full md:w-1/2 lg:w-1/3 p-4">
 					{% include "_imperial/_snippets/event-card.twig" %}
