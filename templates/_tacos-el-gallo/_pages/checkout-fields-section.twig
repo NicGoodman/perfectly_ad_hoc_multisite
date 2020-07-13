@@ -36,9 +36,8 @@
 				{% endfor %}
 				<div class="flex flex-col">
 					<h2 class="font-bold tag leading-5 text-gray-700">{{ cart.lineItems[0].description }}
-						• ${{ cart.totalPrice }}*
+						• ${{ cart.itemSubTotal }}
 					</h2>
-					<span class="block text-sm font-medium leading-5 text-gray-500 align-bottom">*Includes Shipping and Tax.</span>
 					<form method="post" class="flex flex-row mt-4">
 						<input type="hidden" name="action" value="commerce/cart/update-cart">
 						<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
@@ -185,21 +184,15 @@
 						{{ cart.gateway.getPaymentFormHtml({})|raw }}
 						<div class="flex flex-col items-center mt-8">
 
-							Item Sub Total:
-							<span title="{{ cart.itemSubTotal }}">{{ cart.itemSubtotalAsCurrency }}</span>
+							<span class="block text-sm font-medium leading-5 text-gray-700">Item Sub Total: <span title="{{ cart.itemSubTotal }}" class="block text-normal font-bold leading-5">{{ cart.itemSubtotalAsCurrency }}</span>
+							</span>
 							<br>
-							<span title="{{cart.getTotalShippingCost()}}">
-								Total Shipping:
-								{{ cart.totalShippingCostAsCurrency }}</span>
+							<span class="block text-sm font-medium leading-5 text-gray-700">Total Shipping: <span title="{{cart.getTotalShippingCost()}}" class="block text-normal font-bold leading-5">{{ cart.totalShippingCostAsCurrency }}</span>
+							</span>
 							<br>
-							<span title="{{cart.getTotalTax()}}">
-								Total Tax:
-								{{ cart.totalTaxAsCurrency }}</span>
-							<br>
-							<span title="{{cart.getTotalTaxIncluded()}}">
-								Total Tax (inc):
-								{{ cart.totalTaxIncludedAsCurrency }}</span>
-							<br>
+							<span class="block text-sm font-medium leading-5 text-gray-700">Total Tax: <span title="{{cart.getTotalTax()}}" class="block text-normal font-bold leading-5">{{ cart.totalTaxAsCurrency }}</span>
+							</span>
+
 							<button type="submit" class="bg-cool-gray-600 font-bold text-white w-64 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">
 								Buy ${{ cart.totalPrice }}
 							</button>
