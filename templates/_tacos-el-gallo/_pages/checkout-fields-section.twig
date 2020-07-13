@@ -25,6 +25,7 @@
 {% endif %}
 
 {% set productDescription = '' %}
+{% set productTitle = '' %}
 
 <section class="w-full flex flex-col items-center min-h-screen py-48 bg-tag-light-grey">
 	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full py-24 px-48">
@@ -32,14 +33,15 @@
 			<div class="flex flex-row items-center mb-4">
 				{% for item in cart.lineItems %}
 					{% set product = item.purchasable.product %}
-					{% set productImage = item.purchasable.productImage.one().optimizedImages %}
-					{% set productDescription =  item.purchasable.gender.label ~ ', ' ~ item.purchasable.shirtSize.label ~ ', ' ~ item.purchasable.shirtColor.label %}
+					{% set productImage = item.purchasable.productImages.one().optimizedImages %}
+					{% set productDescription =  item.purchasable.size.label %}
+					{% set productTitle = item.purchasable.product.title %}
 
 
 					<img src="{{ productImage.src }}" class="h-32 w-auto rounded-lg mr-4" alt="">
 				{% endfor %}
 				<div class="flex flex-col">
-					<h2 class="font-bold tag leading-5 text-gray-700">{{ productDescription }}
+					<h2 class="font-bold tag leading-5 text-gray-700">{{ productTitle }}{{ productDescription }}
 						• ${{ cart.totalPrice }}*
 					</h2>
 					<span class="block text-sm font-medium leading-5 text-gray-700">*Total Includes Shipping and Tax.</span>
