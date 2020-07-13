@@ -1,5 +1,5 @@
 {% set variant = product.defaultVariant %}
-{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
+{% set productImage = product.defaultVariant.productImages.one().optimizedImages %}
 
 <section class="w-full flex flex-col items-center px-6 py-16 bg-tag-teal h-full flex-grow">
 	<div class="w-full max-w-screen-xl">
@@ -17,7 +17,7 @@
 					<input type="hidden" name="qty" value="1">
 					<select name="purchasableId">
 						{% for variant in product.variants %}
-							<option value="{{ variant.id }}">{{ variant.gender.label }}, {{ variant.shirtSize.label }}, {{ variant.shirtColor.label }}</option>
+							<option value="{{ variant.id }}">{{ variant.size.label }}</option>
 						{% endfor %}
 					</select>
 					<h2 class="tag text-black">{{ product.title }}</h2>
