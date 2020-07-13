@@ -151,11 +151,11 @@
 				<div class="block text-normal font-bold leading-5 text-gray-700 md:p-8 md:border-r-2 md:border-gray-700">
 					<p>
 						<span class="block text-sm font-medium leading-5 text-gray-700">Email</span>
-						{{ cart.email }}</p>
+						{{ cart.email }}</p><br>
 					<p>
 						<span class="block text-sm font-medium leading-5 text-gray-700">Full Name</span>
 						{{ cart.shippingAddress.firstName ?? ''}}
-						{{ cart.shippingAddress.lastName ?? ''}}</p>
+						{{ cart.shippingAddress.lastName ?? ''}}</p><br>
 					<p>
 						<span class="block text-sm font-medium leading-5 text-gray-700">Shipping Address</span>
 						{{ cart.shippingAddress.address1 ?? ''}}
@@ -163,7 +163,7 @@
 						{{ cart.shippingAddress.city ?? ''}},
 						{{ cart.shippingAddress.stateValue ?? ''}}
 						{{ cart.shippingAddress.zipCode ?? ''}}<br>
-						{{ cart.shippingAddress.countryText ?? ''}}<br></p>
+						{{ cart.shippingAddress.countryText ?? ''}}<br></p><br>
 
 					{% if not currentUser %}
 						<div class="mt-4">
@@ -174,8 +174,8 @@
 
 			{% endif %}
 			{% if showPaymentForm %}
-				<div class="p-8">
-					<h2 class="block text-base font-bold leading-5 text-gray-400">Payment Information</h2>
+				<div class="p-8 flex flex-col items-center md:border-l-2 md:border-gray-400">
+					<h2 class="block text-base font-bold leading-5 text-gray-700 self-start mb-2">Payment Information</h2>
 					<form method="POST" class="add-to-cart-form">
 						<input type="hidden" name="action" value="commerce/payments/pay">
 						<input type="hidden" name="gatewayId" value="6">
