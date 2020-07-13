@@ -145,40 +145,41 @@
 					</div>
 				</form>
 			{% endif %}
+		</div>
+		<div class="flex flex-col md:flex-row items-center mt-16">
 			{% if showEmailInfo %}
-				<div class="block text-normal font-bold leading-5 text-gray-700 p-4">
-					{{ cart.email }}<br>
-					{{ cart.shippingAddress.firstName ?? ''}}
+				<div class="block text-normal font-bold leading-5 text-gray-700 md:p-8 md:border-r-2 md:border-gray-700">
+					<span class="block text-sm font-medium leading-5 text-gray-700">Email</span><br>{{ cart.email }}<br>
+					<span class="block text-sm font-medium leading-5 text-gray-700">Full Name</span><br>{{ cart.shippingAddress.firstName ?? ''}}
 					{{ cart.shippingAddress.lastName ?? ''}}<br>
-					{{ cart.shippingAddress.address1 ?? ''}}
+					<span class="block text-sm font-medium leading-5 text-gray-700">Shipping Address</span><br>{{ cart.shippingAddress.address1 ?? ''}}
 					{{ cart.shippingAddress.address2 ?? ''}}<br>
 					{{ cart.shippingAddress.city ?? ''}},
 					{{ cart.shippingAddress.stateValue ?? ''}}
 					{{ cart.shippingAddress.zipCode ?? ''}}<br>
 					{{ cart.shippingAddress.countryText ?? ''}}<br>
+					{% if not currentUser %}
+						<a href="order?step=1" class="bg-cool-gray-600 font-bold text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
+					{% endif %}
 				</div>
-				{% if not currentUser %}
-					<a href="order?step=1" class="bg-cool-gray-600 font-bold text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
-				{% endif %}
-			{% endif %}
-				
-		</div>
-		<div class="flex flex-col items-center mt-16">
-			{% if showPaymentForm %}
-			<h2 class="block text-base font-bold leading-5 text-gray-700">Payment Information</h2>
-				<form method="POST" class="add-to-cart-form">
-					<input type="hidden" name="action" value="commerce/payments/pay">
-					<input type="hidden" name="gatewayId" value="6">
-					{{ redirectInput('order/confirm?number={number}') }}
-					{{ csrfInput() }}
-					{{ cart.gateway.getPaymentFormHtml({})|raw }}
-					<div class="flex flex-col items-center">
-						<button type="submit" class="bg-cool-gray-600 font-bold text-white w-64 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">
-							Buy ${{ cart.totalPrice }}
-						</button>
-					</div>
-				</form>
 
+			{% endif %}
+			{% if showPaymentForm %}
+				<div class="p-8">
+					<h2 class="block text-base font-bold leading-5 text-gray-700">Payment Information</h2>
+					<form method="POST" class="add-to-cart-form">
+						<input type="hidden" name="action" value="commerce/payments/pay">
+						<input type="hidden" name="gatewayId" value="6">
+						{{ redirectInput('order/confirm?number={number}') }}
+						{{ csrfInput() }}
+						{{ cart.gateway.getPaymentFormHtml({})|raw }}
+						<div class="flex flex-col items-center">
+							<button type="submit" class="bg-cool-gray-600 font-bold text-white w-64 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">
+								Buy ${{ cart.totalPrice }}
+							</button>
+						</div>
+					</form>
+				</div>
 				<img src="/uploads/powered-by-stripe.png" class="mt-8 w-32" alt="">
 			{% endif %}
 		</div>
