@@ -171,7 +171,7 @@ h5.imp {
 }
 
 .nav-item.imp {
-    @apply font-quicksand;
+    @apply font-minion-pro;
     @apply text-base;
     @apply font-medium;
     @apply text-imp-aqua;
