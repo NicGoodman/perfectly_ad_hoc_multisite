@@ -4,7 +4,6 @@
 		{% set sectionHeader = entry.merchSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
-		{% set products = craft.products().type('clothing') %}
 		{% if purchasableId %}
 			{# if we have a purchasableId as a query param, just add it to cart and submit the form #}
 			<form method="POST" name="auto-add-to-cart" class="add-to-cart-form">
@@ -22,7 +21,7 @@ document.forms['auto-add-to-cart'].submit();
 			</script>
 		{% else %}
 			<div class="w-full flex flex-row flex-wrap">
-				{% for product in products.all() %}
+				{% for product in craft.products().all() %}
 					{% set variant = product.defaultVariant %}
 					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
 
