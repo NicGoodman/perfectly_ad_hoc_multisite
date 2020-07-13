@@ -25,16 +25,17 @@ document.forms['auto-add-to-cart'].submit();
 					{% set variant = product.defaultVariant %}
 					{% set productImage = product.productImages.one().optimizedImages %}
 
-					<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
+					<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4 justify-between">
 
 
-						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow w-full h-64 object-cover">
-						<h2 class="tag text-black">{{ product.title }}</h2>
-						<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
-						{% set btnLink = product.url %}
-						{% set btnText = 'Learn More' %}
-						{% include "_tacos-el-gallo/_snippets/btn-alt.twig" %}
-
+						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow w-full h-64 object-cover mb-2">
+						<div>
+							<h2 class="tag text-black text-center">{{ product.title }}</h2>
+							<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
+							{% set btnLink = product.url %}
+							{% set btnText = 'Learn More' %}
+							{% include "_tacos-el-gallo/_snippets/btn-alt.twig" %}
+						</div>
 					</div>
 				{% endfor %}
 			</div>
