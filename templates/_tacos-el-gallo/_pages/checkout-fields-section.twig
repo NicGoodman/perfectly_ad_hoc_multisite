@@ -60,8 +60,7 @@
 						{{ redirectInput('order?step=1') }}
 						{{ csrfInput() }}
 						{% for item in cart.lineItems %}
-							<input type="checkbox" name="lineItems[{{ item.id }}][remove]" value="1">
-							Cancel Order<br>
+							<input type="submit" name="lineItems[{{ item.id }}][remove]" value="Cancel Order" class="bg-cool-gray-600 font-bold text-white w-48 text-center rounded px-3 py-2 text-sm hover:bg-cool-gray-800 outline-0">
 						{% endfor %}
 					</form>
 				</div>
