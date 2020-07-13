@@ -21,7 +21,7 @@
 						{% endfor %}
 					</select>
 					<h2 class="tag text-black">{{ product.title }}</h2>
-					<h2 class="tag text-tag-gold">{{ product.salePriceAsCurrency }}</h2>
+					<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
 					<input type="submit" value="Buy Now" class="btn-main tag cursor-pointer">
 				</form>
 			</div>
