@@ -33,7 +33,7 @@
 			<div class="flex flex-row items-center mb-4">
 				{% for item in cart.lineItems %}
 					{% set product = item.purchasable.product %}
-					{% set productImage = item.purchasable.productImages.one().optimizedImages %}
+					{% set productImage = product.productImages.one().optimizedImages %}
 					{% set productDescription =  item.purchasable.size.label %}
 					{% set productTitle = item.purchasable.product.title %}
 
