@@ -149,24 +149,33 @@
 		<div class="flex flex-col md:flex-row items-center mt-16">
 			{% if showEmailInfo %}
 				<div class="block text-normal font-bold leading-5 text-gray-700 md:p-8 md:border-r-2 md:border-gray-700">
-					<span class="block text-sm font-medium leading-5 text-gray-700">Email</span><br>{{ cart.email }}<br>
-					<span class="block text-sm font-medium leading-5 text-gray-700">Full Name</span><br>{{ cart.shippingAddress.firstName ?? ''}}
-					{{ cart.shippingAddress.lastName ?? ''}}<br>
-					<span class="block text-sm font-medium leading-5 text-gray-700">Shipping Address</span><br>{{ cart.shippingAddress.address1 ?? ''}}
-					{{ cart.shippingAddress.address2 ?? ''}}<br>
-					{{ cart.shippingAddress.city ?? ''}},
-					{{ cart.shippingAddress.stateValue ?? ''}}
-					{{ cart.shippingAddress.zipCode ?? ''}}<br>
-					{{ cart.shippingAddress.countryText ?? ''}}<br>
+					<p>
+						<span class="block text-sm font-medium leading-5 text-gray-700">Email</span>
+						{{ cart.email }}</p>
+					<p>
+						<span class="block text-sm font-medium leading-5 text-gray-700">Full Name</span>
+						{{ cart.shippingAddress.firstName ?? ''}}
+						{{ cart.shippingAddress.lastName ?? ''}}</p>
+					<p>
+						<span class="block text-sm font-medium leading-5 text-gray-700">Shipping Address</span>
+						{{ cart.shippingAddress.address1 ?? ''}}
+						{{ cart.shippingAddress.address2 ?? ''}}<br>
+						{{ cart.shippingAddress.city ?? ''}},
+						{{ cart.shippingAddress.stateValue ?? ''}}
+						{{ cart.shippingAddress.zipCode ?? ''}}<br>
+						{{ cart.shippingAddress.countryText ?? ''}}<br></p>
+
 					{% if not currentUser %}
-						<a href="order?step=1" class="bg-cool-gray-600 font-bold text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
+						<div class="mt-4">
+							<a href="order?step=1" class="bg-cool-gray-600 font-bold text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
+						</div>
 					{% endif %}
 				</div>
 
 			{% endif %}
 			{% if showPaymentForm %}
 				<div class="p-8">
-					<h2 class="block text-base font-bold leading-5 text-gray-700">Payment Information</h2>
+					<h2 class="block text-base font-bold leading-5 text-gray-400">Payment Information</h2>
 					<form method="POST" class="add-to-cart-form">
 						<input type="hidden" name="action" value="commerce/payments/pay">
 						<input type="hidden" name="gatewayId" value="6">
@@ -179,8 +188,8 @@
 							</button>
 						</div>
 					</form>
+					<img src="/uploads/powered-by-stripe.png" class="mt-8 w-32" alt="">
 				</div>
-				<img src="/uploads/powered-by-stripe.png" class="mt-8 w-32" alt="">
 			{% endif %}
 		</div>
 
