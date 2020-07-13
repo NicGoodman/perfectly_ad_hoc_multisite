@@ -35,7 +35,10 @@ document.forms['auto-add-to-cart'].submit();
 							<h2 class="imp text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
 							{% set btnLink = product.url %}
 							{% set btnText = 'Learn More' %}
-							{% include "_imperial/_snippets/btn-alt.twig" %}
+							<a href="{{ btnLink }}" class="btn-alt imp text-imp-aqua">
+								{{ btnText }}
+							</a>
+
 						</div>
 					</div>
 				{% endfor %}
@@ -43,4 +46,3 @@ document.forms['auto-add-to-cart'].submit();
 		{% endif %}
 	</div>
 </section>
-
