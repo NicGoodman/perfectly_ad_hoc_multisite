@@ -147,14 +147,7 @@
 			{% endif %}
 			{% if showEmailInfo %}
 				<div class="block text-normal font-bold leading-5 text-gray-700 p-4">
-					{{ cart.email }}
-				</div>
-				{% if not currentUser %}
-					<a href="order?step=1" class="bg-cool-gray-600 font-bold text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
-				{% endif %}
-			{% endif %}
-			{% if showShippingInfo %}
-				<div class="block text-normal font-bold leading-5 text-gray-700 border-t-2 border-cool-gray-400 pt-8 pb-6" style="column-count: 2;">
+					{{ cart.email }}<br>
 					{{ cart.shippingAddress.firstName ?? ''}}
 					{{ cart.shippingAddress.lastName ?? ''}}<br>
 					{{ cart.shippingAddress.address1 ?? ''}}
@@ -164,8 +157,11 @@
 					{{ cart.shippingAddress.zipCode ?? ''}}<br>
 					{{ cart.shippingAddress.countryText ?? ''}}<br>
 				</div>
-				<a href="order?step=2" class="bg-cool-gray-600 text-white font-bold w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
+				{% if not currentUser %}
+					<a href="order?step=1" class="bg-cool-gray-600 font-bold text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
+				{% endif %}
 			{% endif %}
+				
 		</div>
 		<div class="flex flex-col items-center mt-16">
 			{% if showPaymentForm %}
