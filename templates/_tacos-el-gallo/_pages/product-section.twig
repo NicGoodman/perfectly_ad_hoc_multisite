@@ -1,5 +1,5 @@
 {% set variant = product.defaultVariant %}
-{% set productImage = product.defaultVariant.productImages.one().optimizedImages %}
+{% set productImage = product.productImages.one().optimizedImages %}
 
 <section class="w-full flex flex-col items-center px-6 py-16 bg-tag-teal h-full flex-grow">
 	<div class="w-full max-w-screen-xl">
@@ -21,7 +21,7 @@
 						{% endfor %}
 					</select>
 					<h2 class="tag text-black">{{ product.title }}</h2>
-					<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
+					<h2 class="tag text-tag-gold">{{ product.salePriceAsCurrency }}</h2>
 					<input type="submit" value="Buy Now" class="btn-main tag cursor-pointer">
 				</form>
 			</div>
