@@ -97,7 +97,7 @@
 									<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
 								</svg>
 							</div>
-							<input id="email" name="email" type="email" value="{{cart.email}}" {% if currentUser %}} disabled {% endif %}} class="form-input block w-full pl-10 sm:text-sm sm:leading-5" placeholder="you@example.com"/>
+							<input id="email" name="email" type="email" value="{{cart.email}}" {% if currentUser %}} disabled {% endif %}} class="form-input block w-full pl-10 sm:text-sm sm:leading-5" placeholder="you@example.com" required/>
 						</div>
 					</div>
 					{# Name Fields for Shipping #}
@@ -105,13 +105,13 @@
 						<div class="w-full md:w-1/2 p-2 md:p-4">
 							<label for="first-name" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('firstName') %}text-red{% endif %}">First Name</label>
 							<div class="mt-1 relative rounded-md shadow-sm">
-								<input id="first-name" name="shippingAddress[firstName]" type="text" value="{{cart.shippingAddress.firstName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Jane"/>
+								<input id="first-name" name="shippingAddress[firstName]" type="text" value="{{cart.shippingAddress.firstName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Jane" required/>
 							</div>
 						</div>
 						<div class="w-full md:w-1/2 p-2 md:p-4">
 							<label for="last-name" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('lastName') %}text-red{% endif %}">Last Name</label>
 							<div class="mt-1 relative rounded-md shadow-sm">
-								<input id="last-name" name="shippingAddress[lastName]" type="text" value="{{cart.shippingAddress.lastName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Doe"/>
+								<input id="last-name" name="shippingAddress[lastName]" type="text" value="{{cart.shippingAddress.lastName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Doe" required/>
 							</div>
 						</div>
 					</div>
@@ -121,7 +121,7 @@
 						<div class="w-full md:w-1/2 p-2 md:p-4">
 							<label for="address1" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('address1') %}text-red{% endif %}">Address 1</label>
 							<div class="mt-1 relative rounded-md shadow-sm">
-								<input id="address1" name="shippingAddress[address1]" type="text" value="{{cart.shippingAddress.address1 ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="123 Main St."/>
+								<input id="address1" name="shippingAddress[address1]" type="text" value="{{cart.shippingAddress.address1 ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="123 Main St." required/>
 							</div>
 						</div>
 						<div class="w-full md:w-1/2 p-2 md:p-4">
@@ -137,26 +137,26 @@
 						<div class="w-full md:w-2/3 p-2 md:p-4">
 							<label for="city" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('city') %}text-red{% endif %}">City</label>
 							<div class="mt-1 relative rounded-md shadow-sm">
-								<input id="city" name="shippingAddress[city]" type="text" value="{{cart.shippingAddress.city ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Asheville"/>
+								<input id="city" name="shippingAddress[city]" type="text" value="{{cart.shippingAddress.city ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Asheville" required/>
 							</div>
 						</div>
 						<div class="w-full md:w-1/4 p-2 md:p-4">
 							<label for="stateValue" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('stateValue') %}text-red{% endif %}">State</label>
 							<div class="mt-1 relative rounded-md shadow-sm">
-								<input id="stateValue" name="shippingAddress[stateValue]" type="text" value="{{cart.shippingAddress.stateValue ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="NC"/>
+								<input id="stateValue" name="shippingAddress[stateValue]" type="text" value="{{cart.shippingAddress.stateValue ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="NC" required/>
 							</div>
 						</div>
 						<div class="w-full md:w-1/3 p-2 md:p-4">
 							<label for="zipCode" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('zipCode') %}text-red{% endif %}">Zip Code</label>
 							<div class="mt-1 relative rounded-md shadow-sm">
-								<input id="zipCode" name="shippingAddress[zipCode]" type="text" value="{{cart.shippingAddress.zipCode ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="28801"/>
+								<input id="zipCode" name="shippingAddress[zipCode]" type="text" value="{{cart.shippingAddress.zipCode ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="28801" required/>
 							</div>
 						</div>
 						<div class="w-full md:w-1/4 p-2 md:p-4">
 							<div>
 								<label for="country" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('countryId') %}text-red{% endif %}">Country</label>
 								<div class="mt-1 relative rounded-md shadow-sm">
-									<select id="country" aria-label="Country" name="shippingAddress[countryId]" class="form-select relative block w-full rounded-md focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+									<select id="country" aria-label="Country" name="shippingAddress[countryId]" class="form-select relative block w-full rounded-md focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5" required>
 										<option value="233">USA</option>
 									</select>
 								</div>
