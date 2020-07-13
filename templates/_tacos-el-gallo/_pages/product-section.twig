@@ -13,27 +13,24 @@
 				{% endfor %}
 			</div>
 			<div class="w-full md:w-1/3 flex flex-col items-center p-12">
-
-				{% if product.type=='shirts' %}
-					<form method="post" class="flex flex-col items-center space-y-2">
-						<select type="submit" name="purchasableId" class="mt-1 form-select rounded-none block w-full pl-3 pr-10 py-2 text-base leading-6 border-4 border-tag-red focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
-							{% for variant in product.variants %}
-								<option value="{{ variant.id }}">{{ variant.size.label }}</option>
-							{% endfor %}
-						</select>
-					</form>
-				{% endif %}
-
 				<form method="post" class="flex flex-col items-center space-y-2">
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
 					<input type="hidden" name="cartUpdatedNotice" value="Added {{ product.title }} to the cart.">
 					{{ redirectInput('order') }}
 					{{ csrfInput() }}
 					<input type="hidden" name="qty" value="1">
-
+					
 					<h2 class="tag text-black">{{ product.title }}</h2>
 					<p class="tag text-black">{{ product.productDescription }}</p>
-					<input type="hidden" name="purchasableId" value="{{ variant.id }}">
+                    {% if product.type=='shirts' %}
+						<select name="purchasableId" class="mt-1 form-select rounded-none block w-full pl-3 pr-10 py-2 text-base leading-6 border-4 border-tag-red focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+							{% for variant in product.variants %}
+								<option value="{{ variant.id }}">{{ variant.size.label }}</option>
+							{% endfor %}
+						</select>
+					{% else %}
+						<input type="hidden" name="purchasableId" value="{{ variant.id }}">
+					{% endif %}
 					<h2 class="tag text-tag-gold">{{ variant.salePriceAsCurrency }}</h2>
 					<input type="submit" value="Buy Now" class="btn-main tag cursor-pointer">
 				</form>
