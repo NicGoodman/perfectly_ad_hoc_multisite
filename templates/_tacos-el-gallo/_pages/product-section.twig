@@ -15,7 +15,7 @@
 					{{ redirectInput('order') }}
 					{{ csrfInput() }}
 					<input type="hidden" name="qty" value="1">
-					{% if product.variants|length %}
+					{% if product.type=='shirts' %}
 						<select name="purchasableId">
 							{% for variant in product.variants %}
 								<option value="{{ variant.id }}">{{ variant.size.label }}</option>
