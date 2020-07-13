@@ -33,10 +33,7 @@
 				{% for item in cart.lineItems %}
 					{% set product = item.purchasable.product %}
 					{% set productImage = product.defaultVariant.productImage.one().optimizedImages %}
-					{% set variantId = craft.app.request.getQueryParam('id') %}
-					{% set myVariantQuery = craft.variants().id(item.variantId) %}
-					{% set variant = myVariantQuery.one() %}
-					{% set productDescription =  variant.gender.label ~ ', ' ~ variant.shirtSize.label ~ ', ' ~ variant.shirtColor.label %}
+					{% set productDescription =  item.purchasable.gender.label ~ ', ' ~ item.purchasable.shirtSize.label ~ ', ' ~ item.purchasable.shirtColor.label %}
 
 
 					<img src="{{ productImage.src }}" class="h-32 w-auto rounded-lg mr-4" alt="">
