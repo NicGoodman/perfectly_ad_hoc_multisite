@@ -1,0 +1,229 @@
+{% set cart = craft.commerce.carts.cart %}
+
+{% set step = craft.app.request.param('step') %}
+
+{% if cart.isEmpty %}
+	{% redirect '#merch' %}
+{% endif %}
+{% if not step %}
+	{% redirect 'order?step=1' %}
+{% endif %}
+
+{% set showEmailForm = (step == 1) %}
+{% set showEmailInfo = (not showEmailForm and cart.email) %}
+
+
+{% set showPaymentForm = (step == 2) %}
+{% set showShippingInfo = (not showEmailForm and cart.shippingAddress) %}
+
+{% if showPaymentForm and not cart.email %}
+	{% redirect 'order?step=1' %}
+{% endif %}
+
+{% if showPaymentForm and not cart.shippingAddress %}
+	{% redirect 'order?step=1' %}
+{% endif %}
+
+{% set productDescription = '' %}
+{% set productTitle = '' %}
+
+<section class="w-full flex flex-col items-center min-h-screen py-48 bg-imp-light-grey">
+	<div class="w-full max-w-screen-xl bg-cool-gray-300 rounded-lg shadow-lg flex-grow h-full py-24 px-48">
+		<header class="flex flex-row flex-wrap items-center content-center border-b-2 border-cool-gray-400 mb-12">
+			<div class="flex flex-row items-center mb-4">
+				{% for item in cart.lineItems %}
+					{% set product = item.purchasable.product %}
+					{% set productImage = product.productImages.one().optimizedImages %}
+					{% if product.type=='shirts' %}
+						{% set productDescription =  ' • ' ~ item.purchasable.size.label %}
+					{% endif %}
+					{% set productTitle = item.purchasable.product.title %}
+
+
+					<img src="{{ productImage.src }}" class="h-32 w-auto rounded-lg mr-4" alt="">
+				{% endfor %}
+				<div class="flex flex-col">
+					<h2 class="font-bold imp leading-5 text-gray-700">{{ productTitle }}{{ productDescription }}<br>${{ cart.totalPrice }}*
+					</h2>
+					<span class="block text-sm font-medium leading-5 text-gray-700">*Total Includes Shipping and Tax.</span>
+					<form method="post" class="flex flex-row mt-4">
+						<input type="hidden" name="action" value="commerce/cart/update-cart">
+						<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
+						{{ redirectInput('order?step=1') }}
+						{{ csrfInput() }}
+						{% for item in cart.lineItems %}
+							<input type="hidden" name="lineItems[{{ item.id }}][id]" value="{{ item.id }}">
+							<input type="number" name="lineItems[{{ item.id }}][qty]" min="1" value="{{ item.qty }}" class="form-input block pl-3 sm:text-sm sm:leading-5 mr-4 w-15 text-center">
+						{% endfor %}
+						<input type="submit" value="Update Quantity" class="bg-cool-gray-600 font-bold text-white w-48 text-center rounded px-3 py-2 text-sm hover:bg-cool-gray-800 outline-0">
+					</form>
+				</div>
+				<div class="flex flex-col self-end items-start ml-4 pl-4 md:border-l-2 md:border-gray-400">
+
+					<span class="block text-sm font-medium leading-5 text-gray-700 mb-1">Item Sub Total:
+						<span title="{{ cart.itemSubTotal }}" class="inline-block text-normal font-bold leading-5">{{ cart.itemSubtotalAsCurrency }}</span>
+					</span>
+					<span class="block text-sm font-medium leading-5 text-gray-700 mb-1">Total Shipping:
+						<span title="{{cart.getTotalShippingCost()}}" class="inline-block text-normal font-bold leading-5">{{ cart.totalShippingCostAsCurrency }}</span>
+					</span>
+					<span class="block text-sm font-medium leading-5 text-gray-700 mb-1">Total Tax:
+						<span title="{{cart.getTotalTax()}}" class="inline-block text-normal font-bold leading-5">{{ cart.totalTaxAsCurrency }}</span>
+					</span>
+					<form method="post" class="flex flex-row mt-2 w-1/2">
+						<input type="hidden" name="action" value="commerce/cart/update-cart">
+						<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
+						{{ redirectInput('order?step=1') }}
+						{{ csrfInput() }}
+						{% for item in cart.lineItems %}
+							<input type="submit" name="lineItems[{{ item.id }}][remove]" value="Cancel Order" class="bg-cool-gray-600 font-bold text-white w-48 text-center rounded px-3 py-2 text-sm hover:bg-cool-gray-800 outline-0">
+						{% endfor %}
+					</form>
+				</div>
+			</div>
+		</header>
+		<div class="flex flex-col items-start">
+			{% if showEmailForm %}
+				<h2 class="block text-base font-bold leading-5 text-gray-700 p-4">Shipping Information</h2>
+				<form method="POST" class="add-to-cart-form w-full md:w-3/4">
+					<input type="hidden" name="action" value="commerce/cart/update-cart">
+					{{ redirectInput('order?step=2') }}
+					{{ csrfInput() }}
+					<div class="p-4">
+						<label for="email" class="block text-sm font-medium leading-5 text-gray-700">Email</label>
+						<div class="mt-1 relative rounded-md shadow-sm">
+							<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+								<svg class="h-5 w-5 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
+									<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+									<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+								</svg>
+							</div>
+							<input id="email" name="email" type="email" value="{{cart.email}}" {% if currentUser %}} disabled {% endif %}} class="form-input block w-full pl-10 sm:text-sm sm:leading-5" placeholder="you@example.com"/>
+						</div>
+					</div>
+					{# Name Fields for Shipping #}
+					<div class="flex flex-col md:flex-row">
+						<div class="w-full md:w-1/2 p-4">
+							<label for="first-name" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('firstName') %}text-red{% endif %}">First Name</label>
+							<div class="mt-1 relative rounded-md shadow-sm">
+								<input id="first-name" name="shippingAddress[firstName]" type="text" value="{{cart.shippingAddress.firstName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Jane"/>
+							</div>
+						</div>
+						<div class="w-full md:w-1/2 p-4">
+							<label for="last-name" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('lastName') %}text-red{% endif %}">Last Name</label>
+							<div class="mt-1 relative rounded-md shadow-sm">
+								<input id="last-name" name="shippingAddress[lastName]" type="text" value="{{cart.shippingAddress.lastName ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Doe"/>
+							</div>
+						</div>
+					</div>
+
+					{# Address Fields for Shipping #}
+					<div class="flex flex-col md:flex-row flex-wrap">
+						<div class="w-full md:w-1/2 p-4">
+							<label for="address1" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('address1') %}text-red{% endif %}">Address 1</label>
+							<div class="mt-1 relative rounded-md shadow-sm">
+								<input id="address1" name="shippingAddress[address1]" type="text" value="{{cart.shippingAddress.address1 ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="24 Arlington St."/>
+							</div>
+						</div>
+						<div class="w-full md:w-1/2 p-4">
+							<label for="address2" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('address2') %}text-red{% endif %}">Address 2</label>
+							<div class="mt-1 relative rounded-md shadow-sm">
+								<input id="address2" name="shippingAddress[address2]" type="text" value="{{cart.shippingAddress.address2 ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Apt. 23"/>
+							</div>
+						</div>
+					</div>
+
+					{# City state and country fields #}
+					<div class="flex flex-col md:flex-row flex-wrap">
+						<div class="w-full md:w-2/3 p-4">
+							<label for="city" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('city') %}text-red{% endif %}">City</label>
+							<div class="mt-1 relative rounded-md shadow-sm">
+								<input id="city" name="shippingAddress[city]" type="text" value="{{cart.shippingAddress.city ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="Asheville"/>
+							</div>
+						</div>
+						<div class="w-1/2 md:w-1/3 p-4">
+							<label for="zipCode" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('zipCode') %}text-red{% endif %}">Zip Code</label>
+							<div class="mt-1 relative rounded-md shadow-sm">
+								<input id="zipCode" name="shippingAddress[zipCode]" type="text" value="{{cart.shippingAddress.zipCode ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="28802"/>
+							</div>
+						</div>
+						<div class="w-1/2 md:w-1/4 p-4">
+							<label for="stateValue" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('stateValue') %}text-red{% endif %}">State</label>
+							<div class="mt-1 relative rounded-md shadow-sm">
+								<input id="stateValue" name="shippingAddress[stateValue]" type="text" value="{{cart.shippingAddress.stateValue ?? ''}}" class="form-input block w-full sm:text-sm sm:leading-5" placeholder="NC"/>
+							</div>
+						</div>
+						<div class="w-1/2 md:w-1/4 p-4">
+							<div>
+								<label for="country" class="block text-sm font-medium leading-5 text-gray-700 {% if cart.shippingAddress and cart.shippingAddress.getFirstError('countryId') %}text-red{% endif %}">Country</label>
+								<div class="mt-1 relative rounded-md shadow-sm">
+									<select id="country" aria-label="Country" name="shippingAddress[countryId]" class="form-select relative block w-full rounded-md focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+										<option value="233">USA</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="w-1/2">
+							<input type="hidden" name="billingAddressSameAsShipping" value="1"/>
+						</div>
+					</div>
+					<div class="w-1/2 p-4">
+						<button type="submit" class="bg-cool-gray-600 font-bold text-white w-full rounded px-3 py-3 ml-1 mt-6 text-sm hover:bg-cool-gray-800 outline-0">
+							Continue to Payment Info
+						</button>
+					</div>
+				</form>
+			{% endif %}
+		</div>
+		<div class="flex flex-col md:flex-row items-start mt-16">
+			{% if showEmailInfo %}
+				<div class="block text-normal font-bold leading-5 text-gray-700 md:p-8">
+					<h2 class="block text-base font-bold leading-5 text-gray-700 self-start mb-6">Shipping Information</h2>
+					<p>
+						<span class="block text-sm font-medium leading-5 text-gray-700">Email</span>
+						{{ cart.email }}</p><br>
+					<p>
+						<span class="block text-sm font-medium leading-5 text-gray-700">Full Name</span>
+						{{ cart.shippingAddress.firstName ?? ''}}
+						{{ cart.shippingAddress.lastName ?? ''}}</p><br>
+					<p>
+						<span class="block text-sm font-medium leading-5 text-gray-700">Shipping Address</span>
+						{{ cart.shippingAddress.address1 ?? ''}}
+						{{ cart.shippingAddress.address2 ?? ''}}<br>
+						{{ cart.shippingAddress.city ?? ''}},
+						{{ cart.shippingAddress.stateValue ?? ''}}
+						{{ cart.shippingAddress.zipCode ?? ''}}<br>
+						{{ cart.shippingAddress.countryText ?? ''}}<br></p><br>
+
+					{% if not currentUser %}
+						<div class="mt-4">
+							<a href="order?step=1" class="bg-cool-gray-600 font-bold text-white w-32 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">Edit</a>
+						</div>
+					{% endif %}
+				</div>
+
+			{% endif %}
+			{% if showPaymentForm %}
+				<div class="p-8 flex flex-col items-center md:border-l-2 md:border-gray-400">
+					<h2 class="block text-base font-bold leading-5 text-gray-700 self-start mb-6">Payment Information</h2>
+					<form method="POST" class="add-to-cart-form">
+						<input type="hidden" name="action" value="commerce/payments/pay">
+						<input type="hidden" name="gatewayId" value="6">
+						{{ redirectInput('order/confirm?number={number}') }}
+						{{ csrfInput() }}
+						{{ cart.gateway.getPaymentFormHtml({})|raw }}
+						<div class="flex flex-col items-center mt-8">
+							<button type="submit" class="bg-cool-gray-600 font-bold text-white w-64 text-center rounded px-3 py-3 text-sm hover:bg-cool-gray-800 outline-0">
+								Buy ${{ cart.totalPrice }}
+							</button>
+						</div>
+					</form>
+					<img src="/uploads/powered-by-stripe.png" class="mt-8 w-32" alt="">
+				</div>
+			{% endif %}
+		</div>
+
+
+	</div>
+
+
+</section>

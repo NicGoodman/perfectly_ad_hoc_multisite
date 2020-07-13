@@ -1,12 +1,12 @@
 {% set variant = product.defaultVariant %}
-<section class="w-full flex flex-col items-center px-6 py-16 bg-tag-teal h-full flex-grow">
+<section class="w-full flex flex-col items-center px-6 py-16 bg-imp-aqua h-full flex-grow">
 	<div class="w-full max-w-screen-xl">
 		<div class="w-full flex flex-row flex-wrap">
 			<div class="w-full md:w-2/3 p-12 flex flex-row flex-wrap">
 				{% for image in product.productImages.all() %}
 					{% set productImage = image.optimizedImages %}
 					<div class="w-1/2 p-4">
-						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
+						<img src="{{ productImage.src }}" alt="" class="border-4 border-imp-gold">
 					</div>
 				{% endfor %}
 			</div>
@@ -18,10 +18,10 @@
 					{{ csrfInput() }}
 					<input type="hidden" name="qty" value="1">
 					
-					<h2 class="tag text-black">{{ product.title }}</h2>
-					<p class="tag text-black">{{ product.productDescription }}</p>
+					<h2 class="imp text-black">{{ product.title }}</h2>
+					<p class="imp text-black">{{ product.productDescription }}</p>
                     {% if product.type=='shirts' %}
-						<select name="purchasableId" class="mt-1 form-select rounded-none block w-full pl-3 pr-10 py-2 text-base leading-6 border-4 border-tag-red focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
+						<select name="purchasableId" class="mt-1 form-select rounded-none block w-full pl-3 pr-10 py-2 text-base leading-6 border-4 border-imp-red focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5">
 							{% for variant in product.variants %}
 								<option value="{{ variant.id }}">{{ variant.size.label }}</option>
 							{% endfor %}
@@ -29,8 +29,8 @@
 					{% else %}
 						<input type="hidden" name="purchasableId" value="{{ variant.id }}">
 					{% endif %}
-					<h2 class="tag text-tag-gold">{{ variant.salePriceAsCurrency }}</h2>
-					<input type="submit" value="Buy Now" class="btn-main tag cursor-pointer">
+					<h2 class="imp text-imp-gold">{{ variant.salePriceAsCurrency }}</h2>
+					<input type="submit" value="Buy Now" class="btn-main imp cursor-pointer">
 				</form>
 			</div>
 
