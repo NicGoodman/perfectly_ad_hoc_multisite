@@ -3,6 +3,7 @@
 	<div class="w-full max-w-screen-xl">
 		{% set sectionHeader = entry.merchSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
+		{% set textColor = 'text-imp-aqua' %}
 		{% include "_imperial/_snippets/heading" %}
 		{% if purchasableId %}
 			{# if we have a purchasableId as a query param, just add it to cart and submit the form #}
