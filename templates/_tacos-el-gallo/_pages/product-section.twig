@@ -5,8 +5,8 @@
 	<div class="w-full max-w-screen-xl">
 		<div class="w-full flex flex-row flex-wrap">
 			<div class="w-full md:w-2/3 p-12 flex flex-row flex-wrap">
-				{% for image in product.productImages %}
-					{% set productImage = image.one().optimizedImages %}
+				{% for image in product.productImages.all() %}
+					{% set productImage = image.optimizedImages %}
 					<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow w-1/2 p-4">
 				{% endfor %}
 			</div>
