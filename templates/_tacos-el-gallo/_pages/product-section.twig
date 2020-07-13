@@ -19,7 +19,10 @@
 					{{ redirectInput('order') }}
 					{{ csrfInput() }}
 					<input type="hidden" name="qty" value="1">
-					{% if product.type=='shirts' %}
+					
+					<h2 class="tag text-black">{{ product.title }}</h2>
+					<p class="tag text-black">{{ product.productDescription }}</p>
+                    {% if product.type=='shirts' %}
 						<select name="purchasableId">
 							{% for variant in product.variants %}
 								<option value="{{ variant.id }}">{{ variant.size.label }}</option>
@@ -28,8 +31,6 @@
 					{% else %}
 						<input type="hidden" name="purchasableId" value="{{ variant.id }}">
 					{% endif %}
-					<h2 class="tag text-black">{{ product.title }}</h2>
-					<p class="tag text-black">{{ product.productDescription }}</p>
 					<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
 					<input type="submit" value="Buy Now" class="btn-main tag cursor-pointer">
 				</form>
