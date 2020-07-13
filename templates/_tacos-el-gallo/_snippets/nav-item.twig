@@ -1,3 +1,4 @@
-<a href="{% if entry.uri == "__home__" %}{{ itemLink }}{% else %}{{ currentSite.baseUrl }}{{ itemLink }}{% endif %}" class="nav-item tag uppercase" @click="isOpen = false">{{ itemName }}</a>
+{% set url = craft.app.request.url %}
+<a href="{% if url == "/" %}{{ itemLink }}{% else %}{{ currentSite.baseUrl }}{{ itemLink }}{% endif %}" class="nav-item tag uppercase" @click="isOpen = false">{{ itemName }}</a>
 
 
