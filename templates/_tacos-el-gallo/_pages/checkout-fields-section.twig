@@ -34,14 +34,16 @@
 				{% for item in cart.lineItems %}
 					{% set product = item.purchasable.product %}
 					{% set productImage = product.productImages.one().optimizedImages %}
-					{% set productDescription =  item.purchasable.size.label %}
+					{% if product.type=='shirts' %}
+						{% set productDescription =  ' • ' ~ item.purchasable.size.label %}
+					{% endif %}
 					{% set productTitle = item.purchasable.product.title %}
 
 
 					<img src="{{ productImage.src }}" class="h-32 w-auto rounded-lg mr-4" alt="">
 				{% endfor %}
 				<div class="flex flex-col">
-					<h2 class="font-bold tag leading-5 text-gray-700">{{ productTitle }} • {{ productDescription }}<br>${{ cart.totalPrice }}*
+					<h2 class="font-bold tag leading-5 text-gray-700">{{ productTitle }}{{ productDescription }}<br>${{ cart.totalPrice }}*
 					</h2>
 					<span class="block text-sm font-medium leading-5 text-gray-700">*Total Includes Shipping and Tax.</span>
 					<form method="post" class="flex flex-row mt-4">
