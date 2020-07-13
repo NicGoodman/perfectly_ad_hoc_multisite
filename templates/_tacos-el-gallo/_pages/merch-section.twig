@@ -28,7 +28,7 @@ document.forms['auto-add-to-cart'].submit();
 					<div class="w-1/2 md:w-1/4 flex flex-col items-center p-4">
 
 
-						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
+						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow w-full h-64 object-cover">
 						<h2 class="tag text-black">{{ product.title }}</h2>
 						<h2 class="tag text-tag-gold">{{ product.defaultVariant.salePriceAsCurrency }}</h2>
 						{% set btnLink = product.url %}
