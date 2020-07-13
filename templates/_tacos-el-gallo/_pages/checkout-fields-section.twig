@@ -54,15 +54,6 @@
 						{% endfor %}
 						<input type="submit" value="Update Quantity" class="bg-cool-gray-600 font-bold text-white w-48 text-center rounded px-3 py-2 text-sm hover:bg-cool-gray-800 outline-0">
 					</form>
-					<form method="post" class="flex flex-row mt-4">
-						<input type="hidden" name="action" value="commerce/cart/update-cart">
-						<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
-						{{ redirectInput('order?step=1') }}
-						{{ csrfInput() }}
-						{% for item in cart.lineItems %}
-							<input type="submit" name="lineItems[{{ item.id }}][remove]" value="Cancel Order" class="bg-cool-gray-600 font-bold text-white w-48 text-center rounded px-3 py-2 text-sm hover:bg-cool-gray-800 outline-0">
-						{% endfor %}
-					</form>
 				</div>
 				<div class="flex flex-col self-start items-start mt-8 ml-4 pl-4 md:border-l-2 md:border-gray-400">
 
@@ -80,7 +71,7 @@
 		</header>
 		<div class="flex flex-col items-start">
 			{% if showEmailForm %}
-				<h2 class="block text-base font-bold leading-5 text-gray-700 p-4">Email & Shipping Information</h2>
+				<h2 class="block text-base font-bold leading-5 text-gray-700 p-4">Shipping Information</h2>
 				<form method="POST" class="add-to-cart-form w-full md:w-3/4">
 					<input type="hidden" name="action" value="commerce/cart/update-cart">
 					{{ redirectInput('order?step=2') }}
@@ -168,6 +159,15 @@
 							Continue to Payment Info
 						</button>
 					</div>
+				</form>
+				<form method="post" class="flex flex-row mt-4 w-1/2 p-4">
+					<input type="hidden" name="action" value="commerce/cart/update-cart">
+					<input type="hidden" name="cartUpdatedNotice" value="Updated line items.">
+					{{ redirectInput('order?step=1') }}
+					{{ csrfInput() }}
+					{% for item in cart.lineItems %}
+						<input type="submit" name="lineItems[{{ item.id }}][remove]" value="Cancel Order" class="bg-cool-gray-600 font-bold text-white w-48 text-center rounded px-3 py-2 text-sm hover:bg-cool-gray-800 outline-0">
+					{% endfor %}
 				</form>
 			{% endif %}
 		</div>
