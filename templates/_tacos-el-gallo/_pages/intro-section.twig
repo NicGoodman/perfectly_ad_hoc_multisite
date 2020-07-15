@@ -1,6 +1,9 @@
-<section class="bg-tag-dark-teal flex flex-row w-full" style="{% if entry.introSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.introSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat center/cover;{% endif %} height: 66vh;">
+<section class="flex flex-row w-full bg-tag-dark-teal" style="{% if entry.introSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.introSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat center/cover;{% endif %} height: 66vh;">
 	{% set navBtnList = entry.headerContent.navigation.visibleInIntroSection(true).all() %}
-	<nav class="w-full md:w-1/2 flex flex-col justify-center items-center">
+	{% set ctaText = entry.introSectionContent.callToActionText %}
+	{% set ctaLink = entry.introSectionContent.callToActionLink %}
+	<nav class="flex flex-col items-center justify-center w-full md:w-1/2">
 		{% include "_tacos-el-gallo/_content/nav-btn-list" %}
+		{% include "_tacos-el-gallo/_snippets/btn-main.twig" %}
 	</nav>
 </section>
