@@ -1,5 +1,5 @@
-<section class="w-full flex flex-col items-center px-6 bg-imp-dark-aqua py-16">
-	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
+<section class="flex flex-col items-center w-full px-6 py-16 bg-imp-dark-aqua">
+	<div class="flex flex-col items-center w-full max-w-screen-xl mb-12">
 		{% set sectionHeader = entry.hoursSectionContent.sectionHeader %}
 		{% set address = entry.hoursSectionContent.address %}
 		{% set hours = entry.hoursSectionContent.hours %}
@@ -10,46 +10,48 @@
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% set textColor = 'text-imp-aqua' %}
 		{% include "_imperial/_snippets/heading" %}
-		<div class="flex flex-col md:hidden items-center p-4 w-full">
+		<div class="flex flex-col items-center w-full p-4 md:hidden">
 			<address class="not-italic">
 				<a href="https://goo.gl/maps/b1R88RrjJU2dZ4cE6" target="_blank">
-					<h2 class="text-imp-light-grey imp text-center">{{ address }}</h2>
+					<h2 class="text-center text-imp-light-grey imp">{{ address }}</h2>
 				</a>
 			</address>
 			<div>
-				<h2 class="text-imp-gold md:text-imp-dark-red imp text-center my-2">{{ hours | nl2br }}</h2>
+				<h2 class="my-2 text-center text-imp-gold md:text-imp-dark-red imp">{{ hours | nl2br }}</h2>
 			</div>
 			<div>
 				<h2 class="text-imp-gold md:text-imp-dark-red imp">{{ phoneNumber }}</h2>
 			</div>
 		</div>
-		<div class="flex flex-row w-full h-64 md:h-auto items-stretch" style="{% if entry.hoursSectionContent.map.one()|length %} {% set map = entry.hoursSectionContent.map.one().getUrl() %}background: url('{{ map }}') no-repeat right/cover;{% endif %}">
-			<div class="hidden md:flex flex-col items-center p-4 md:w-2/5 lg:w-1/3 h-full bg-imp-aqua bg-opacity-85">
+		<div class="flex flex-row items-stretch w-full h-64 md:h-auto" style="{% if entry.hoursSectionContent.map.one()|length %} {% set map = entry.hoursSectionContent.map.one().getUrl() %}background: url('{{ map }}') no-repeat right/cover;{% endif %}">
+			<div class="flex-col items-center hidden h-full p-4 md:flex md:w-2/5 lg:w-1/3 bg-imp-aqua bg-opacity-85">
 				<address class="not-italic">
 					<a href="https://goo.gl/maps/b1R88RrjJU2dZ4cE6" target="_blank">
-						<h2 class="text-imp-dark-aqua imp text-center cursor-pointer">{{ address }}</h2>
+						<h2 class="text-center cursor-pointer text-imp-dark-aqua imp">{{ address }}</h2>
 					</a>
 				</address>
 				<div>
-					<h2 class="text-imp-gold md:text-imp-dark-red imp text-center my-2">{{ hours | nl2br }}</h2>
+					<h2 class="my-2 text-center text-imp-gold md:text-imp-dark-red imp">{{ hours | nl2br }}</h2>
 				</div>
 				<div>
 					<a href="tel:1-828-254-8980">
 						<h2 class="text-imp-gold md:text-imp-dark-red imp">{{ phoneNumber }}</h2>
 					</a>
 				</div>
-				<article class="text-center text-black mb-4 imp">
+				<article class="mb-4 text-center text-black imp">
 					{{ bodyText }}
 				</article>
 				{% include "_imperial/_snippets/btn-main.twig" %}
 			</div>
-			<div class=" w-full md:w-2/3 h-auto cursor-pointer" onclick="location.href='https://goo.gl/maps/b1R88RrjJU2dZ4cE6';"></div>
+			<div class="w-full h-auto cursor-pointer md:w-2/3" onclick="location.href='https://goo.gl/maps/b1R88RrjJU2dZ4cE6';"></div>
 		</div>
-		<div class="flex flex-col md:hidden items-center p-4 w-full">
-			<article class="text-center text-black mb-4 imp">
+		<div class="flex flex-col items-center w-full p-4 md:hidden">
+			<article class="mb-4 text-center text-black imp">
 				{{ bodyText }}
 			</article>
-			{% include "_imperial/_snippets/btn-main.twig" %}
+			{% if ctaText|length %}
+				{% include "_imperial/_snippets/btn-main.twig" %}
+			{% endif %}
 		</div>
 	</div>
 </section>
