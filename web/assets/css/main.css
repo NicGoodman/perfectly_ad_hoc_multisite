@@ -682,8 +682,8 @@ h5.tag {
   background-color: #FFBC00;
   background-color: rgba(255, 188, 0, var(--bg-opacity));
   --text-opacity: 1;
-  color: #4FBBCD;
-  color: rgba(79, 187, 205, var(--text-opacity));
+  color: #147F91;
+  color: rgba(20, 127, 145, var(--text-opacity));
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;

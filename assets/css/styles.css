@@ -72,7 +72,7 @@ h5.tag {
 
 .nav-btn.tag {
     @apply bg-tag-gold;
-    @apply text-tag-teal;
+    @apply text-tag-dark-teal;
     @apply px-4;
     @apply py-2;
     @apply font-proxima-nova;
