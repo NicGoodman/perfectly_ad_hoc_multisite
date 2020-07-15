@@ -7,7 +7,7 @@
 		{% set ctaText = entry.privateEventsSectionContent.callToActionText %}
 		{% set ctaLink = entry.privateEventsSectionContent.callToActionLink %}
 		{% include "_imperial/_snippets/heading" %}
-		<div class="flex flex-row items-center w-full h-64" style="{% if entry.privateEventsSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.privateEventsSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat right/cover;{% endif %}">
+		<div class="flex flex-row items-center w-full h-auto" style="{% if entry.privateEventsSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.privateEventsSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat right/cover;{% endif %}">
 			<div class="flex-col items-center hidden w-1/2 h-full md:flex">
 				<div class="flex flex-col items-center justify-center w-full px-4 py-48 bg-imp-dark-aqua">
 					<article class="text-center imp text-tag-light-grey">
