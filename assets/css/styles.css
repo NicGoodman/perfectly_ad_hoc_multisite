@@ -194,7 +194,7 @@ h5.imp {
 
 .nav-btn.imp {
     @apply bg-imp-gold;
-    @apply text-imp-light-grey;
+    @apply text-imp-dark-aqua;
     @apply px-4;
     @apply py-2;
     @apply font-luchador;
@@ -206,7 +206,8 @@ h5.imp {
 }
 
 .nav-btn.imp:hover {
-    @apply bg-imp-aqua;
+    @apply bg-imp-dark-red;
+    @apply text-imp-light-grey;
 }
 
 .nav-btn.imp:active {

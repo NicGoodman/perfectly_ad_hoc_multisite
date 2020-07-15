@@ -845,8 +845,8 @@ h5.imp {
   background-color: #fab40f;
   background-color: rgba(250, 180, 15, var(--bg-opacity));
   --text-opacity: 1;
-  color: #f2f2f2;
-  color: rgba(242, 242, 242, var(--text-opacity));
+  color: #0d6c78;
+  color: rgba(13, 108, 120, var(--text-opacity));
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -861,8 +861,11 @@ h5.imp {
 
 .nav-btn.imp:hover {
   --bg-opacity: 1;
-  background-color: #b9dfcf;
-  background-color: rgba(185, 223, 207, var(--bg-opacity));
+  background-color: #bf3026;
+  background-color: rgba(191, 48, 38, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #f2f2f2;
+  color: rgba(242, 242, 242, var(--text-opacity));
 }
 
 .nav-btn.imp:active {
