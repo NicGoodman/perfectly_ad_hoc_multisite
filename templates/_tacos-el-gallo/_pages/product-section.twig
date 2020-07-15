@@ -6,7 +6,7 @@
 				{% for image in product.productImages.all() %}
 					{% set productImage = image.optimizedImages %}
 					<div class="flex-grow w-1/2 p-4">
-					<a href="#" data-featherlight="{{ productImage.getUrl }}">
+					<a href="#" data-featherlight="{{ image.getUrl }}">
 						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
 						</a>
 					</div>
