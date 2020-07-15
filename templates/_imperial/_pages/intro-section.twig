@@ -1,4 +1,5 @@
-<section class="flex flex-row w-full bg-left bg-cover bg-imp-dark-aqua md:bg-center" style="{% if entry.introSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.introSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat;{% endif %} height: 66vh;">
+
+<section class="flex flex-row w-full bg-cover bg-imp-dark-aqua {% if entry.introSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.introSectionContent.backgroundImage.one().getUrl() %}bg-image{% endif %}">
 	{% set navBtnList = entry.headerContent.navigation.visibleInIntroSection(true).all() %}
 		{% set ctaText = entry.introSectionContent.callToActionText %}
 	{% set ctaLink = entry.introSectionContent.callToActionLink %}
