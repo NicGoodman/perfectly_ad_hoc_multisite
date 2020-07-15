@@ -41,7 +41,9 @@
 				<article class="mb-4 text-center text-black imp">
 					{{ bodyText }}
 				</article>
-				{% include "_imperial/_snippets/btn-main.twig" %}
+				{% if ctaLink|length %}
+					{% include "_imperial/_snippets/btn-main.twig" %}
+				{% endif %}
 			</div>
 			<div class="w-full h-auto cursor-pointer md:w-2/3" onclick="location.href='https://goo.gl/maps/b1R88RrjJU2dZ4cE6';"></div>
 		</div>
@@ -49,7 +51,9 @@
 			<article class="mb-4 text-center text-black imp">
 				{{ bodyText }}
 			</article>
-
+			{% if ctaLink|length %}
+				{% include "_imperial/_snippets/btn-main.twig" %}
+			{% endif %}
 		</div>
 	</div>
 </section>

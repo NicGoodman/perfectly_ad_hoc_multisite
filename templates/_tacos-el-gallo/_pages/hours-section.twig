@@ -40,7 +40,9 @@
 				<article class="mb-4 text-center text-black tag">
 					{{ bodyText }}
 				</article>
-				{% include "_tacos-el-gallo/_snippets/btn-main.twig" %}
+				{% if ctaText|length %}
+					{% include "_tacos-el-gallo/_snippets/btn-main.twig" %}
+				{% endif %}
 			</div>
 			<div class="w-full h-auto cursor-pointer md:w-2/3" onclick="location.href='https://goo.gl/maps/b1R88RrjJU2dZ4cE6';"></div>
 		</div>
@@ -48,7 +50,9 @@
 			<article class="mb-4 text-center text-black tag">
 				{{ bodyText }}
 			</article>
-
+			{% if ctaText|length %}
+				{% include "_tacos-el-gallo/_snippets/btn-main.twig" %}
+			{% endif %}
 		</div>
 	</div>
 </section>
