@@ -345,3 +345,13 @@ h5.imp {
 .stripe-payment-intents-form {
     width: 100% !important;
 }
+
+.bg-position {
+    background-position:50% 25%;
+}
+
+@media (min-width: 768px) { 
+    .bg-position {
+        background-position:50% 50%;
+    }
+ }

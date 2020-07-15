@@ -38616,6 +38616,16 @@ h5.imp {
   width: 100% !important;
 }
 
+.bg-position {
+  background-position:50% 25%;
+}
+
+@media (min-width: 768px) {
+  .bg-position {
+    background-position:50% 50%;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:space-y-0 > :not(template) ~ :not(template) {
     --space-y-reverse: 0;
