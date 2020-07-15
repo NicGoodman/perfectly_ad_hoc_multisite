@@ -1,5 +1,5 @@
-<section class="w-full flex flex-col items-center px-6 bg-imp-aqua py-16">
-	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
+<section class="flex flex-col items-center w-full px-6 py-16 bg-imp-aqua">
+	<div class="flex flex-col items-center w-full max-w-screen-xl mb-12">
 		{% set sectionHeader = entry.privateEventsSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% set textColor = 'text-imp-dark-aqua' %}
@@ -7,26 +7,26 @@
 		{% set ctaText = entry.privateEventsSectionContent.callToActionText %}
 		{% set ctaLink = entry.privateEventsSectionContent.callToActionLink %}
 		{% include "_imperial/_snippets/heading" %}
-		<div class="w-full flex flex-row items-center h-64" style="{% if entry.privateEventsSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.privateEventsSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat right/cover;{% endif %}">
-			<div class="hidden md:flex flex-col w-1/2 items-center h-full">
-				<div class="flex flex-col items-center p-4 w-full h-full bg-imp-dark-aqua justify-center">
-					<article class="imp text-center text-tag-light-grey">
+		<div class="flex flex-row items-center w-full h-64" style="{% if entry.privateEventsSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.privateEventsSectionContent.backgroundImage.one().getUrl() %}background: url('{{ backgroundImage }}') no-repeat right/cover;{% endif %}">
+			<div class="flex-col items-center hidden w-1/2 h-full md:flex">
+				<div class="flex flex-col items-center justify-center w-full px-4 py-48 bg-imp-dark-aqua">
+					<article class="text-center imp text-tag-light-grey">
 						{{ bodyText }}
 					</article>
 				</div>
 			</div>
-			<div class="hidden md:flex flex-col w-1/2 items-center p-4">
+			<div class="flex-col items-center hidden w-1/2 p-4 md:flex">
 				{% include "_imperial/_snippets/btn-main.twig" %}
 			</div>
 		</div>
-		<div class="md:hidden flex flex-col w-full items-center p-4 ">
-			<div class="flex flex-col items-center p-4 w-full h-full bg-imp-aqua">
-				<article class="imp text-center text-black">
+		<div class="flex flex-col items-center w-full p-4 md:hidden ">
+			<div class="flex flex-col items-center w-full h-full p-4 bg-imp-aqua">
+				<article class="text-center text-black imp">
 					{{ bodyText }}
 				</article>
 			</div>
 		</div>
-		<div class="md:hidden flex flex-col w-full items-center p-4">
+		<div class="flex flex-col items-center w-full p-4 md:hidden">
 			{% include "_imperial/_snippets/btn-main.twig" %}
 		</div>
 	</div>
