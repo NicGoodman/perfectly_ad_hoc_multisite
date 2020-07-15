@@ -345,15 +345,3 @@ h5.imp {
 .stripe-payment-intents-form {
     width: 100% !important;
 }
-
-.bg-image {
-    background: url('{{ backgroundImage }}') no-repeat left/cover; 
-    height: 66vh;
-}
-
-@media (min-width: 768px) { 
-    .bg-image {
-        background: url('{{ backgroundImage }}') no-repeat center/cover; 
-        height: 66vh;
-    }
- }
