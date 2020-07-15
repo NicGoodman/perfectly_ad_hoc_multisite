@@ -1,39 +1,39 @@
-<ul class="flex flex-row flex-wrap space-x-4 self-center items-center">
+<ul class="flex flex-row flex-wrap items-center self-center space-x-4">
 	{% for block in socialMediaList %}
 		{% set accountLink = block.accountLink %}
 		{% if 'youtube' in accountLink %}
 			<li>
-				<a href="{{ accountLink }}" class="social-item imp">
+				<a href="{{ accountLink }}" class="social-item imp" target="_blank">
 					<i class="fab fa-youtube"></i>
 				</a>
 			</li>
 		{% elseif 'facebook' in accountLink %}
 			<li>
-				<a href="{{ accountLink }}" class="social-item imp" @click="isOpen = false">
+				<a href="{{ accountLink }}" class="social-item imp" @click="isOpen = false" target="_blank">
 					<i class="fab fa-facebook-f"></i>
 				</a>
 			</li>
 		{% elseif 'twitter' in accountLink %}
 			<li>
-				<a href="{{ accountLink }}" class="social-item imp" @click="isOpen = false">
+				<a href="{{ accountLink }}" class="social-item imp" @click="isOpen = false" target="_blank">
 					<i class="fab fa-twitter"></i>
 				</a>
 			</li>
 		{% elseif 'instagram' in accountLink %}
 			<li>
-				<a href="{{ accountLink }}" class="social-item imp" @click="isOpen = false">
+				<a href="{{ accountLink }}" class="social-item imp" @click="isOpen = false" target="_blank">
 					<i class="fab fa-instagram"></i>
 				</a>
 			</li>
 		{% elseif 'pinterest' in accountLink %}
 			<li>
-				<a href="{{ accountLink }}" class="social-item imp" @click="isOpen = false">
+				<a href="{{ accountLink }}" class="social-item imp" @click="isOpen = false" target="_blank">
 					<i class="fab fa-pinterest-p"></i>
 				</a>
 			</li>
 		{% elseif 'linkedin' in accountLink %}
 			<li>
-				<a href="{{ accountLink }}" class="social-item imp" @click="isOpen = false">
+				<a href="{{ accountLink }}" class="social-item imp" @click="isOpen = false" target="_blank">
 					<i class="fab fa-linkedin-in"></i>
 				</a>
 			</li>
