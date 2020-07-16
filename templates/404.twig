@@ -1,30 +1,30 @@
 {# We need a unique 404 for each site - just take us to the 
    right slug relative to current URL #}
 
-{% switch currentSite.handle %}
+{% switch currentSite.id %}
 
 
-	{% case default %}
+	{% case 1 %}
 
 		{% include "_perfectly-ad-hoc/_entries/_error.twig" %}
 
 
-	{% case tableRightHere %}
+	{% case 2 %}
 
 		{% include "_table-right-here/_entries/_error.twig" %}
 
 
-	{% case rightThere %}
+	{% case 3 %}
 
 		{% include "_right-there/_entries/_error.twig" %}
 
 
-	{% case tacosElGallo %}
+	{% case 4 %}
 
 		{% include "_tacos-el-gallo/_entries/_error.twig" %}
 
 
-	{% case imperial %}
+	{% case 5 %}
 
 		{% include "_imperial/_entries/_error.twig" %}
 
