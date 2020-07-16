@@ -1,4 +1,4 @@
-{% set url = craft.app.request.url %}
+{% set url = craft.app.request.absoluteUrl %}
 <a href="{% if url == currentSite.baseUrl %}{{ itemLink }}{% else %}{{ currentSite.baseUrl }}{{ itemLink }}{% endif %}" class="uppercase nav-item imp" @click="isOpen = false">{{ itemName }}</a>
 
 
