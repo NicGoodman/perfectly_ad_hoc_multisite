@@ -1,10 +1,10 @@
-<article class="bg-imp-light-grey flex flex-col items-center p-4 w-full">
-	<img src="{{ eventBannerImage.src}}" data-srcset="{{ eventBannerImage.srcset() }}" alt="{{ eventBannerImageAltText }}" class="border-imp-gold border-4 object-cover w-full h-48">
-	<h2 class="imp text-imp-dark-aqua w-full text-left mt-4">{{ eventTitle }}</h2>
-	<h2 class="imp text-imp-dark-aqua mb-4 border-imp-red border-t-4 w-full text-left font-bold">{{ eventDate }}
+<article class="flex flex-col items-center w-full p-4 bg-imp-light-grey">
+	<img src="{{ eventBannerImage.src}}" data-srcset="{{ eventBannerImage.srcset() }}" alt="{{ eventBannerImageAltText }}" class="object-cover w-full h-48 border-4 border-imp-gold">
+	<h2 class="w-full mt-4 text-left imp text-imp-dark-aqua">{{ eventTitle }}</h2>
+	<h2 class="w-full mb-4 font-bold text-left border-t-4 imp text-imp-dark-aqua border-imp-red">{{ eventDate }}
 		at
 		{{ eventTime }}</h2>
-	<a href="{{ btnLink }}" class="btn-alt imp" target="_blank">
+	<a href="{{ btnLink }}" class="btn-alt imp" target="_blank" rel="nofollow">
 		{{ btnText }}
 	</a>
 </article>
