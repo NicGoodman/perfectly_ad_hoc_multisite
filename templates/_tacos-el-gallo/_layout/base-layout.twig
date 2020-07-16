@@ -23,6 +23,24 @@
 		<script src="https://kit.fontawesome.com/f1b10d4b9b.js" crossorigin="anonymous"></script>
 		<link href="https://cdn.jsdelivr.net/gh/noelboss/featherlight@master/src/featherlight.css" type="text/css" rel="stylesheet"/>
 		{% set cart = craft.commerce.carts.cart %}
+		<style>
+			.featherlight-close-icon {
+				/* dimensions: 25px x 25px */
+				line-height: 45px !important;
+				width: 45px !important;
+
+				/* styling */
+				cursor: pointer;
+				text-align: center;
+				font-family: proxima-nova, sans-serif !important;
+				font-weight: 800 !important;
+				background: #fff; /* Set the background in case it overlaps the content */
+				background: rgba(255, 255, 255, 0.3);
+				color: #000;
+				border: none;
+				padding: 0;
+			}
+		</style>
 	</head>
 	<body class="flex flex-col min-h-screen bg-imp-light-grey"> {% block header %}{% endblock %}{% block main %}{% endblock %}{% block footer %}{% endblock %}
 		<script src="https://cdn.jsdelivr.net/gh/noelboss/featherlight@master/src/featherlight.js" type="text/javascript" charset="utf-8"></script>
