@@ -1,5 +1,5 @@
-<section class="w-full flex flex-col items-center px-6 bg-imp-light-grey py-16">
-	<div class="w-full max-w-screen-xl flex flex-col items-center mb-12">
+<section class="flex flex-col items-center w-full px-6 py-16 bg-imp-light-grey">
+	<div class="flex flex-col items-center w-full max-w-screen-xl mb-12">
 		{% set sectionHeader = entry.contactUsSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% set textColor = 'text-imp-dark-aqua' %}
@@ -20,37 +20,37 @@
 			{{ csrfInput() }}
 			<input type="hidden" name="action" value="contact-form/send">
 			{{ redirectInput('contact/thanks') }}
-			<div class="flex flex-row mb-4 items-center">
-				<p class="imp uppercase justify-center w-32 h-12 flex items-center bg-imp-dark-aqua text-imp-light-grey text-sm">
+			<div class="flex flex-row items-center mb-4">
+				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase imp bg-imp-dark-aqua text-imp-light-grey">
 					<label for="from-name">Full Name</label>
 				</p>
-				<input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" class="px-4 w-auto flex-grow h-12 border-4 border-imp-red rounded-none">
+				<input id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-tag-gold">
 				{{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 			</div>
 
-			<div class="flex flex-row mb-4 items-center">
-				<p class="imp uppercase justify-center w-32 h-12 flex items-center bg-imp-dark-aqua text-imp-light-grey text-sm">
+			<div class="flex flex-row items-center mb-4">
+				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase imp bg-imp-dark-aqua text-imp-light-grey">
 					<label for="from-email">Email</label>
 				</p>
-				<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class=" px-4 w-auto flex-grow border-4 border-imp-red h-12 rounded-none">
+				<input id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-tag-gold">
 				{{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 			</div>
-			<div class="flex flex-row mb-4 items-center">
-				<p class="imp uppercase justify-center w-32 h-12 flex items-center bg-imp-dark-aqua text-imp-light-grey text-sm">
+			<div class="flex flex-row items-center mb-4">
+				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase imp bg-imp-dark-aqua text-imp-light-grey">
 					<label for="phone">Phone</label>
 				</p>
-				<input id="phone" type="text" name="phone" value="{{ message.phone ?? '' }}" class="px-4 w-auto flex-grow border-4 border-imp-red h-12 rounded-none">
+				<input id="phone" type="text" name="phone" value="{{ message.phone ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-tag-gold">
 				{{ message is defined and message ? errorList(message.getErrors('phone')) }}
 			</div>
 			<div class="flex flex-col mb-4">
-				<p class="imp uppercase justify-center w-32 h-12 flex items-center bg-imp-dark-aqua text-imp-light-grey text-sm">
+				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase imp bg-imp-dark-aqua text-imp-light-grey">
 					<label for="message">Comment</label>
 				</p>
-				<textarea rows="10" cols="40" id="message" name="message" class="p-4 w-full border-4 border-imp-red rounded-none">{{ message.message ?? '' }}</textarea>
+				<textarea rows="10" cols="40" id="message" name="message" class="w-full p-4 border-4 rounded-none border-tag-gold">{{ message.message ?? '' }}</textarea>
 				{{ message is defined and message ? errorList(message.getErrors('message')) }}
 			</div>
 
-			<input type="submit" value="Get In Touch" class="btn-main imp w-64 self-center rounded-none">
+			<input type="submit" value="Get In Touch" class="self-center w-64 rounded-none btn-main imp">
 		</form>
 	</div>
 </section>
