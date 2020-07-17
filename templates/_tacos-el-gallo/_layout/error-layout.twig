@@ -1,15 +1,15 @@
-{% extends "_imperial/_layout/base-layout" %}
+{% extends "_tacos-el-gallo/_layout/base-layout" %}
 
 {% block header %}
-{% set entry = craft.entries().section('imperialHomePage').one() %}
-	{% include "_imperial/_frame/header" %}
+{% set entry = craft.entries().section('tacosElGalloHome').one() %}
+	{% include "_tacos-el-gallo/_frame/header" %}
 {% endblock %}
 {% block main %}
 	<main class="flex flex-col items-center flex-grow w-full h-full">
-	{% include "_imperial/_pages/error-section" %}
+	{% include "_tacos-el-gallo/_pages/error-section" %}
 	</main>
 {% endblock %}
 {% block footer %}
-{% set entry = craft.entries().section('imperialHomePage').one() %}
-	{% include "_imperial/_frame/footer" %}
+{% set entry = craft.entries().section('tacosElGalloHome').one() %}
+	{% include "_tacos-el-gallo/_frame/footer" %}
 {% endblock %}
