@@ -1,3 +1,4 @@
+{% set entry = craft.entries.section('errorPage').one() %}
 {% set image = entry.errorImage.one().optimizedImages %}
 {% set altText = entry.errorImage.one().title %}
 {% set errorHeader = entry.errorHeader %}
