@@ -7,6 +7,7 @@
 	{% case 1 %}
 
 		{% include "_perfectly-ad-hoc/_entries/_error.twig" %}
+		
 
 
 	{% case 2 %}
@@ -21,11 +22,11 @@
 
 	{% case 4 %}
 
-		{% include "_tacos-el-gallo/_entries/_error.twig" %}
+		{% redicrect "_tacos-el-gallo/_entries/_error.twig" %}
 
 
 	{% case 5 %}
 
-		{% include "_imperial/_entries/_error.twig" %}
+		{% redirect "_imperial/_entries/_error.twig" %}
 
 {% endswitch %}
