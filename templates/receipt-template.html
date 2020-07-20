@@ -22,7 +22,8 @@
 
 			ul {
 				list-style: none;
-				padding-left: 0;
+                padding-left: 0;
+                margin-left: 0;
 			}
 		</style>
 
@@ -78,8 +79,8 @@
 											{{ order.shippingAddress.stateValue }}
 										{% endif %}
 
-										{% if order.shippingAddress.stateValue is not empty %}
-											{{ order.shippingAddress.stateValue }}
+										{% if order.shippingAddress.zipCode is not empty %}
+											{{ order.shippingAddress.zipCode }}
 										{% endif %}
 									</li>
 								{% endif %}
