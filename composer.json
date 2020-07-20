@@ -1,5 +1,6 @@
 {
   "require": {
+    "clarknelson/craft-recaptcha-3": "^1.0",
     "craftcms/cms": "^3.4.0",
     "craftcms/commerce": "^3.1",
     "craftcms/commerce-stripe": "2.3.1.1",

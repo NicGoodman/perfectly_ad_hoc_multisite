@@ -43,14 +43,14 @@
 				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase tag bg-tag-dark-teal text-tag-light-grey">
 					<label for="phone">Phone</label>
 				</p>
-				<input id="phone" type="text" name="phone" value="{{ message.phone ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-tag-yellow">
+				<input id="phone" type="text" name="message[Phone]" value="{{ message.phone ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-tag-yellow">
 				{{ message is defined and message ? errorList(message.getErrors('phone')) }}
 			</div>
 			<div class="flex flex-col mb-4">
 				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase tag bg-tag-dark-teal text-tag-light-grey">
 					<label for="message">Comment</label>
 				</p>
-				<textarea rows="10" cols="40" id="message" name="message" class="w-full p-4 border-4 rounded-none border-tag-yellow">{{ message.message ?? '' }}</textarea>
+				<textarea rows="10" cols="40" id="message" name="message[body]" class="w-full p-4 border-4 rounded-none border-tag-yellow">{{ message.message ?? '' }}</textarea>
 				{{ message is defined and message ? errorList(message.getErrors('message')) }}
 			</div>
 
