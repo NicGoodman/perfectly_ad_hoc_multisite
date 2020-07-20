@@ -43,48 +43,48 @@
             {% if order.shippingAddress %}
                 <ul class="address-data">
 
-  {% if address.firstName or address.lastName %}
+  {% if shippingAddress.firstName or shippingAddress.lastName %}
     <li>
-      {% if address.firstName is not empty %}
-        {{ address.firstName }}
+      {% if shippingAddress.firstName is not empty %}
+        {{ shippingAddress.firstName }}
       {% endif %}
 
-      {% if address.lastName is not empty %}
-        {{ address.lastName }}
+      {% if shippingAddress.lastName is not empty %}
+        {{ shippingAddress.lastName }}
       {% endif %}
     </li>
   {% endif %}
 
-  {% if address.address1 is not empty %}
-    <li>{{ address.address1 }}</li>
+  {% if shippingAddress.address1 is not empty %}
+    <li>{{ shippingAddress.address1 }}</li>
   {% endif %}
 
-  {% if address.address2 is not empty %}
-    <li>{{ address.address2 }}</li>
+  {% if shippingAddress.address2 is not empty %}
+    <li>{{ shippingAddress.address2 }}</li>
   {% endif %}
 
-  {% if address.zipCode is not empty or address.city is not empty %}
+  {% if shippingAddress.zipCode is not empty or shippingAddress.city is not empty %}
     <li>
-      {% if address.zipCode is not empty %}
-        {{ address.zipCode }}
+      {% if shippingAddress.zipCode is not empty %}
+        {{ shippingAddress.zipCode }}
       {% endif %}
 
-      {% if address.city is not empty %}
-        {{ address.city }}
+      {% if shippingAddress.city is not empty %}
+        {{ shippingAddress.city }}
       {% endif %}
     </li>
   {% endif %}
 
-  {% if address.country is defined %}
-    <li>{{ address.country }}</li>
+  {% if shippingAddress.country is defined %}
+    <li>{{ shippingAddress.country }}</li>
   {% endif %}
 
-  {% if address.stateValue is defined %}
-    <li>{{ address.stateValue }}</li>
+  {% if shippingAddress.stateValue is defined %}
+    <li>{{ shippingAddress.stateValue }}</li>
   {% endif %}
 
-  {% if address.phone is not empty %}
-    <li>{{ address.phone }}</li>
+  {% if shippingAddress.phone is not empty %}
+    <li>{{ shippingAddress.phone }}</li>
   {% endif %}
 </ul>
 
