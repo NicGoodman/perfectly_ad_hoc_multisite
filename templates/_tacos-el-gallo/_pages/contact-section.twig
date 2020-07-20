@@ -18,7 +18,12 @@
 		<form method="post" action="" accept-charset="UTF-8" class="flex flex-col w-full md:w-2/3">
 			{{ csrfInput() }}
 			<input type="hidden" name="action" value="contact-form/send">
-			{{ redirectInput('contact/thanks') }}
+			{{ redirectInput('#contact-us') }}
+			{% if craft.app.session.hasFlash('notice') %}
+				<p class="font-bold message notice">{{ craft.app.session.getFlash('notice') }}</p>
+			{% elseif craft.app.session.hasFlash('error') %}
+				<p class="font-bold message error">{{ craft.app.session.getFlash('error') }}</p>
+			{% endif %}
 			<div class="flex flex-row items-center mb-4">
 				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase tag bg-tag-dark-teal text-tag-light-grey">
 					<label for="from-name">Full Name</label>
