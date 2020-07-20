@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3825df5a3e2e570603391c54e0a9d17f",
+    "content-hash": "3c3d474d6ef560891ea973c0ae94a0f7",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -65,68 +65,6 @@
                 "markdown-extra"
             ],
             "time": "2018-03-26T11:24:36+00:00"
-        },
-        {
-            "name": "clarknelson/craft-recaptcha-3",
-            "version": "1.0.16",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/clarknelson/craft-recaptcha-3.git",
-                "reference": "ef0183ef12b31d936d896f9f765fe6276b1fa09d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/clarknelson/craft-recaptcha-3/zipball/ef0183ef12b31d936d896f9f765fe6276b1fa09d",
-                "reference": "ef0183ef12b31d936d896f9f765fe6276b1fa09d",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.1.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Craft reCAPTCHA 3",
-                "handle": "craft-recaptcha-3",
-                "hasCpSettings": true,
-                "hasCpSection": false,
-                "changelogUrl": "https://raw.githubusercontent.com/clarknelson/craft-recaptcha-3/master/CHANGELOG.md",
-                "class": "clarknelson\\craftrecaptcha3\\CraftRecaptcha3"
-            },
-            "autoload": {
-                "psr-4": {
-                    "clarknelson\\craftrecaptcha3\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Clark Nelson",
-                    "homepage": "http://clarknelson.com"
-                }
-            ],
-            "description": "Verifies via Google the site and secret codes required to verify humanity through reCAPTCHA v3.",
-            "keywords": [
-                "Craft",
-                "Forms",
-                "anti-bot",
-                "anti-bots",
-                "anti-spam",
-                "captcha",
-                "cms",
-                "contact",
-                "craft recaptcha 3",
-                "craft-plugin",
-                "craftcms",
-                "google",
-                "recaptcha",
-                "security",
-                "spam",
-                "validation"
-            ],
-            "time": "2020-02-27T22:46:02+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -704,6 +642,53 @@
                 "yii2"
             ],
             "time": "2020-05-04T10:04:00+00:00"
+        },
+        {
+            "name": "craftcms/contact-form-honeypot",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/contact-form-honeypot.git",
+                "reference": "57f4e16c1d24074dcd5575440bcfe7bf6c3b8de0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/contact-form-honeypot/zipball/57f4e16c1d24074dcd5575440bcfe7bf6c3b8de0",
+                "reference": "57f4e16c1d24074dcd5575440bcfe7bf6c3b8de0",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-beta.20"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Contact Form Honeypot",
+                "handle": "contact-form-honeypot",
+                "changelogUrl": "https://raw.githubusercontent.com/craftcms/contact-form-honeypot/master/CHANGELOG.md",
+                "downloadUrl": "https://github.com/craftcms/contact-form-honeypot/archive/master.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\contactform\\honeypot\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Add a honeypot captcha to your Craft CMS contact form",
+            "keywords": [
+                "cms",
+                "craftcms",
+                "yii2"
+            ],
+            "time": "2017-12-05T00:55:45+00:00"
         },
         {
             "name": "craftcms/mailgun",

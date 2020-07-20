@@ -1,10 +1,10 @@
 {
   "require": {
-    "clarknelson/craft-recaptcha-3": "^1.0",
     "craftcms/cms": "^3.4.0",
     "craftcms/commerce": "^3.1",
     "craftcms/commerce-stripe": "2.3.1.1",
     "craftcms/contact-form": "^2.2",
+    "craftcms/contact-form-honeypot": "^1.0",
     "craftcms/mailgun": "^1.4",
     "craftcms/redactor": "^2.6",
     "craftcms/store-hours": "2.1.1.1",
