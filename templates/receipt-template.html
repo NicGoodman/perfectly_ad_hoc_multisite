@@ -43,51 +43,50 @@
             {% if order.shippingAddress %}
                 <ul class="address-data">
 
-  {% if shippingAddress.firstName or shippingAddress.lastName %}
+  {% if order.shippingAddress.firstName or order.shippingAddress.lastName %}
     <li>
-      {% if shippingAddress.firstName is not empty %}
-        {{ shippingAddress.firstName }}
+      {% if order.shippingAddress.firstName is not empty %}
+        {{ order.shippingAddress.firstName }}
       {% endif %}
 
-      {% if shippingAddress.lastName is not empty %}
-        {{ shippingAddress.lastName }}
+      {% if order.shippingAddress.lastName is not empty %}
+        {{ order.shippingAddress.lastName }}
       {% endif %}
     </li>
   {% endif %}
 
-  {% if shippingAddress.address1 is not empty %}
-    <li>{{ shippingAddress.address1 }}</li>
+  {% if order.shippingAddress.address1 is not empty %}
+    <li>{{ order.shippingAddress.address1 }}</li>
   {% endif %}
 
-  {% if shippingAddress.address2 is not empty %}
-    <li>{{ shippingAddress.address2 }}</li>
+  {% if order.shippingAddress.address2 is not empty %}
+    <li>{{ order.shippingAddress.address2 }}</li>
   {% endif %}
 
-  {% if shippingAddress.zipCode is not empty or shippingAddress.city is not empty %}
+  {% if order.shippingAddress.zipCode is not empty or order.shippingAddress.city is not empty %}
     <li>
-      {% if shippingAddress.zipCode is not empty %}
-        {{ shippingAddress.zipCode }}
+      {% if order.shippingAddress.zipCode is not empty %}
+        {{ order.shippingAddress.zipCode }}
       {% endif %}
 
-      {% if shippingAddress.city is not empty %}
-        {{ shippingAddress.city }}
+      {% if order.shippingAddress.city is not empty %}
+        {{ order.shippingAddress.city }}
       {% endif %}
     </li>
   {% endif %}
 
-  {% if shippingAddress.country is defined %}
-    <li>{{ shippingAddress.country }}</li>
+  {% if order.shippingAddress.country is defined %}
+    <li>{{ order.shippingAddress.country }}</li>
   {% endif %}
 
-  {% if shippingAddress.stateValue is defined %}
-    <li>{{ shippingAddress.stateValue }}</li>
+  {% if order.shippingAddress.stateValue is defined %}
+    <li>{{ order.shippingAddress.stateValue }}</li>
   {% endif %}
 
-  {% if shippingAddress.phone is not empty %}
-    <li>{{ shippingAddress.phone }}</li>
+  {% if order.shippingAddress.phone is not empty %}
+    <li>{{ order.shippingAddress.phone }}</li>
   {% endif %}
 </ul>
-
             {% endif %}
         </td>
     </tr>
