@@ -20,7 +20,7 @@
 		{% set navList = entry.headerContent.navigation.all() %}
 		{% include "_imperial/_content/nav-item-list" %}
 		{% if entry.headerContent.altLogo|length %}
-			<img src="{{ altLogo.src }}" alt="">
+			<img src="{{ altLogo.src }}" alt="" class="hidden h-32 lg:block">
 		{% endif %}
 		{% set socialMediaList = entry.headerContent.socialMediaAccounts.all() %}
 		{% include "_imperial/_content/social-media-links" %}
