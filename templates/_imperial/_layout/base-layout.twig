@@ -22,7 +22,7 @@
 		<script src="https://kit.fontawesome.com/f1b10d4b9b.js" crossorigin="anonymous"></script>
 		<link href="https://cdn.jsdelivr.net/gh/noelboss/featherlight@master/src/featherlight.css" type="text/css" rel="stylesheet"/>
 		{% set cart = craft.commerce.carts.cart %}
-		<style>
+				<style>
 			.featherlight-close-icon {
 				/* dimensions: 25px x 25px */
 				line-height: 45px !important;
@@ -39,6 +39,7 @@
 				border: none;
 				padding: 0;
 			}
+			input#contactFormHoneypot { display: none; }
 		</style>
 	</head>
 	<body class="flex flex-col min-h-screen bg-imp-light-grey"> {% block header %}{% endblock %}{% block main %}{% endblock %}{% block footer %}{% endblock %}
