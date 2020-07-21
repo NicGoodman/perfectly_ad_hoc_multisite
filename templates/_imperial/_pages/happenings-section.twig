@@ -5,14 +5,14 @@
 		{% set textColor = 'text-imp-aqua' %}
 		{% include "_imperial/_snippets/heading" %}
 		<div class="flex flex-col flex-wrap items-stretch md:flex-row">
-			{% for entry in craft.entries().section('events').all() if entry.eventDate|date('Y-m-d') >= now|date('Y-m-d') %}
+			{% for entry in craft.entries().section('events').all() if entry.eventContent.eventDate|date('Y-m-d') >= now|date('Y-m-d') %}
 				{% set eventTitle = entry.eventContent.eventTitle %}
 				{% if entry.eventContent.eventBannerImage.one() | length %}
 					{% set eventBannerImage = entry.eventContent.eventBannerImage.one().optimizedImages %}
 					{% set eventBannerImageAltText = entry.eventContent.eventBannerImage.one().title %}
 				{% endif %}
 				{% set eventDate = entry.eventContent.eventDate|date('medium') %}
-								{% set eventTime = entry.eventContent.eventDate|time('short') %}
+				{% set eventTime = entry.eventContent.eventDate|time('short') %}
 				{% set facebookId = entry.eventContent.facebookId %}
 				{% set btnText = "Learn More" %}
 				<div class="w-full p-4 md:w-1/2 lg:w-1/3">
