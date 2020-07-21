@@ -12,6 +12,7 @@
 					{% set eventBannerImageAltText = entry.eventContent.eventBannerImage.one().title %}
 				{% endif %}
 				{% set eventDate = entry.eventContent.eventDate|date('medium') %}
+								{% set eventTime = entry.eventContent.eventDate|time('short') %}
 				{% set facebookId = entry.eventContent.facebookId %}
 				{% set btnText = "Learn More" %}
 				<div class="w-full p-4 md:w-1/2 lg:w-1/3">
