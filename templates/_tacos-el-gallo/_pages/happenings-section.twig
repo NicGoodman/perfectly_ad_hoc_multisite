@@ -2,7 +2,7 @@
 	<div class="w-full max-w-screen-xl">
 		{% set sectionHeader = entry.happeningsSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
-		{% set facebookEvents = craft.entries().section('events').status('pending').orderBy('postDate asc') %}
+		{% set facebookEvents = craft.entries().section('events').orderBy('postDate asc') %}
 		{% include "_tacos-el-gallo/_snippets/heading" %}
 		<div class="flex flex-col flex-wrap items-stretch md:flex-row">
 			{% for entry in facebookEvents.all() if entry.eventContent.eventDate|date('Y-m-d') >= now|date('Y-m-d') %}
