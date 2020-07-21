@@ -3,9 +3,10 @@
 		{% set sectionHeader = entry.happeningsSectionContent.sectionHeader %}
 		{% set anchorLink = sectionHeader|replace(' ', '-')|lower %}
 		{% set textColor = 'text-imp-aqua' %}
+		{% set facebookEvents = craft.entries().section('events').status('pending').orderBy('postDate asc') %}
 		{% include "_imperial/_snippets/heading" %}
 		<div class="flex flex-col flex-wrap items-stretch md:flex-row">
-			{% for entry in craft.entries().section('events').all() if entry.eventContent.eventDate|date('Y-m-d') >= now|date('Y-m-d') %}
+			{% for entry in facebookEvents.all() if entry.eventContent.eventDate|date('Y-m-d') >= now|date('Y-m-d') %}
 				{% set eventTitle = entry.eventContent.eventTitle %}
 				{% if entry.eventContent.eventBannerImage.one() | length %}
 					{% set eventBannerImage = entry.eventContent.eventBannerImage.one().optimizedImages %}
