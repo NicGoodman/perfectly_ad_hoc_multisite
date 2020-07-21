@@ -5,9 +5,10 @@
 			<div class="flex flex-row flex-wrap justify-end w-full p-4 md:w-1/2 lg:w-2/3 md:p-12">
 				{% for image in product.productImages.all() %}
 					{% set productImage = image.optimizedImages %}
+					{% set productImageAltText = image.title %}
 					<div class="flex-grow w-1/2 p-4">
 					<a href="#" data-featherlight="{{ image.getUrl }}">
-						<img src="{{ productImage.src }}" alt="" class="border-4 border-tag-yellow">
+						<img src="{{ productImage.src }}" alt="{{ productImageAltText }}" data-srcset="{{ productImage.srcset() }}" class="border-4 border-tag-yellow">
 						</a>
 					</div>
 				{% endfor %}

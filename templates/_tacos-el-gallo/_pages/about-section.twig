@@ -18,11 +18,12 @@
 					{% switch block.type %}
 						{% case "image" %}
 							{% set image = block.image.one().optimizedImages %}
+							{% set imageAltText = block.image.one().title %}
 							{% set imageHeader = block.overlayHeader %}
 							{% set imageSubheader = block.overlaySubheader %}
 							{% set imageBodyText = block.overlayBodyText %}
 							<div class="flex flex-col w-full p-4 md:w-1/3 lg:w-1/4">
-								<img src="{{ image.src }}" class="flex flex-col items-center justify-end object-cover object-center w-full h-64 border-4 border-tag-yellow" />
+								<img src="{{ image.src }}" class="flex flex-col items-center justify-end object-cover object-center w-full h-64 border-4 border-tag-yellow" alt="{{ imageAltText }}" data-srcset="{{ image.srcset() }}" />
 									<div class="flex flex-col items-start flex-grow w-full p-4 mt-2 bg-tag-teal">
 										<header class="mb-2">
 											<h2 class="leading-none tag">{{ imageHeader }}</h2>
