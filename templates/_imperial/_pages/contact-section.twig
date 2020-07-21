@@ -19,7 +19,13 @@
 		<form method="post" action="" accept-charset="UTF-8" class="flex flex-col w-full md:w-2/3">
 			{{ csrfInput() }}
 			<input type="hidden" name="action" value="contact-form/send">
-			{{ redirectInput('contact/thanks') }}
+			<input id="contactFormHoneypot" name="contactFormHoneypot" type="text">
+			{{ redirectInput('#contact-us') }}
+			{% if craft.app.session.hasFlash('notice') %}
+				<p class="mb-2 font-bold text-center message notice">{{ craft.app.session.getFlash('notice') }}</p>
+			{% elseif craft.app.session.hasFlash('error') %}
+				<p class="mb-2 font-bold text-center message error">{{ craft.app.session.getFlash('error') }}</p>
+			{% endif %}
 			<div class="flex flex-row items-center mb-4">
 				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase imp bg-imp-dark-aqua text-imp-light-grey">
 					<label for="from-name">Full Name</label>
@@ -39,14 +45,14 @@
 				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase imp bg-imp-dark-aqua text-imp-light-grey">
 					<label for="phone">Phone</label>
 				</p>
-				<input id="phone" type="text" name="phone" value="{{ message.phone ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-tag-gold">
+				<input id="phone" type="text" name="message[Phone]" value="{{ message.phone ?? '' }}" class="flex-grow w-auto h-12 px-4 border-4 rounded-none border-tag-gold">
 				{{ message is defined and message ? errorList(message.getErrors('phone')) }}
 			</div>
 			<div class="flex flex-col mb-4">
 				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase imp bg-imp-dark-aqua text-imp-light-grey">
 					<label for="message">Comment</label>
 				</p>
-				<textarea rows="10" cols="40" id="message" name="message" class="w-full p-4 border-4 rounded-none border-tag-gold">{{ message.message ?? '' }}</textarea>
+				<textarea rows="10" cols="40" id="message" name="message[body]" class="w-full p-4 border-4 rounded-none border-tag-gold">{{ message.message ?? '' }}</textarea>
 				{{ message is defined and message ? errorList(message.getErrors('message')) }}
 			</div>
 

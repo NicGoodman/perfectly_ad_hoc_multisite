@@ -21,9 +21,9 @@
 			<input id="contactFormHoneypot" name="contactFormHoneypot" type="text">
 			{{ redirectInput('#contact-us') }}
 			{% if craft.app.session.hasFlash('notice') %}
-				<p class="font-bold message notice">{{ craft.app.session.getFlash('notice') }}</p>
+				<p class="mb-2 font-bold text-center message notice">{{ craft.app.session.getFlash('notice') }}</p>
 			{% elseif craft.app.session.hasFlash('error') %}
-				<p class="font-bold message error">{{ craft.app.session.getFlash('error') }}</p>
+				<p class="mb-2 font-bold text-center message error">{{ craft.app.session.getFlash('error') }}</p>
 			{% endif %}
 			<div class="flex flex-row items-center mb-4">
 				<p class="flex items-center justify-center w-32 h-12 text-sm uppercase tag bg-tag-dark-teal text-tag-light-grey">
