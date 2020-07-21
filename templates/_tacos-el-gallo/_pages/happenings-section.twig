@@ -6,8 +6,10 @@
 		<div class="flex flex-col flex-wrap items-stretch md:flex-row">
 			{% for entry in craft.entries().section('events').all() %}
 				{% set eventTitle = entry.eventContent.eventTitle %}
-				{% set eventBannerImage = entry.eventContent.eventBannerImage.one().optimizedImages %}
-				{% set eventBannerImageAltText = entry.eventContent.eventBannerImage.one().title %}
+				{% if entry.eventContent.eventBannerImage.one().optimizedImage | length %}
+					{% set eventBannerImage = entry.eventContent.eventBannerImage.one().optimizedImages %}
+					{% set eventBannerImageAltText = entry.eventContent.eventBannerImage.one().title %}
+				{% endif %}
 				{% set eventDate = entry.eventContent.eventDate|date('medium') %}
 				{% set eventTime = entry.eventContent.eventDate|time('short') %}
 				{% set facebookId = entry.facebookId %}
