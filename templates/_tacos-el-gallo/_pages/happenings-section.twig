@@ -6,7 +6,7 @@
 		<div class="flex flex-col flex-wrap items-stretch md:flex-row">
 			{% for entry in craft.entries().section('events').all() %}
 				{% set eventTitle = entry.eventContent.eventTitle %}
-				{% if entry.eventContent.eventBannerImage.one().optimizedImage | length %}
+				{% if entry.eventContent.eventBannerImage.one() | length %}
 					{% set eventBannerImage = entry.eventContent.eventBannerImage.one().optimizedImages %}
 					{% set eventBannerImageAltText = entry.eventContent.eventBannerImage.one().title %}
 				{% endif %}

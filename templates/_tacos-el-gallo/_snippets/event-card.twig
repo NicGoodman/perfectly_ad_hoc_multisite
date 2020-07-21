@@ -1,5 +1,5 @@
 <article class="flex flex-col items-center w-full p-4 bg-tag-teal">
-	{% if entry.eventContent.eventBannerImage.one().optimizedImage | length %}
+	{% if entry.eventContent.eventBannerImage.one() | length %}
 		<img src="{{ eventBannerImage.src}}" data-srcset="{{ eventBannerImage.srcset() }}" alt="{{ eventBannerImageAltText }}" class="object-cover w-full h-48 border-4 border-tag-yellow">
 	{% endif %}
 	<h2 class="w-full mt-4 text-left text-black tag">{{ eventTitle }}</h2>
