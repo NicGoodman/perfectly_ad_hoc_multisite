@@ -5,6 +5,7 @@
     "craftcms/commerce-stripe": "2.3.1.1",
     "craftcms/contact-form": "^2.2",
     "craftcms/contact-form-honeypot": "^1.0",
+    "craftcms/feed-me": "^4.2",
     "craftcms/mailgun": "^1.4",
     "craftcms/redactor": "^2.6",
     "craftcms/store-hours": "2.1.1.1",
