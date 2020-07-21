@@ -6,6 +6,9 @@
 	{% else %}
 		{% include "_imperial/_snippets/site-title" %}
 	{% endif %}
+	{% if entry.headerContent.altLogo|length %}
+		{% set altLogo = entry.headerContent.altLogo.one().optimizedImages %}
+	{% endif %}
 	<button @click="isOpen = !isOpen" type="button" class="block px-2 md:hidden text-imp-gold hover:text-imp-red focus:outline-none" :class="{ 'transition transform-180': isOpen }">
 		<svg class="w-6 h-6 fill-current" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
 			<path x-show="isOpen" fill-rule="evenodd" clip-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"/>
@@ -16,6 +19,9 @@
 		{% set listClasses = 'flex flex-col md:flex-row flex-wrap items-center justify-center md:space-x-8 space-y-4 md:space-y-0 mb-4 md:mb-0 md:p-4' %}
 		{% set navList = entry.headerContent.navigation.all() %}
 		{% include "_imperial/_content/nav-item-list" %}
+		{% if entry.headerContent.altLogo|length %}
+			<img src="{{ altLogo.src }}" alt="">
+		{% endif %}
 		{% set socialMediaList = entry.headerContent.socialMediaAccounts.all() %}
 		{% include "_imperial/_content/social-media-links" %}
 	</nav>
