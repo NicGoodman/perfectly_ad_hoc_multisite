@@ -1,5 +1,10 @@
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: true,
+    content: ['./templates/**/*.html',
+      './templates/**/*.twig',
+    ],
+  },
   theme: {
     extend: {
       colors: {
