@@ -19,7 +19,7 @@
 				{% set menuIconAltText = row.menuIcon.one().title %}
 				<div class="flex flex-col items-center w-40 cursor-pointer text-tag-teal hover:text-tag-dark-teal" @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null">
 					<a href="#menu" class="text-center">
-						<img src="{{ menuIcon.src() }}" data-srcset="{{ menuIcon.srcset() }}" alt="{{ menuIconAltText }}">
+						<img src="{{ menuIcon.src(576) }}" data-srcset="{{ menuIcon.srcset() }}" alt="{{ menuIconAltText }}">
 						<h2 class="tag">{{ menuName }}</h2>
 					</a>
 				</div>
