@@ -17,7 +17,7 @@
 
 		<form method="post" action="" accept-charset="UTF-8" class="flex flex-col w-full md:w-2/3">
 			{{ csrfInput() }}
-			<input type="hidden" name="toEmail" value="{{ 'nic@ninebarcreative.com'|hash }}">
+			<input type="hidden" name="toEmail" value="{{ contactFormEmailAddress|hash }}">
 			<input type="hidden" name="action" value="contact-form/send">
 			<input id="contactFormHoneypot" name="contactFormHoneypot" type="text">
 			{{ redirectInput('#contact-us') }}

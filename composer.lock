@@ -491,16 +491,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.29",
+            "version": "3.4.29.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "62f9fa2705090ab061db374924377ac5a5d42362"
+                "reference": "9cdd56c3c1a5744b58207609706d3cd49214c7fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/62f9fa2705090ab061db374924377ac5a5d42362",
-                "reference": "62f9fa2705090ab061db374924377ac5a5d42362",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/9cdd56c3c1a5744b58207609706d3cd49214c7fa",
+                "reference": "9cdd56c3c1a5744b58207609706d3cd49214c7fa",
                 "shasum": ""
             },
             "require": {
@@ -585,7 +585,7 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2020-07-21T15:06:10+00:00"
+            "time": "2020-07-22T14:02:22+00:00"
         },
         {
             "name": "craftcms/commerce",
@@ -3434,16 +3434,16 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.3.11",
+            "version": "3.3.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nystudio107/craft-seomatic.git",
-                "reference": "e495cacb7af641e9fddc12481f813fbc982c3e11"
+                "reference": "c866c8208184f8a60fad2164ba1836c904f15d23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/e495cacb7af641e9fddc12481f813fbc982c3e11",
-                "reference": "e495cacb7af641e9fddc12481f813fbc982c3e11",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/c866c8208184f8a60fad2164ba1836c904f15d23",
+                "reference": "c866c8208184f8a60fad2164ba1836c904f15d23",
                 "shasum": ""
             },
             "require": {
@@ -3508,7 +3508,7 @@
                 "tags",
                 "twitter"
             ],
-            "time": "2020-07-15T01:10:32+00:00"
+            "time": "2020-07-21T21:03:42+00:00"
         },
         {
             "name": "opis/closure",
