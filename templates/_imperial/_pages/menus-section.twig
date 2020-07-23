@@ -18,7 +18,7 @@
 				{% set menuName = row.menuName %}
 				{% set menuIcon = row.menuIcon.one().optimizedImages %}
 				{% set menuIconAltText = row.menuIcon.one().title %}
-				<div class="flex flex-col items-center w-40 cursor-pointer text-imp-dark-aqua hover:text-imp-dark-gold" @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null">
+				<div class="flex flex-col items-center w-40 cursor-pointer text-imp-dark-aqua hover:text-imp-dark-gold" @click="selected !== {{ loop.index }} ? selected = {{ loop.index }} : selected = null" :class="{ 'text-imp-dark-gold': selected === {{ loop.index }}, 'text-imp-aqua': selected !== {{ loop.index }} }">
 					<a href="#menu" class="text-center break-words">
 						<img src="{{ menuIcon.src }}" data-srcset="{{ menuIcon.srcset }}" alt="{{ menuIconAltText }}">
 						<h2 class="imp">{{ menuName }}</h2>
@@ -30,28 +30,35 @@
 			{% for row in entry.menus.all() %}
 				<div class="w-full" x-show="selected == {{ loop.index }}">
 					{% for block in row.menuContent.all() %}
-						{% set itemName = block.itemName %}
-						{% set itemDescription = block.itemDescription %}
-						{% set price = block.prices %}
-						{% set priceDescription = block.priceDescription %}
-						<div id="menu-item-wrapper" class="flex flex-col w-full mb-4">
-							<div id="menu-item-top-line" class="flex flex-row justify-between w-full">
-								<div class="text-left">
-									<h2 class="font-bold imp">{{ itemName }}</h3>
+						{% switch block.type %}
+							{% case "menuItem" %}
+								{% set itemName = block.itemName %}
+								{% set itemDescription = block.itemDescription %}
+								{% set price = block.prices %}
+								{% set priceDescription = block.priceDescription %}
+								<div id="menu-item-wrapper" class="flex flex-col w-full mb-4">
+									<div id="menu-item-top-line" class="flex flex-row justify-between w-full">
+										<div class="text-left">
+											<h2 class="font-bold imp">{{ itemName }}</h3>
+										</div>
+										<div class="pl-10 text-right">
+											<h2 class="font-bold imp text-imp-red">{{ price }}</h3>
+										</div>
+									</div>
+									<div id="menu-item-bottom-line" class="flex flex-row justify-between w-full">
+										<div class="text-left imp">
+											{{ itemDescription | nl2br }}
+										</div>
+										<div class="pl-10 text-right imp">
+											<p class="imp text-imp-dark-aqua">{{ priceDescription }}</p>
+										</div>
+									</div>
 								</div>
-								<div class="pl-10 text-right">
-									<h2 class="font-bold imp text-imp-red">{{ price }}</h3>
+							{% case "subheader" %}
+								<div id="menu-subheader-wrapper" class="flex flex-col w-full mt-8 mb-2">
+									<h3 class="pb-2 text-left border-b-2 tag text-imp-dark-aqua border-imp-dark-gold">{{ block.subheaderText}}</h3>
 								</div>
-							</div>
-							<div id="menu-item-bottom-line" class="flex flex-row justify-between w-full">
-								<div class="text-left imp">
-									{{ itemDescription | nl2br }}
-								</div>
-								<div class="pl-10 text-right imp">
-									<p class="imp text-imp-dark-aqua">{{ priceDescription }}</p>
-								</div>
-							</div>
-						</div>
+						{% endswitch %}
 					{% endfor %}
 				</div>
 			{% endfor %}
