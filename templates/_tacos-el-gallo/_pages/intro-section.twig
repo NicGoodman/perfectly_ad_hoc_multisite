@@ -1,4 +1,4 @@
-<section class="flex flex-row w-full bg-no-repeat bg-cover bg-position bg-tag-dark-teal" style="{% if entry.introSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.introSectionContent.backgroundImage.one().getUrl() %}background-image: url('{{ backgroundImage }}');{% endif %} height: 66vh;" x-data="{ 'open': true }" @keydown.escape="open = false" x-bind:class="{ 'overflow-hidden': open }">
+<section class="flex flex-row w-full bg-no-repeat bg-cover bg-position bg-tag-dark-teal" style="{% if entry.introSectionContent.backgroundImage.one()|length %} {% set backgroundImage = entry.introSectionContent.backgroundImage.one().getUrl() %}background-image: url('{{ backgroundImage }}');{% endif %} height: 66vh;">
 	{% set navBtnList = entry.headerContent.navigation.visibleInIntroSection(true).all() %}
 	{% set ctaText = entry.introSectionContent.callToActionText %}
 	{% set ctaLink = entry.introSectionContent.callToActionLink %}
