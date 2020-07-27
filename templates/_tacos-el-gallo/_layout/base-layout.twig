@@ -46,7 +46,7 @@
 		</style>
 		{% set url = craft.app.request.url %}
 	</head>
-	<body class="flex flex-col min-h-screen bg-imp-light-grey" x-data="{ 'open': true }" @keydown.escape="open = false" {% if url == "/" %} {% if entry.announcementModalDescription|length %} x-bind:class="{ 'overflow-hidden': open }" {% endif %} {% endif %}> {% block header %}{% endblock %}{% block main %}{% endblock %}{% block footer %}{% endblock %}
+	<body class="flex flex-col min-h-screen bg-imp-light-grey" x-data="{ 'open': true }" @keydown.escape="open = false" {% if entry.announcementModalDescription is defined and entry.announcementModalDescription is not empty %} x-bind:class="{ 'overflow-hidden': open }"{% endif %}> {% block header %}{% endblock %}{% block main %}{% endblock %}{% block footer %}{% endblock %}
 		<script src="https://cdn.jsdelivr.net/gh/noelboss/featherlight@master/src/featherlight.js" type="text/javascript" charset="utf-8"></script>
 		<script src='https://app.upserve.com/platform/olo-widget.js?the-imperial-life-asheville' type='text/javascript' id='upserve-olo-script'></script>
 		<script src="assets/js/zenscroll-min.js"></script>
