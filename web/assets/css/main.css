@@ -1787,6 +1787,10 @@ h5.imp {
   line-height: 1;
 }
 
+.m-2 {
+  margin: 0.5rem;
+}
+
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -2002,6 +2006,10 @@ h5.imp {
 
 .pl-3 {
   padding-left: 0.75rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .pb-6 {
