@@ -1447,8 +1447,8 @@ h5.imp {
   background-color: rgba(13, 108, 120, var(--bg-opacity));
 }
 
-.bg-opacity-20 {
-  --bg-opacity: 0.2;
+.bg-opacity-50 {
+  --bg-opacity: 0.5;
 }
 
 .bg-opacity-85 {
@@ -2281,6 +2281,10 @@ h5.imp {
 
 .w-screen {
   width: 100vw;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .focus\:z-10:focus {
