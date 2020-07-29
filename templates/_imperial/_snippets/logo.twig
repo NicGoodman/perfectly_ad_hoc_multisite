@@ -1,5 +1,6 @@
+{% set currentUrl = currentSite.getBaseUrl() %}
 <h1 class="w-40">
-	<a href="{{ currentSite.baseUrl}}">
+	<a href="{{ currentSite }}">
 		<img src="{{ logo.src }}" data-srcset="{{ logo.srcset() }}" alt="{{ logoAltText }}">
 	</a>
 </h1>
